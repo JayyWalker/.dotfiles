@@ -10,6 +10,8 @@ Plugin 'gmarik/Vundle.vim'
 Plugin 'tpope/vim-fugitive'											" Git Wrapper
 Plugin 'maksimr/vim-jsbeautify'									" Use jsbeautifier inside vim to format js, html and css files.
 Plugin 'scrooloose/syntastic'										" Syntax checking hacks.
+Plugin 'dsawardekar/wordpress.vim'							" Wordpress development plugin. Auto-completion, WP-CLI integration, Hooks Integration, jump to defition, UltiSnips Snippets, Syntax Highlighting, Search in Codex, WpSeek Integration.
+
 Plugin 'mattn/emmet-vim'
 Plugin 'ervandew/supertab'											" Tab completion.
 Plugin 'othree/html5.vim'												" HTML5 omnicomplete and syntax.
@@ -30,6 +32,7 @@ Plugin 'bronson/vim-trailing-whitespace'				" Removes whitespace by :FixWhitespa
 Plugin 'groenewege/vim-less'							      " LESS syntax
 Plugin 'StanAngeloff/php.vim'                       " PHP overides highlights
 Plugin 'airblade/vim-gitgutter'									" Shows 'git diff' in the gutter. Shows whether each line has been added, modified, and where lines have been removed.
+Plugin 'junegunn/vim-easy-align'								" Allows to easily align stuff
 
 "----Colors----""
 Plugin 'altercation/vim-colors-solarized'
@@ -39,7 +42,11 @@ colorscheme apprentice
 autocmd BufEnter *.scss colorscheme Tomorrow-Night
 autocmd BufEnter *.scss colorscheme Tomorrow-Night
 autocmd BufEnter *.js		colorscheme		solarized
-"autocmd BufEnter *.conf colorscheme badwolf
+autocmd BufEnter *.conf colorscheme		badwolf
+autocmd BufEnter *.js		colorscheme		solarized
+autocmd BufEnter *.php	colorscheme		apprentice
+autocmd BufEnter *			colorscheme		apprentice
+autocmd BufEnter *.scss colorscheme		Tomorrow-Night
 "autocmd BufEnter *.js			colorscheme ChocolateLiquor
 
 "----This is to remain underneath plugins----"
@@ -64,7 +71,7 @@ autocmd FileType html set omnifunc=htmlcomplete#CompleteTags
 set noerrorbells visualbell t_vb=										" No more annoying flash
 
 "----Make it better for reading my shit---"
-"set autoindent 
+"set autoindent
 set smartindent
 set shiftwidth=2
 "set foldlevel=1
@@ -107,10 +114,17 @@ let mapleader = ","
 "--NERDTree
 map <leader>nn :NERDTreeToggle<cr>
 map <leader>nf :NERDTreeFocus<cr>
-map <leader>nb :NERDTreeFromBookmark 
+map <leader>nb :NERDTreeFromBookmark
 map <leader>nff :NERDTreeFind<cr>
 map <leader>nb :NERDTreeFromBookmark
 map <leader>nf :NERDTreeFind<cr>
 map <leader>n  :NERDTree<cr>
-
 nmap <Space> <Enter>
+
+"--Easy-align
+" Start interactive EasyAlign for a motion/text object (e.g. gaip)
+nmap ga <Plug>(EasyAlign)
+
+" Start interactive EasyAlign in visual mode (e.g. vip<Enter>)
+vmap <Enter> <Plug>(EasyAlign)
+

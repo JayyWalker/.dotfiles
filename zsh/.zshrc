@@ -5,7 +5,7 @@ export ZSH=$HOME/.oh-my-zsh
 # Look in ~/.oh-my-zsh/themes/
 # Optionally, if you set this to "random", it'll load a random theme each
 # time that oh-my-zsh is loaded.
-ZSH_THEME="kafeitu"
+ZSH_THEME="avit"
 
 # Uncomment the following line to use case-sensitive completion.
 # CASE_SENSITIVE="true"
@@ -117,7 +117,6 @@ alias lssh="ls -Xla ~/.ssh"
 alias ownwww="sudo chown -R www-data:www-data"
 alias ownme="sudo chown -R $USER:$USER"
 alias nbg="sudo npm install && bower install && grunt build"
-alias theme="/home/reklaw/projects/et-15-001/wp-content/themes/theme"
 alias goodbye="sudo shutdown -P now"
 alias build="npm run build"
 alias watcher="npm run watch"

@@ -37,8 +37,9 @@ Plugin 'flazz/vim-colorschemes'
 
 colorscheme apprentice
 autocmd BufEnter *.scss colorscheme Tomorrow-Night
+autocmd BufEnter *.scss colorscheme Tomorrow-Night
 autocmd BufEnter *.js		colorscheme		solarized
-autocmd BufEnter *.conf colorscheme badwolf
+"autocmd BufEnter *.conf colorscheme badwolf
 "autocmd BufEnter *.js			colorscheme ChocolateLiquor
 
 "----This is to remain underneath plugins----"

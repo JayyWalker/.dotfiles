@@ -38,6 +38,10 @@ Plugin 'junegunn/vim-easy-align'								" Allows to easily align stuff
 Plugin 'altercation/vim-colors-solarized'
 Plugin 'flazz/vim-colorschemes'
 
+colorscheme apprentice
+autocmd BufEnter *.scss colorscheme Tomorrow-Night
+autocmd BufEnter *.scss colorscheme Tomorrow-Night
+autocmd BufEnter *.js		colorscheme		solarized
 autocmd BufEnter *.conf colorscheme		badwolf
 autocmd BufEnter *.js		colorscheme		solarized
 autocmd BufEnter *.php	colorscheme		apprentice

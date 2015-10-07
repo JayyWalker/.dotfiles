@@ -89,7 +89,7 @@ PROJECT_PATHS=(~/projects)																			# This uses the plugin 'pj'. Can no
 #
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 #source .aliases/source
-source $HOME/.dotfiles/.aliases
+source $HOME/.dotfiles/.aliases.sh
 
 
 #export PATH="/.composer/vendor/bin:$PATH"

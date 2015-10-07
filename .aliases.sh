@@ -1,6 +1,11 @@
+alias dotfiles="$HOME/.dotfiles"
+alias dotconfig="vim $HOME/.dotfiles"
+alias prjconfig="vim $HOME/.dotfiles/.current_project.sh"
+alias aconfig="vim $HOME/.dotfiles/.aliases.sh"
+alias econfig="vim $HOME/.dotfiles/.env"
 alias zshconfig="vim $HOME/.zshrc"
 alias viconfig="vim $HOME/.vimrc"
-alias aconfig="vim $HOME/.dotfiles/.aliases"
+
 alias lsg="ls -Xla"
 alias ohnozng="/var/log/nginx/errors.log"
 alias ohnozap="~/projects/logs"

@@ -86,6 +86,11 @@ set showcmd
 set showmatch											" Show's matching brackets
 set listchars=tab:->
 
+"----Windows/Panels----"
+set splitbelow										" Open new split panes to right and bottom, which feels more natural
+set splitright
+
+
 "----Highlighting---"
 
 "----Backup----"

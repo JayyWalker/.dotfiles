@@ -58,6 +58,7 @@ plugins=(command-not-found copydir copyfile cp fasd git github gitignore lol pj 
 # export MANPATH ="/usr/local/man:$MANPATH"
 
 source $ZSH/oh-my-zsh.sh
+source $HOME/.dotfiles/.env
 
 # You may need to manually set your language environment
 # export LANG=en_US.UTF-8
@@ -88,41 +89,8 @@ PROJECT_PATHS=(~/projects)																			# This uses the plugin 'pj'. Can no
 #
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 #source .aliases/source
-alias zshconfig="vim ~/.zshrc"
-alias viconfig="vim ~/.vimrc"
-alias lsg="ls -Xla"
-alias ohnozng="/var/log/nginx/errors.log"
-alias ohnozap="~/projects/logs"
-alias ngrs=" sudo service nginx restart"
-alias aprs=" sudo service apache2 restart"
-alias nvconfig=" sudo vim /etc/nginx/sites-available/"
-alias avconfig=" sudo vim /etc/apache2/sites-available/"
-alias ...="../../"
-alias ....="../../../"
-alias mydb="mysql -u -p"
-alias dumpdb="mysqldump -u -p"
-alias apt-get="sudo apt-get install"
-alias upgrade="sudo apt-get update && sudo apt-get upgrade"
-alias purge="sudo apt-get remove auto-remove --purge"
-alias pingg="ping google.com"
-alias cpuinfo="lscpu"
-alias meminfo="free -m -l -t"
-alias psg="ps aux | grep"
-alias myip="curl ifconfig.me"
-alias tma="tmux attach"
-alias :q="exit"
-alias vh="sudo vim /etc/hosts"
-alias sln="sudo ln -s"
-alias lssh="ls -Xla ~/.ssh"
-alias ownwww="sudo chown -R www-data:www-data"
-alias ownme="sudo chown -R $USER:$USER"
-alias nbg="sudo npm install && bower install && grunt build"
-alias goodbye="sudo shutdown -P now"
-alias theme="$HOME/projects/wordpress/project/wp-content/themes/theme"
-alias build="npm run build"
-alias watcher="npm run watch"
-alias mv="mv -i"
-alias cp="cp -i"
+source $HOME/.dotfiles/.aliases
+
 
 #export PATH="/.composer/vendor/bin:$PATH"
 export PATH="$HOME/.linuxbrew/bin:$PATH"

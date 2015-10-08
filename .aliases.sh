@@ -1,42 +1,66 @@
-alias dotfiles="$HOME/.dotfiles"
+# Ma .dotfiles
 alias dotconfig="vim $HOME/.dotfiles"
-alias prjconfig="vim $HOME/.dotfiles/.current_project.sh"
-alias aconfig="vim $HOME/.dotfiles/.aliases.sh"
-alias econfig="vim $HOME/.dotfiles/.env"
+alias dotfiles="$HOME/.dotfiles"
+
+alias prjconfig="vim $HOME/.dotfiles/.current_project.sh && zsh"
 alias zshconfig="vim $HOME/.zshrc"
 alias viconfig="vim $HOME/.vimrc"
+alias aconfig="vim $HOME/.dotfiles/.aliases.sh"
+alias econfig="vim $HOME/.dotfiles/.env"
+alias sconfig="vim $HOME/.dotfiles/.scripts"
 
+# General convenience
+alias tma="tmux attach"
 alias lsg="ls -Xla"
-alias ohnozng="/var/log/nginx/errors.log"
-alias ohnozap="~/projects/logs"
-alias ngrs=" sudo service nginx restart"
-alias aprs=" sudo service apache2 restart"
-alias nvconfig=" sudo vim /etc/nginx/sites-available/"
-alias avconfig=" sudo vim /etc/apache2/sites-available/"
-alias ...="../../"
-alias ....="../../../"
-alias mydb="mysql -u -p"
-alias dumpdb="mysqldump -u -p"
+alias :q="exit"
+
+## CHANGE DIRECTORY
+
+# System stuff
+alias goodbye="sudo shutdown -P now"
 alias apt-get="sudo apt-get install"
 alias upgrade="sudo apt-get update && sudo apt-get upgrade"
-alias purge="sudo apt-get remove auto-remove --purge"
-alias pingg="ping google.com"
 alias cpuinfo="lscpu"
 alias meminfo="free -m -l -t"
-alias psg="ps aux | grep"
+alias purge="sudo apt-get remove auto-remove --purge"
+alias pingg="ping google.com"
 alias myip="curl ifconfig.me"
-alias tma="tmux attach"
-alias :q="exit"
-alias vh="sudo vim /etc/hosts"
-alias sln="sudo ln -s"
-alias lssh="ls -Xla ~/.ssh"
+alias psg="ps aux | grep"
+
+## PERMISSIONS
 alias ownwww="sudo chown -R www-data:www-data"
 alias ownme="sudo chown -R $USER:$USER"
-alias nbg="sudo npm install && bower install && grunt build"
-alias goodbye="sudo shutdown -P now"
-alias theme="$HOME/projects/${CUR_PRJ}/wp-content/themes/theme"
-alias proj="$HOME/$CUR_PRJ"
-alias build="npm run build"
-alias watcher="npm run watch"
+
+# Moving stuff about 
+alias sln="sudo ln -s"
+alias lssh="ls -Xla ~/.ssh"
 alias mv="mv -i"
 alias cp="cp -i"
+
+# Projects
+alias proj="$HOME/$CUR_PRJ"
+
+## Npm
+alias watcher="npm run watch"
+alias build="npm run build"
+alias nbg="sudo npm install && bower install && grunt build"
+
+alias dumpdb="mysqldump -u -p"
+alias mydb="mysql -u -p"
+
+# WORDPRESS specific
+alias wpconfig="vim $PRJ/wp-config.php"
+alias theme="$HOME/projects/${CUR_PRJ}/wp-content/themes/theme"
+
+# Server stuff
+alias vh="sudo vim /etc/hosts"
+
+## NGINX specific
+alias nvconfig=" sudo vim /etc/nginx/sites-available/"
+alias ohnozng="/var/log/nginx/errors.log"
+alias ngrs=" sudo service nginx restart"
+
+## APACHE speficif
+alias avconfig=" sudo vim /etc/apache2/sites-available/"
+alias ohnozap="$HOME/logs"
+alias aprs=" sudo service apache2 restart"

@@ -38,16 +38,13 @@ Plugin 'junegunn/vim-easy-align'								" Allows to easily align stuff
 Plugin 'altercation/vim-colors-solarized'
 Plugin 'flazz/vim-colorschemes'
 
-colorscheme apprentice
-autocmd BufEnter *.scss colorscheme Tomorrow-Night
-autocmd BufEnter *.scss colorscheme Tomorrow-Night
-autocmd BufEnter *.js		colorscheme		solarized
-autocmd BufEnter *.conf colorscheme		badwolf
-autocmd BufEnter *.js		colorscheme		solarized
-autocmd BufEnter *.php	colorscheme		apprentice
-autocmd BufEnter *			colorscheme		apprentice
+"--Syntax
 autocmd BufEnter *.scss colorscheme		Tomorrow-Night
-"autocmd BufEnter *.js			colorscheme ChocolateLiquor
+autocmd BufEnter *.conf colorscheme		badwolf
+autocmd BufEnter *.php	colorscheme		apprentice
+autocmd BufEnter *.js			colorscheme ChocolateLiquor
+autocmd BufEnter *			colorscheme		apprentice
+"autocmd BufEnter *.js		colorscheme		solarized
 
 "----This is to remain underneath plugins----"
 call vundle#end()
@@ -103,8 +100,6 @@ syntax on
 "----Airline----"
 let g:airline#extensions#tabline#enabled = 1
 let g:airline#extensions#tabline#left_sep = ' '
-
-
 
 "----Key Maps----"
 

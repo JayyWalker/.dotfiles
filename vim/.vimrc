@@ -8,7 +8,6 @@ Plugin 'gmarik/Vundle.vim'
 
 "----Plugins----"
 Plugin 'tpope/vim-fugitive'											" Git Wrapper
-Plugin 'maksimr/vim-jsbeautify'									" Use jsbeautifier inside vim to format js, html and css files.
 Plugin 'scrooloose/syntastic'										" Syntax checking hacks.
 Plugin 'dsawardekar/wordpress.vim'							" Wordpress development plugin. Auto-completion, WP-CLI integration, Hooks Integration, jump to defition, UltiSnips Snippets, Syntax Highlighting, Search in Codex, WpSeek Integration.
 
@@ -16,6 +15,8 @@ Plugin 'mattn/emmet-vim'
 Plugin 'ervandew/supertab'											" Tab completion.
 Plugin 'othree/html5.vim'												" HTML5 omnicomplete and syntax.
 Plugin 'pangloss/vim-javascript'								" Javascript bundle for vim, this bundle provides syntax and indent plugins.
+Plugin 'maksimr/vim-jsbeautify'									" Use jsbeautifier inside vim to format js, html and css files.
+Plugin 'lucapette/vim-jquery-doc'								" vim-jquery-doc is a little plugin that helps you to look up jQuery API doc website more quickly.
 Plugin 'mxw/vim-jsx'														" Syntax hightlighting for JSX.
 Plugin 'cakebaker/scss-syntax.vim'							" SCSS syntax for vim.
 Plugin 'tpope/vim-surround'											" Makes it easier to remove, edit and add surrounding pairs like [ , (, <, etc.
@@ -34,6 +35,7 @@ Plugin 'StanAngeloff/php.vim'                       " PHP overides highlights
 Plugin 'airblade/vim-gitgutter'									" Shows 'git diff' in the gutter. Shows whether each line has been added, modified, and where lines have been removed.
 Plugin 'junegunn/vim-easy-align'								" Allows to easily align stuff
 
+
 "----Colors----""
 Plugin 'altercation/vim-colors-solarized'
 Plugin 'flazz/vim-colorschemes'
@@ -42,7 +44,7 @@ Plugin 'flazz/vim-colorschemes'
 autocmd BufEnter *.scss colorscheme		Tomorrow-Night
 autocmd BufEnter *.conf colorscheme		badwolf
 autocmd BufEnter *.php	colorscheme		apprentice
-autocmd BufEnter *.js			colorscheme ChocolateLiquor
+autocmd BufEnter *.js		colorscheme		ChocolateLiquor
 autocmd BufEnter *			colorscheme		apprentice
 "autocmd BufEnter *.js		colorscheme		solarized
 

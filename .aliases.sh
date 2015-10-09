@@ -18,14 +18,18 @@ alias :q="exit"
 
 # System stuff
 alias goodbye="sudo shutdown -P now"
-alias apt-get="sudo apt-get install"
-alias upgrade="sudo apt-get update && sudo apt-get upgrade"
 alias cpuinfo="lscpu"
 alias meminfo="free -m -l -t"
+alias psg="ps aux | grep"
+
+## Package stuff on Ubuntu
+alias apt-get="sudo apt-get install"
+alias upgrade="sudo apt-get update && sudo apt-get upgrade"
 alias purge="sudo apt-get remove auto-remove --purge"
+
+## Internet connection
 alias pingg="ping google.com"
 alias myip="curl ifconfig.me"
-alias psg="ps aux | grep"
 
 ## PERMISSIONS
 alias ownwww="sudo chown -R www-data:www-data"
@@ -44,9 +48,6 @@ alias proj="$HOME/$CUR_PRJ"
 alias watcher="npm run watch"
 alias build="npm run build"
 alias nbg="sudo npm install && bower install && grunt build"
-
-alias dumpdb="mysqldump -u -p"
-alias mydb="mysql -u -p"
 
 # WORDPRESS specific
 alias wpconfig="vim $PRJ/wp-config.php"

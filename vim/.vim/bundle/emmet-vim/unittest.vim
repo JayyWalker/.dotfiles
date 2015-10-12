@@ -492,6 +492,10 @@ finish
           'result': "<input type=\"input\" value=\"test1\">\n<input type=\"input\" value=\"test2\">\n<input type=\"input\" value=\"test3\">",
         },
         {
+          'query': "test1\ntest2\ntest3$$$$\\<esc>ggVG\\<c-y>,div[id=$#]*\\<cr>$$$$",
+          'result': "<div id=\"test1\"></div>\n<div id=\"test2\"></div>\n<div id=\"test3\"></div>",
+        },
+        {
           'query': "div#id-$*5>div#id2-$",
           'result': "<div id=\"id-1\">\n\t<div id=\"id2-1\"></div>\n</div>\n<div id=\"id-2\">\n\t<div id=\"id2-2\"></div>\n</div>\n<div id=\"id-3\">\n\t<div id=\"id2-3\"></div>\n</div>\n<div id=\"id-4\">\n\t<div id=\"id2-4\"></div>\n</div>\n<div id=\"id-5\">\n\t<div id=\"id2-5\"></div>\n</div>\n",
         },
@@ -530,6 +534,10 @@ finish
         {
           'query': "<small>a$$$$</small>",
           'result': "<small><a href=\"\"></a></small>",
+        },
+        {
+          'query': "form.search-form._wide>input.-query-string+input:s.-btn_large|bem",
+          'result': "<form class=\"search-form search-form_wide\" action=\"\">\n\t<input class=\"search-form-query-string\" type=\"\">\n\t<input class=\"search-form-btn_large\" type=\"submit\" value=\"\">\n</form>\n",
         },
       ],
     },

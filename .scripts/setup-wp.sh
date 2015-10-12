@@ -45,8 +45,38 @@ echo Downloading Wordpress
 
 	wp core download  
 
-echo Copying the sample config file
 	cp wp-config-sample.php wp-config.php
+echo Database name?
+	read DBNAME
+
+	sed -i 's/database_name_here/$DBNAME/g' wp-config.php
+
+echo Database user?
+	read DBUSER
+
+	sed -i 's/username_here/$DBUSER/g' wp-config.php
+
+echo Database password?
+	read DBPASS
+
+	sed -i 's/username_here/$DBPASS/g' wp-config.php
+
+echo Database host? leave blank if localhost
+ read DBHOST
+ if [[ $DBHOST =  ]]
+
+echo Database prefix? Press ENTER to leave it as default.
+	read -p "Database prefix? Press enter for "
+
+echo Project URL? (This will also be used for virtual hosts)
+	read PRJURL
+
+echo Would you like to set a url? [y | n]
+	read URL_ANSA
+
+	if [[ $URL_ANSA = y ]] ; then
+		sed -i 's/'
+	fi
 
 	sleep 5
 

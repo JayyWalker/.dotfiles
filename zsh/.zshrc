@@ -60,7 +60,7 @@ plugins=(command-not-found copydir copyfile cp fasd git github gitignore lol pj 
 source $ZSH/oh-my-zsh.sh
 source $HOME/.dotfiles/.env
 # Runs terminal at startup
-[[ $TERM != "screen" ]] && exec tmux
+#[[ $TERM != "screen" ]] && exec tmux
 
 # You may need to manually set your language environment
 # export LANG=en_US.UTF-8

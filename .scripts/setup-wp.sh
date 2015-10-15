@@ -10,13 +10,14 @@ echo What is the title of your project?
 
 echo You are currently in...
 
+#Show the user their current path
 pwd
 
 echo
 
 sleep 2
 
-#Figure out how to prevnt the requirement of pressing enter after the y input
+#Figure out how to bypass the enter key requirement after user input
 echo "Are you currently in the root directory of the project? [y | n]"
 echo
 read ANSA

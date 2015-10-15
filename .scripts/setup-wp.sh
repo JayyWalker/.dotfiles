@@ -2,9 +2,6 @@
 # It uses wp cli to download and install Wordpress 
 # Find wp-cli at www.wp-cli.org
 
-
-
-
 #!/bin/bash
 clear
 
@@ -35,7 +32,19 @@ read ANSA
 			eval cd "$PROJPATH" 
 
 		echo "Okay. Just moving there now"
-			mkdir $PROJNAME && cd $PROJNAME && git init
+
+			if [[ -e $PROJNAME ]] ; then
+
+				echo -e "File or Directory $PROJNAME already exists"
+
+				EXIT
+
+				else 
+
+					mkdir $PROJNAME && cd $PROJNAME && git init
+
+			fi
+				
 	fi
 
 echo
@@ -46,6 +55,7 @@ echo Downloading Wordpress
 	wp core download  
 
 	cp wp-config-sample.php wp-config.php
+
 echo Database name?
 	read DBNAME
 
@@ -61,9 +71,15 @@ echo Database password?
 
 	sed -i 's/username_here/$DBPASS/g' wp-config.php
 
+#define('WP_HOME','http://everywheretravel.dev');
+#define('WP_SITEURL','http://everywheretravel.dev');
+
 echo Database host? leave blank if localhost
- read DBHOST
- if [[ $DBHOST =  ]]
+	read DBHOST
+		if [[ -z "$DBHOST" ]] ; then
+			 sed -i 's/'
+			 else 
+		fi
 
 echo Database prefix? Press ENTER to leave it as default.
 	read -p "Database prefix? Press enter for "

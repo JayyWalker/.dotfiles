@@ -55,7 +55,7 @@ call vundle#end()
 set guifont=Monospace\ 40
 
 "----General---"
-set autochdir
+"set autochdir
 set wildmenu
 set ruler
 set t_Co=256

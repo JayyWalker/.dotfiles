@@ -58,7 +58,7 @@ alias vh="sudo vim /etc/hosts"
 
 ## NGINX specific
 alias nvconfig=" sudo vim /etc/nginx/sites-available/"
-alias ohnozng="/var/log/nginx/errors.log"
+alias ohnozng="vim /var/log/nginx/errors.log"
 alias ngrs=" sudo service nginx restart"
 
 ## APACHE speficif

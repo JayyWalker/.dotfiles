@@ -13,6 +13,7 @@ alias sconfig="vim $HOME/.dotfiles/.scripts"
 alias tma="tmux attach"
 alias lsg="ls -Xla"
 alias :q="exit"
+alias tmd="tmux detach"
 
 ## CHANGE DIRECTORY
 
@@ -25,7 +26,7 @@ alias psg="ps aux | grep"
 ## Package stuff on Ubuntu
 alias apt-get="sudo apt-get install"
 alias upgrade="sudo apt-get update && sudo apt-get upgrade"
-alias purge="sudo apt-get remove auto-remove --purge"
+alias purge="sudo apt-get remove --purge"
 
 ## Internet connection
 alias pingg="ping google.com"
@@ -34,6 +35,10 @@ alias myip="curl ifconfig.me"
 ## PERMISSIONS
 alias ownwww="sudo chown -R www-data:www-data"
 alias ownme="sudo chown -R $USER:$USER"
+alias 777r="chmod -R 777"
+alias 775r="chmod -R 775"
+alias ch777="chmod 777"
+alias ch775="chmod 775"
 
 # Moving stuff about 
 alias sln="sudo ln -s"
@@ -42,7 +47,7 @@ alias mv="mv -i"
 alias cp="cp -i"
 
 # Projects
-alias proj="$HOME/$CUR_PRJ"
+alias proj="$HOME/projects/$CUR_PRJ"
 
 ## Npm
 alias watcher="npm run watch"

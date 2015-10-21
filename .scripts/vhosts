@@ -1,15 +1,6 @@
 #!/usr/bin/env bash
+
 # At the moment, this script is just for setting up nginx vhosts
-
-#listen 80;
-#listen [::]:80;
-
-#root /home/reklaw/projects/project_name;
-#index index.php index.html index.htm;
-
-
-# Make site accessible from http://localhost/
-#server_name project_url.dev;
 
 echo Current project name is?
 
@@ -38,8 +29,6 @@ sudo sed -i "s/project_name/$CUR_PRJ/" ${CUR_PRJ}.dev
 sudo sed -i "s/project_url/$url/" ${CUR_PRJ}.dev
 
 sudo sed -i "s/port/$port/" ${CUR_PRJ}.dev
-
-#sed -i 's/database_name_here/$DBNAME/g' wp-config.php
 
 vim ${CUR_PRJ}.dev
 

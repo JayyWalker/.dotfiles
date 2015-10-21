@@ -1,3 +1,4 @@
+#!/usr/bin/env bash
 # At the moment, this script is just for setting up nginx vhosts
 
 #listen 80;

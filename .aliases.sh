@@ -49,6 +49,8 @@ alias cp="cp -i"
 # Projects
 alias proj="$HOME/projects/$CUR_PRJ"
 
+alias derek="mysql -u dev -h derek -p"
+
 ## Npm
 alias watcher="npm run watch"
 alias build="npm run build"

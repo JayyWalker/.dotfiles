@@ -65,17 +65,17 @@ set smartcase                                           " Prevents vim search fr
 set confirm
 set ignorecase
 set laststatus=2
-
+"
 "----Syntax----"
 autocmd FileType html set omnifunc=htmlcomplete#CompleteTags
 set noerrorbells visualbell t_vb=										" No more annoying flash
-
+"
 "----Make it better for reading my shit---"
 "set autoindent
-set smartindent
+"set smartindent
 set shiftwidth=2
-"set foldlevel=1
-"set foldmethod=syntax
+set foldlevel=1
+set foldmethod=syntax
 set softtabstop=2
 set tabstop=2
 set backspace=indent,eol,start
@@ -84,8 +84,8 @@ set number
 set showmode
 set showcmd
 set showmatch											" Show's matching brackets
-set listchars=tab:->
-
+""set listchars=tab:->
+"
 "----Windows/Panels----"
 set splitbelow										" Open new split panes to right and bottom, which feels more natural
 set splitright
@@ -97,8 +97,7 @@ set splitright
 set history=400
 set undolevels=1000
 
-syntax on
-
+syntax on 
 "----Airline----"
 let g:airline#extensions#tabline#enabled = 1
 let g:airline#extensions#tabline#left_sep = ' '
@@ -107,7 +106,6 @@ let g:airline#extensions#tabline#left_sep = ' '
 
 "--General
 imap jj <ESC>
-imap ~  #
 map <Space> <Return>
 :let mapleader = ","
 

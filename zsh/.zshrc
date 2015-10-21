@@ -99,6 +99,8 @@ export PATH="$HOME/.linuxbrew/bin:$PATH"
 export MANPATH="$HOME/.linuxbrew/share/man:$MANPATH"
 export INFOPATH="$HOME/.linuxbrew/share/inofo:$INFOPATH"
 export PATH=$PATH:#/.composer/vendor/bin
+export PATH=$PATH:/usr/local/bin/
+export PATH=$PATH:/usr/bin
 
 autoload -U +X bashcompinit && bashcompinit
 source ~/wp-completion.bash

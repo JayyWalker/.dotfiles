@@ -8,6 +8,7 @@ alias viconfig="vim $HOME/.vimrc"
 alias aconfig="vim $HOME/.dotfiles/.aliases.sh"
 alias econfig="vim $HOME/.dotfiles/.env"
 alias sconfig="vim $HOME/.dotfiles/.scripts"
+alias dbconfig="vim $HOME/.dotfiles/.dbconfig.sh && zsh"
 
 # General convenience
 alias tma="tmux attach"

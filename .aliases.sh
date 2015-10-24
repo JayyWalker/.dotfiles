@@ -50,16 +50,21 @@ alias cp="cp -i"
 alias proj="$HOME/$CUR_PRJ"
 alias proj="$HOME/projects/${CUR_PRJ}"
 
-alias derek="mysql -u dev -h derek -p"
+
+## WORDPRESS specific
+alias wpconfig="vim $PRJ/wp-config.php"
+alias theme="$HOME/projects/${CUR_PRJ}/wp-content/themes/theme"
 
 ## Npm
 alias watcher="npm run watch"
 alias build="npm run build"
 alias nbg="sudo npm install && bower install && grunt build"
 
-# WORDPRESS specific
-alias wpconfig="vim $PRJ/wp-config.php"
-alias theme="$HOME/projects/${CUR_PRJ}/wp-content/themes/theme"
+# Database stuff
+alias derek="mysql -u dev -h derek -p"
+alias derekdump="mysql -u dev -h derek -p"
+alias mydb="mysql -u $DBU -p$DBP"
+alias dumpdb="mysqldump -u $DBU -p$DBP"
 
 # Server stuff
 alias vh="sudo vim /etc/hosts"

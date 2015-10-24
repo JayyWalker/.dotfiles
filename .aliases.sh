@@ -24,7 +24,7 @@ alias meminfo="free -m -l -t"
 alias psg="ps aux | grep"
 
 ## Package stuff on Ubuntu
-alias apt-get="sudo apt-get install"
+#alias apt-get="sudo apt-get install"
 alias upgrade="sudo apt-get update && sudo apt-get upgrade"
 alias purge="sudo apt-get remove --purge"
 
@@ -47,7 +47,8 @@ alias mv="mv -i"
 alias cp="cp -i"
 
 # Projects
-alias proj="$HOME/projects/$CUR_PRJ"
+alias proj="$HOME/$CUR_PRJ"
+alias proj="$HOME/projects/${CUR_PRJ}"
 
 alias derek="mysql -u dev -h derek -p"
 
@@ -72,3 +73,4 @@ alias ngrs=" sudo service nginx restart"
 alias avconfig=" sudo vim /etc/apache2/sites-available/"
 alias ohnozap="$HOME/logs"
 alias aprs=" sudo service apache2 restart"
+

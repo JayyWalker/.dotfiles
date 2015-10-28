@@ -31,6 +31,7 @@ alias purge="sudo apt-get remove --purge"
 ## Internet connection
 alias pingg="ping google.com"
 alias myip="curl ifconfig.me"
+alias nts="netstat -tunlp"
 
 ## PERMISSIONS
 alias ownwww="sudo chown -R www-data:www-data"
@@ -48,8 +49,10 @@ alias cp="cp -i"
 
 # Projects
 alias proj="$HOME/projects/$CUR_PRJ"
-
 alias derek="mysql -u dev -h derek -p"
+
+# PHP projects
+alias propel="$PRJ/vendor/bin/propel"
 
 ## Npm
 alias watcher="npm run watch"

@@ -58,24 +58,24 @@ set guifont=Monospace\ 40
 "set autochdir
 set wildmenu
 set ruler
-set t_Co=256
+set t_Co=256							                          " Makes vim not look so fugly
 "let g:nerdtree_tabs_open_on_console_startup=1			" As the code so obviously says: open on Vim Startup
 set noerrorbells visualbell t_vb=										" No more annoying flash
 set smartcase                                           " Prevents vim search from being case sensitive
 set confirm
 set ignorecase
 set laststatus=2
-"
+
 "----Syntax----"
 autocmd FileType html set omnifunc=htmlcomplete#CompleteTags
-set noerrorbells visualbell t_vb=										" No more annoying flash
-"
-"----Make it better for reading my shit---"
-"set autoindent
-"set smartindent
-set shiftwidth=2
-set foldlevel=1
-set foldmethod=syntax
+
+""----Make it better for reading my shit---"
+set autoindent
+set smartindent
+"set foldlevel=1
+"set foldmethod=syntax
+set expandtab
+set shiftwidth=1
 set softtabstop=2
 set tabstop=2
 set backspace=indent,eol,start
@@ -84,13 +84,13 @@ set number
 set showmode
 set showcmd
 set showmatch											" Show's matching brackets
-""set listchars=tab:->
-"
+set listchars=tab:->
+
 "----Windows/Panels----"
 set splitbelow										" Open new split panes to right and bottom, which feels more natural
 set splitright
-
-
+"
+"
 "----Highlighting---"
 
 "----Backup----"
@@ -112,7 +112,7 @@ map <Space> <Return>
 let mapleader = ","
 :map <leader>o :BuffExplorer<cr>
 
-"--NERDTree
+""--NERDTree
 map <leader>nn :NERDTreeToggle<cr>
 map <leader>nf :NERDTreeFocus<cr>
 map <leader>nb :NERDTreeFromBookmark
@@ -128,4 +128,3 @@ nmap ga <Plug>(EasyAlign)
 
 " Start interactive EasyAlign in visual mode (e.g. vip<Enter>)
 vmap <Enter> <Plug>(EasyAlign)
-

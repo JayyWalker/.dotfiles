@@ -32,4 +32,6 @@ sudo sed -i "s/port/$port/" ${CUR_PRJ}.dev
 
 vim ${CUR_PRJ}.dev
 
-sudo ln -s /etc/nginx/sites-available/{$CUR_PRJ}.dev /etc/nginx/sites-enabled/{$CUR_PRJ}.dev
+sudo ln -s /etc/nginx/sites-available/$CUR_PRJ\.dev /etc/nginx/sites-enabled/$CUR_PRJ\.dev
+
+sudo service nginx reload

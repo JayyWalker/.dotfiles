@@ -59,6 +59,8 @@ plugins=(command-not-found copydir copyfile cp fasd git github gitignore lol pj 
 
 source $ZSH/oh-my-zsh.sh
 source $HOME/.dotfiles/.env
+source $HOME/.dotfiles/.dbconfig.sh
+
 # Runs terminal at startup
 #[[ $TERM != "screen" ]] && exec tmux
 

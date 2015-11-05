@@ -8,6 +8,7 @@ alias viconfig="vim $HOME/.vimrc"
 alias aconfig="vim $HOME/.dotfiles/.aliases.sh"
 alias econfig="vim $HOME/.dotfiles/.env"
 alias sconfig="vim $HOME/.dotfiles/.scripts"
+alias dbconfig="vim $HOME/.dotfiles/.dbconfig.sh && zsh"
 
 # General convenience
 alias tma="tmux attach"
@@ -24,7 +25,7 @@ alias meminfo="free -m -l -t"
 alias psg="ps aux | grep"
 
 ## Package stuff on Ubuntu
-alias apt-get="sudo apt-get install"
+#alias apt-get="sudo apt-get install"
 alias upgrade="sudo apt-get update && sudo apt-get upgrade"
 alias purge="sudo apt-get remove --purge"
 
@@ -51,6 +52,12 @@ alias cp="cp -i"
 alias proj="$HOME/projects/$CUR_PRJ"
 alias derek="mysql -u dev -h derek -p"
 
+
+## WORDPRESS specific
+alias wpconfig="vim $PRJ/wp-config.php"
+alias theme="$HOME/projects/${CUR_PRJ}/wp-content/themes/theme"
+>>>>>>> 8c145fb5ff68c9298088b5cb83570a48a860a33a
+
 # PHP projects
 alias propel="$PRJ/vendor/bin/propel"
 
@@ -59,9 +66,11 @@ alias watcher="npm run watch"
 alias build="npm run build"
 alias nbg="sudo npm install && bower install && grunt build"
 
-# WORDPRESS specific
-alias wpconfig="vim $PRJ/wp-config.php"
-alias theme="$HOME/projects/${CUR_PRJ}/wp-content/themes/theme"
+# Database stuff
+alias derek="mysql -u dev -h derek -p"
+alias derekdump="mysql -u dev -h derek -p"
+alias mydb="mysql -u $DBU -p$DBP"
+alias dumpdb="mysqldump -u $DBU -p$DBP"
 
 # Server stuff
 alias vh="sudo vim /etc/hosts"
@@ -75,3 +84,4 @@ alias ngrs=" sudo service nginx restart"
 alias avconfig=" sudo vim /etc/apache2/sites-available/"
 alias ohnozap="$HOME/logs"
 alias aprs=" sudo service apache2 restart"
+

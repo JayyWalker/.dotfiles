@@ -8,9 +8,9 @@ clear
 echo What is the title of your project?
 	read PROJNAME
 
+#Show the user their current path
 echo You are currently in...
 
-#Show the user their current path
 pwd
 
 echo
@@ -78,17 +78,13 @@ echo Database password?
 echo Database host? leave blank if localhost
 	read DBHOST
 		if [[ -z "$DBHOST" ]] ; then
-			 sed -i 's/'
-			 else 
+			 sed -i 's/localhost/$DBHOST/g' wp-config.php
 		fi
 
 echo Database prefix? Press ENTER to leave it as default.
-	read -p "Database prefix? Press enter for "
+	read -p "Database prefix? Press enter for"
 
-echo Project URL? (This will also be used for virtual hosts)
-	read PRJURL
-
-echo Would you like to set a url? [y | n]
+echo Would you like to set a url in your wp-config? [y | n]
 	read URL_ANSA
 
 	if [[ $URL_ANSA = y ]] ; then
@@ -97,12 +93,17 @@ echo Would you like to set a url? [y | n]
 
 	sleep 5
 
+echo Project URL?	
+
+read PRJURL
+
+
 # I'll come to this at some point
 
 echo Installing WordPress
 	wp core install 
 
-echo I think Wordpress installed
+# echo I think Wordpress installed
 
 # This is for when I sort out the if error and if not
 
@@ -131,15 +132,10 @@ read ANSAGIT
 	fi
 	
 echo "Running sudo npm install && bower install && build"
-	sudo npm install
-
-	bower install
-
-	npm run build
+	sudo npm install & bower install & npm run build
 
 echo Activating FoundationPress
 	wp theme activate theme
-
 
 # Run apache/nginx configuration
 
@@ -149,10 +145,12 @@ read ANSAVHOST
 	if [[ $ANSAVHOST = y ]] ; then
 		echo Okay 
 
+    vhosts
+
 		sleep 30
 
 		else 
-			echo OKay
+			echo Okay
 	fi
 
 # Run  

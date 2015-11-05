@@ -13,6 +13,7 @@ Plugin 'dsawardekar/wordpress.vim'							" Wordpress development plugin. Auto-co
 
 Plugin 'mattn/emmet-vim'
 Plugin 'ervandew/supertab'											" Tab completion.
+Plugin 'evidens/vim-twig'                       " Twig syntax
 Plugin 'othree/html5.vim'												" HTML5 omnicomplete and syntax.
 Plugin 'pangloss/vim-javascript'								" Javascript bundle for vim, this bundle provides syntax and indent plugins.
 Plugin 'maksimr/vim-jsbeautify'									" Use jsbeautifier inside vim to format js, html and css files.
@@ -75,7 +76,7 @@ set smartindent
 "set foldlevel=1
 "set foldmethod=syntax
 set expandtab
-set shiftwidth=1
+set shiftwidth=2
 set softtabstop=2
 set tabstop=2
 set backspace=indent,eol,start

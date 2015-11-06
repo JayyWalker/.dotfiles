@@ -56,7 +56,7 @@ call vundle#end()
 set guifont=Monospace\ 40
 
 "----General---"
-"set autochdir
+set autochdir
 set wildmenu
 set ruler
 set t_Co=256							                          " Makes vim not look so fugly
@@ -76,9 +76,9 @@ set smartindent
 "set foldlevel=1
 "set foldmethod=syntax
 set expandtab
-set shiftwidth=2
-set softtabstop=2
-set tabstop=2
+set shiftwidth=4
+set softtabstop=4
+set tabstop=4
 set backspace=indent,eol,start
 set wrap
 set number

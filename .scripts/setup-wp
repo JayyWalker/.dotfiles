@@ -1,9 +1,20 @@
+#!/usr/bin/env bash
+
 # This script will download, setup and install Wordpress with FoundationPress
 # It uses wp cli to download and install Wordpress 
 # Find wp-cli at www.wp-cli.org
 
-#!/bin/bash
 clear
+
+echo "Have you created your database? [y | n]" DBANSA
+
+read DBANSA
+
+if [[ $DBANSA = n ]] ; then
+  echo Setup the database
+
+  exit
+fi
 
 echo What is the title of your project?
 	read PROJNAME
@@ -97,7 +108,6 @@ echo Project URL?
 
 read PRJURL
 
-
 # I'll come to this at some point
 
 echo Installing WordPress
@@ -131,8 +141,8 @@ read ANSAGIT
 		echo Moving on...
 	fi
 	
-echo "Running sudo npm install && bower install && build"
-	sudo npm install & bower install & npm run build
+#echo "Running sudo npm install && bower install && build"
+#	sudo npm install & bower install & npm run build
 
 echo Activating FoundationPress
 	wp theme activate theme

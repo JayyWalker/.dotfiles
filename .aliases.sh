@@ -56,7 +56,6 @@ alias derek="mysql -u dev -h derek -p"
 ## WORDPRESS specific
 alias wpconfig="vim $PRJ/wp-config.php"
 alias theme="$HOME/projects/${CUR_PRJ}/wp-content/themes/theme"
->>>>>>> 8c145fb5ff68c9298088b5cb83570a48a860a33a
 
 # PHP projects
 alias propel="$PRJ/vendor/bin/propel"
@@ -65,6 +64,7 @@ alias propel="$PRJ/vendor/bin/propel"
 alias watcher="npm run watch"
 alias build="npm run build"
 alias nbg="sudo npm install && bower install && grunt build"
+alias nbgu="sudo npm install && bower install && gulp"
 
 # Database stuff
 alias derek="mysql -u dev -h derek -p"

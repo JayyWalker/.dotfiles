@@ -99,9 +99,10 @@ set history=400
 set undolevels=1000
 
 syntax on 
+
 "----Airline----"
 let g:airline#extensions#tabline#enabled = 1
-let g:airline#extensions#tabline#left_sep = ' '
+"let g:airline#extensions#tabline#left_sep = '>'
 
 "----Key Maps----"
 

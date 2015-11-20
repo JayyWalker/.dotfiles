@@ -1,3 +1,10 @@
+"vimrc {{{
+    augroup reload_vimrc " {
+        autocmd!
+        autocmd BufWritePost $MYVIMRC source $MYVIMRC
+    augroup END "  }
+"}}}
+
 set nocompatible
 filetype off
 
@@ -7,34 +14,37 @@ filetype off
 
     "Plugins {{
     Plugin 'gmarik/Vundle.vim'
-    Plugin 'tpope/vim-fugitive'											" Git Wrapper
-    Plugin 'scrooloose/syntastic'										" Syntax checking hacks.
-    Plugin 'dsawardekar/wordpress.vim'							" Wordpress development plugin. Auto-completion, WP-CLI integration, Hooks Integration, jump to defition, UltiSnips Snippets, Syntax Highlighting, Search in Codex, WpSeek Integration.
+    Plugin 'tpope/vim-fugitive'						" Git Wrapper
+    Plugin 'scrooloose/syntastic'					" Syntax checking hacks.
+    Plugin 'dsawardekar/wordpress.vim'				" Wordpress development plugin. Auto-completion, WP-CLI integration, Hooks Integration, jump to defition, UltiSnips Snippets, Syntax Highlighting, Search in Codex, WpSeek Integration.
 
-    Plugin 'mattn/emmet-vim'
-    Plugin 'ervandew/supertab'											" Tab completion.
+    Plugin 'mattn/emmet-vim'                        " The last tool I needed to become a vim convert.
+    Plugin 'ervandew/supertab'						" Tab completion.
     Plugin 'evidens/vim-twig'                       " Twig syntax
-    Plugin 'othree/html5.vim'												" HTML5 omnicomplete and syntax.
-    Plugin 'pangloss/vim-javascript'								" Javascript bundle for vim, this bundle provides syntax and indent plugins.
-    Plugin 'maksimr/vim-jsbeautify'									" Use jsbeautifier inside vim to format js, html and css files.
-    Plugin 'lucapette/vim-jquery-doc'								" vim-jquery-doc is a little plugin that helps you to look up jQuery API doc website more quickly.
-    Plugin 'mxw/vim-jsx'														" Syntax hightlighting for JSX.
-    Plugin 'cakebaker/scss-syntax.vim'							" SCSS syntax for vim.
-    Plugin 'tpope/vim-surround'											" Makes it easier to remove, edit and add surrounding pairs like [ , (, <, etc.
-    Plugin 'tpope/vim-commentary'										" Comment out lines using 'gcc', 'gc' comment out target of motion and 'gcu' to comment out adjacent lines.
+    Plugin 'othree/html5.vim'						" HTML5 omnicomplete and syntax.
+    "Plugin 'pangloss/vim-javascript'				" Javascript bundle for vim, this bundle provides syntax and indent plugins.
+    Plugin 'maksimr/vim-jsbeautify'					" Use jsbeautifier inside vim to format js, html and css files.
+    Plugin 'lucapette/vim-jquery-doc'				" vim-jquery-doc is a little plugin that helps you to look up jQuery API doc website more quickly.
+    "Plugin 'mxw/vim-jsx'							" Syntax hightlighting for JSX.
+    Plugin 'cakebaker/scss-syntax.vim'			    " SCSS syntax for vim.
+    Plugin 'tpope/vim-surround'					    " Makes it easier to remove, edit and add surrounding pairs like [ , (, <, etc.
+    "Plugin 'tpope/vim-commentary'					" Comment out lines using 'gcc', 'gc' comment out target of motion and 'gcu' to comment out adjacent lines.
     Plugin 'jiangmiao/auto-pairs'
     Plugin 'scrooloose/nerdtree'
-    Plugin 'jistr/vim-nerdtree-tabs'								" Keeps NERDTree independant of tabs.
-    Plugin 'Shougo/unite.vim'												" The unite or unite.vim plug-in can search and display information from arbitrary sources like files, buffers, recently used files or registers.
-    Plugin 'kien/ctrlp.vim'													" Open multiple files at once. Create new files and directories. Built-in project's root finder. Extensible.
-    Plugin 'YankRing.vim'														" Maintains a history of yanks, changes and deletes.
-    Plugin 'bling/vim-airline'											" Lean & mean status/tabline for vim that's light as air.
-    Plugin 'junegunn/goyo.vim'											" Distraction-free writing. :Goyo to toggle :Goyo! to turn off :Goyo [dimension] to resize.
-    Plugin 'bronson/vim-trailing-whitespace'				" Removes whitespace by :FixWhitespace.
-    Plugin 'groenewege/vim-less'							      " LESS syntax
-    Plugin 'StanAngeloff/php.vim'                       " PHP overides highlights
-    Plugin 'airblade/vim-gitgutter'									" Shows 'git diff' in the gutter. Shows whether each line has been added, modified, and where lines have been removed.
-    Plugin 'junegunn/vim-easy-align'								" Allows to easily align stuff
+    Plugin 'jistr/vim-nerdtree-tabs'				" Keeps NERDTree independant of tabs.
+    Plugin 'Shougo/unite.vim'						" The unite or unite.vim plug-in can search and display information from arbitrary sources like files, buffers, recently used files or registers.
+    Plugin 'kien/ctrlp.vim'							" Open multiple files at once. Create new files and directories. Built-in project's root finder. Extensible.
+    Plugin 'YankRing.vim'							" Maintains a history of yanks, changes and deletes.
+    Plugin 'bling/vim-airline'						" Lean & mean status/tabline for vim that's light as air.
+    "Plugin 'junegunn/goyo.vim'						" Distraction-free writing. :Goyo to toggle :Goyo! to turn off :Goyo [dimension] to resize.
+    Plugin 'bronson/vim-trailing-whitespace'		" Removes whitespace by :FixWhitespace.
+    "Plugin 'groenewege/vim-less'                   " LESS syntax
+    Plugin 'StanAngeloff/php.vim'                   " PHP overides highlights
+    Plugin 'airblade/vim-gitgutter'					" Shows 'git diff' in the gutter. Shows whether each line has been added, modified, and where lines have been removed.
+    Plugin 'junegunn/vim-easy-align'				" Allows to easily align stuff
+    Plugin 'todo.txt-vim'
+    Plugin 'vim-searchindex'
+    Plugin 'vim-simple-todo'
 
     "----Colors----""
     Plugin 'altercation/vim-colors-solarized'
@@ -57,10 +67,11 @@ filetype off
     "let g:nerdtree_tabs_open_on_console_startup=1			" As the code so obviously says: open on Vim Startup
     set noerrorbells visualbell t_vb=										" No more annoying flash
     set smartcase                                           " Prevents vim search from being case sensitive
-    set confirm
     set ignorecase
+    set confirm
     set laststatus=2
 "}}}
+
 
 " Syntax {{{
     autocmd BufEnter *.scss     colorscheme		Tomorrow-Night
@@ -87,19 +98,27 @@ filetype off
     set softtabstop=4
     set tabstop=4
     set backspace=indent,eol,start
-    set wrap
     set number
     set showmode
     set showcmd
     set showmatch											" Show's matching brackets
     set listchars=tab:->
+
+    "Wrap Text {{
+        set wrap
+        set formatoptions+=tw21
+        set showbreak=↪
+        set textwidth=0
+        set wrapmargin=0
+        set linebreak
+        set nolist
+    "}}
 "}}}
 
 "Windows/Panels {{{
     set splitbelow										" Open new split panes to right and bottom, which feels more natural
     set splitright
 "}}}
-
 
 "Backup {{{
     set history=400
@@ -111,14 +130,43 @@ filetype off
     "let g:airline#extensions#tabline#left_sep = '>'
 "}}}
 
+"CtrlP {{{
+    let g:ctrlp_working_path_mode = 'c'
+    let g:ctrlp_switch_buffer = 'Et'
+    let g:ctrlp_clear_cache_on_exit = 1
+    let g:ctrlp_cache_dir = $HOME.'/.cache/ctrlp'
+    let g:ctrlp_show_hidden = 1
+    let g:ctrlp_max_files = 500
+
+    "let g:ctrlp_custom_ignore = {
+    "    \ 'dir': '\v[\/]\.(git|)'
+    "}
+"}}}
+
+
 "Key Maps {{{
     "General {{
         imap jj <ESC>
         map <Space> <Return>
-        :let mapleader = ","
-
-        let mapleader = ","
         :map <leader>o :BuffExplorer<cr>
+        :let mapleader = ","
+        let mapleader = ","
+    "}}
+
+    "CtrlP {{
+        nnoremap <silent>t :CtrlP<cr>
+    "}}
+
+    "EmmetVim {{
+        " Gave up on this. Try it another time
+        " imap hh <C-y>,
+
+    "Easy-align {{
+        " Start interactive EasyAlign for a motion/text object (e.g. gaip)
+        nmap ga <Plug>(EasyAlign)
+
+        " Start interactive EasyAlign in visual mode (e.g. vip<Enter>)
+        vmap <Enter> <Plug>(EasyAlign)
     "}}
 
     "NERDTree {{
@@ -131,18 +179,6 @@ filetype off
         map <leader>n  :NERDTree<cr>
         nmap <Space> <Enter>
     "}}
-
-
-    "EmmetVim {{
-        " Gave up on this. Try it another time
-        " imap hh <C-y>,
-    "}}
-
-    "Easy-align {{
-        " Start interactive EasyAlign for a motion/text object (e.g. gaip)
-        nmap ga <Plug>(EasyAlign)
-
-        " Start interactive EasyAlign in visual mode (e.g. vip<Enter>)
-        vmap <Enter> <Plug>(EasyAlign)
-    "}}
 "}}}
+
+

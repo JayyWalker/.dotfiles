@@ -11,10 +11,13 @@ alias sconfig="vim $HOME/.dotfiles/.scripts"
 alias dbconfig="vim $HOME/.dotfiles/.dbconfig.sh && zsh"
 
 # General convenience
-alias tma="tmux attach"
 alias lsg="ls -Xla"
 alias :q="exit"
+
+## tmux
+alias tma="tmux attach"
 alias tmd="tmux detach"
+alias tmat="tmux a -t"
 
 ## CHANGE DIRECTORY
 

@@ -132,6 +132,12 @@ filetype off
         nmap <Space> <Enter>
     "}}
 
+
+    "EmmetVim {{
+        " Gave up on this. Try it another time
+        " imap hh <C-y>,
+    "}}
+
     "Easy-align {{
         " Start interactive EasyAlign for a motion/text object (e.g. gaip)
         nmap ga <Plug>(EasyAlign)

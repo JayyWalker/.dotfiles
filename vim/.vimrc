@@ -64,7 +64,6 @@ filetype off
     set wildmenu
     set ruler
     set t_Co=256							                          " Makes vim not look so fugly
-    "let g:nerdtree_tabs_open_on_console_startup=1			" As the code so obviously says: open on Vim Startup
     set noerrorbells visualbell t_vb=										" No more annoying flash
     set smartcase                                           " Prevents vim search from being case sensitive
     set ignorecase
@@ -125,24 +124,30 @@ filetype off
     set undolevels=1000
 "}}}
 
-"Airline {{{
-    let g:airline#extensions#tabline#enabled = 1
-    "let g:airline#extensions#tabline#left_sep = '>'
+"Plugins {{{
+
+    "Airline {{{
+        let g:airline#extensions#tabline#enabled = 1
+        "let g:airline#extensions#tabline#left_sep = '>'
+    "}}}
+
+    "CtrlP {{
+        let g:ctrlp_working_path_mode = 'c'
+        let g:ctrlp_switch_buffer = 'Et'
+        let g:ctrlp_clear_cache_on_exit = 1
+        let g:ctrlp_cache_dir = $HOME.'/.cache/ctrlp'
+        let g:ctrlp_show_hidden = 1
+        let g:ctrlp_max_files = 500
+
+        "let g:ctrlp_custom_ignore = {
+        "    \ 'dir': '\v[\/]\.(git|)'
+        "}
+    "}}
+
+    "NERDTree {{
+        let g:nerdtree_tabs_open_on_console_startup=1			" As the code so obviously says: open on Vim Startup
+    "}}
 "}}}
-
-"CtrlP {{{
-    let g:ctrlp_working_path_mode = 'c'
-    let g:ctrlp_switch_buffer = 'Et'
-    let g:ctrlp_clear_cache_on_exit = 1
-    let g:ctrlp_cache_dir = $HOME.'/.cache/ctrlp'
-    let g:ctrlp_show_hidden = 1
-    let g:ctrlp_max_files = 500
-
-    "let g:ctrlp_custom_ignore = {
-    "    \ 'dir': '\v[\/]\.(git|)'
-    "}
-"}}}
-
 
 "Key Maps {{{
     "General {{
@@ -180,5 +185,4 @@ filetype off
         nmap <Space> <Enter>
     "}}
 "}}}
-
 

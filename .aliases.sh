@@ -52,7 +52,7 @@ alias mv="mv -i"
 alias cp="cp -i"
 
 # Projects
-alias proj="$HOME/projects/$CUR_PRJ"
+alias prj="$HOME/projects/$CUR_PRJ"
 alias derek="mysql -u dev -h derek -p"
 
 

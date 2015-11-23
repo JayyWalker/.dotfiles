@@ -71,7 +71,7 @@ alias nbgu="sudo npm install && bower install && gulp"
 
 # Database stuff
 alias derek="mysql -u dev -h derek -p"
-alias derekdump="mysql -u dev -h derek -p"
+alias derekdump="mysqldump -u dev -h derek -p"
 alias mydb="mysql -u $DBU -p$DBP"
 alias dumpdb="mysqldump -u $DBU -p$DBP"
 

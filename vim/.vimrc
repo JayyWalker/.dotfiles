@@ -145,7 +145,7 @@ filetype off
     "}}
 
     "NERDTree {{
-        let g:nerdtree_tabs_open_on_console_startup=1			" As the code so obviously says: open on Vim Startup
+        "let g:nerdtree_tabs_open_on_console_startup=1			" As the code so obviously says: open on Vim Startup
     "}}
 "}}}
 

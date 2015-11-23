@@ -5,19 +5,19 @@ alias dotfiles="$HOME/.dotfiles"
 alias prjconfig="vim $HOME/.dotfiles/.current_project.sh && zsh"
 alias zshconfig="vim $HOME/.zshrc"
 alias viconfig="vim $HOME/.vimrc"
+alias dbconfig="vim $HOME/.dotfiles/.dbconfig.sh && zsh"
 alias aconfig="vim $HOME/.dotfiles/.aliases.sh"
 alias econfig="vim $HOME/.dotfiles/.env"
 alias sconfig="vim $HOME/.dotfiles/.scripts"
-alias dbconfig="vim $HOME/.dotfiles/.dbconfig.sh && zsh"
 
 # General convenience
 alias lsg="ls -Xla"
 alias :q="exit"
 
 ## tmux
+alias tmat="tmux a -t"
 alias tma="tmux attach"
 alias tmd="tmux detach"
-alias tmat="tmux a -t"
 
 ## CHANGE DIRECTORY
 
@@ -40,21 +40,20 @@ alias nts="netstat -tunlp"
 ## PERMISSIONS
 alias ownwww="sudo chown -R www-data:www-data"
 alias ownme="sudo chown -R $USER:$USER"
-alias 777r="chmod -R 777"
-alias 775r="chmod -R 775"
 alias ch777="chmod 777"
 alias ch775="chmod 775"
+alias 777r="chmod -R 777"
+alias 775r="chmod -R 775"
 
 # Moving stuff about 
-alias sln="sudo ln -s"
 alias lssh="ls -Xla ~/.ssh"
+alias sln="sudo ln -s"
 alias mv="mv -i"
 alias cp="cp -i"
 
 # Projects
-alias prj="$HOME/projects/$CUR_PRJ"
 alias derek="mysql -u dev -h derek -p"
-
+alias prj="$HOME/projects/$CUR_PRJ"
 
 ## WORDPRESS specific
 alias wpconfig="vim $PRJ/wp-config.php"
@@ -66,14 +65,14 @@ alias propel="$PRJ/vendor/bin/propel"
 ## Npm
 alias watcher="npm run watch"
 alias build="npm run build"
-alias nbg="sudo npm install && bower install && grunt build"
 alias nbgu="sudo npm install && bower install && gulp"
+alias nbg="sudo npm install && bower install && grunt build"
 
 # Database stuff
-alias derek="mysql -u dev -h derek -p"
 alias derekdump="mysqldump -u dev -h derek -p"
-alias mydb="mysql -u $DBU -p$DBP"
 alias dumpdb="mysqldump -u $DBU -p$DBP"
+alias derek="mysql -u dev -h derek -p"
+alias mydb="mysql -u $DBU -p$DBP"
 
 # Server stuff
 alias vh="sudo vim /etc/hosts"

@@ -40,6 +40,7 @@ filetype off
     Plugin 'bronson/vim-trailing-whitespace'		" Removes whitespace by :FixWhitespace.
     "Plugin 'groenewege/vim-less'                   " LESS syntax
     Plugin 'StanAngeloff/php.vim'                   " PHP overides highlights
+    Plugin 'joonty/vim-phpqa.git'                   " This is a plugin for Vim that integrates PHP quality checking tools, to allow you to code to a particular standard and easily spot errors and violations. 
     Plugin 'airblade/vim-gitgutter'					" Shows 'git diff' in the gutter. Shows whether each line has been added, modified, and where lines have been removed.
     Plugin 'junegunn/vim-easy-align'				" Allows to easily align stuff
     Plugin 'todo.txt-vim'
@@ -71,7 +72,6 @@ filetype off
     set laststatus=2
 "}}}
 
-
 " Syntax {{{
     autocmd BufEnter *.scss     colorscheme		Tomorrow-Night
     autocmd BufEnter *.conf     colorscheme		badwolf
@@ -93,9 +93,9 @@ filetype off
     "set foldlevel=1
     "set foldmethod=syntax
     set expandtab
-    set shiftwidth=4
-    set softtabstop=4
-    set tabstop=4
+    set shiftwidth=2
+    set softtabstop=2
+    set tabstop=2
     set backspace=indent,eol,start
     set number
     set showmode
@@ -145,7 +145,7 @@ filetype off
     "}}
 
     "NERDTree {{
-        let g:nerdtree_tabs_open_on_console_startup=1			" As the code so obviously says: open on Vim Startup
+        "let g:nerdtree_tabs_open_on_console_startup=1			" As the code so obviously says: open on Vim Startup
     "}}
 "}}}
 

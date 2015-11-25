@@ -88,3 +88,7 @@ alias avconfig=" sudo vim /etc/apache2/sites-available/"
 alias ohnozap="$HOME/logs"
 alias aprs=" sudo service apache2 restart"
 
+
+# i3wm
+alias dualOff="xrandr --output VGA-0 --auto --output VGA-1 --off"
+alias dualOn="xrandr --output VGA-1 --auto --right-of VGA-0"

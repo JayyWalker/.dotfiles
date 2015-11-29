@@ -13,46 +13,73 @@ filetype off
     call vundle#begin()
 
     "Plugins {{
-    Plugin 'gmarik/Vundle.vim'
-    Plugin 'tpope/vim-fugitive'						" Git Wrapper
-    Plugin 'scrooloose/syntastic'					" Syntax checking hacks.
-    Plugin 'dsawardekar/wordpress.vim'				" Wordpress development plugin. Auto-completion, WP-CLI integration, Hooks Integration, jump to defition, UltiSnips Snippets, Syntax Highlighting, Search in Codex, WpSeek Integration.
+        Plugin 'gmarik/Vundle.vim'
+        Plugin 'dsawardekar/wordpress.vim'              " Wordpress development plugin. Auto-completion, WP-CLI integration, Hooks Integration, jump to defition, UltiSnips Snippets, Syntax Highlighting, Search in Codex, WpSeek Integration.
+        Plugin 'ervandew/supertab'                      " Tab completion.
+        Plugin 'bling/vim-airline'                      " Lean & mean status/tabline for vim that's light as air.
+        Plugin 'YankRing.vim'                           " Maintains a history of yanks, changes and deletes.
 
-    Plugin 'mattn/emmet-vim'                        " The last tool I needed to become a vim convert.
-    Plugin 'ervandew/supertab'						" Tab completion.
-    Plugin 'evidens/vim-twig'                       " Twig syntax
-    Plugin 'othree/html5.vim'						" HTML5 omnicomplete and syntax.
-    "Plugin 'pangloss/vim-javascript'				" Javascript bundle for vim, this bundle provides syntax and indent plugins.
-    Plugin 'maksimr/vim-jsbeautify'					" Use jsbeautifier inside vim to format js, html and css files.
-    Plugin 'lucapette/vim-jquery-doc'				" vim-jquery-doc is a little plugin that helps you to look up jQuery API doc website more quickly.
-    "Plugin 'mxw/vim-jsx'							" Syntax hightlighting for JSX.
-    Plugin 'cakebaker/scss-syntax.vim'			    " SCSS syntax for vim.
-    Plugin 'tpope/vim-surround'					    " Makes it easier to remove, edit and add surrounding pairs like [ , (, <, etc.
-    "Plugin 'tpope/vim-commentary'					" Comment out lines using 'gcc', 'gc' comment out target of motion and 'gcu' to comment out adjacent lines.
-    Plugin 'jiangmiao/auto-pairs'
-    Plugin 'scrooloose/nerdtree'
-    Plugin 'jistr/vim-nerdtree-tabs'				" Keeps NERDTree independant of tabs.
-    Plugin 'Shougo/unite.vim'						" The unite or unite.vim plug-in can search and display information from arbitrary sources like files, buffers, recently used files or registers.
-    Plugin 'kien/ctrlp.vim'							" Open multiple files at once. Create new files and directories. Built-in project's root finder. Extensible.
-    Plugin 'YankRing.vim'							" Maintains a history of yanks, changes and deletes.
-    Plugin 'bling/vim-airline'						" Lean & mean status/tabline for vim that's light as air.
-    "Plugin 'junegunn/goyo.vim'						" Distraction-free writing. :Goyo to toggle :Goyo! to turn off :Goyo [dimension] to resize.
-    Plugin 'bronson/vim-trailing-whitespace'		" Removes whitespace by :FixWhitespace.
-    "Plugin 'groenewege/vim-less'                   " LESS syntax
-    Plugin 'StanAngeloff/php.vim'                   " PHP overides highlights
-    Plugin 'joonty/vim-phpqa.git'                   " This is a plugin for Vim that integrates PHP quality checking tools, to allow you to code to a particular standard and easily spot errors and violations. 
-    Plugin 'airblade/vim-gitgutter'					" Shows 'git diff' in the gutter. Shows whether each line has been added, modified, and where lines have been removed.
-    Plugin 'junegunn/vim-easy-align'				" Allows to easily align stuff
-    Plugin 'todo.txt-vim'
-    Plugin 'vim-searchindex'
-    Plugin 'vim-simple-todo'
+        "Text {
+            Plugin 'bronson/vim-trailing-whitespace'        " Removes whitespace by :FixWhitespace.
+            Plugin 'junegunn/vim-easy-align'                " Allows to easily align stuff
+            Plugin 'vim-simple-todo'
+            Plugin 'todo.txt-vim'
+        "}
 
-    "----Colors----""
-    Plugin 'altercation/vim-colors-solarized'
-    Plugin 'flazz/vim-colorschemes'
+        "Projects {
+            Plugin 'Shougo/unite.vim'                       " The unite or unite.vim plug-in can search and display information from arbitrary sources like files, buffers, recently used files or registers.
+            Plugin 'vim-searchindex'
+            Plugin 'kien/ctrlp.vim'                         " Open multiple files at once. Create new files and directories. Built-in project's root finder. Extensible.
+        "}
+
+        "NERDTree specific {
+            Plugin 'jistr/vim-nerdtree-tabs'                " Keeps NERDTree independant of tabs.
+            Plugin 'scrooloose/nerdtree'
+        "}
+
+        "Git specific {
+            Plugin 'airblade/vim-gitgutter'                 " Shows 'git diff' in the gutter. Shows whether each line has been added, modified, and where lines have been removed.
+            Plugin 'tpope/vim-fugitive'                     " Git Wrapper
+        "}
+
+        "Syntax specific {
+            Plugin 'scrooloose/syntastic'                   " Syntax checking hacks.
+            Plugin 'jiangmiao/auto-pairs'
+            Plugin 'tpope/vim-surround'                     " Makes it easier to remove, edit and add surrounding pairs like [ , (, <, etc.
+        "}
+
+        "PHP specific {
+            Plugin 'StanAngeloff/php.vim'                   " PHP overides highlights
+            Plugin 'joonty/vim-phpqa.git'                   " This is a plugin for Vim that integrates PHP quality checking tools, to allow you to code to a particular standard and easily spot errors and violations. 
+        "}
+
+        "Javascript specific {
+            Plugin 'lucapette/vim-jquery-doc'              " vim-jquery-doc is a little plugin that helps you to look up jQuery API doc website more quickly.
+            Plugin 'pangloss/vim-javascript'               " Javascript bundle for vim, this bundle provides syntax and indent plugins.
+            Plugin 'maksimr/vim-jsbeautify'                " Use jsbeautifier inside vim to format js, html and css files.
+            "Plugin 'mxw/vim-jsx'                           " Syntax hightlighting for JSX.
+        "}
+
+        "HTML specific {"
+            Plugin 'othree/html5.vim'                      " HTML5 omnicomplete and syntax.
+            Plugin 'mattn/emmet-vim'                       " The last tool I needed to become a vim convert.
+        "}
+
+        "Twig specific {
+            Plugin 'evidens/vim-twig'                      " Twig syntax
+        "}
+        
+        "CSS & CSS Prepocessor specific {
+            Plugin 'cakebaker/scss-syntax.vim'             " SCSS syntax for vim.
+            Plugin 'groenewege/vim-less'                   " LESS syntax
+        "}
+
+        "Colors {
+            Plugin 'altercation/vim-colors-solarized'
+            Plugin 'flazz/vim-colorschemes'
+        "}
     "}}
 
-"This is to remain underneath plugins {{{
     call vundle#end()
 "}}}
 
@@ -64,8 +91,8 @@ filetype off
     set autochdir
     set wildmenu
     set ruler
-    set t_Co=256							                          " Makes vim not look so fugly
-    set noerrorbells visualbell t_vb=										" No more annoying flash
+    set t_Co=256                                            " Makes vim not look so fugly
+    set noerrorbells visualbell t_vb=                       " No more annoying flash
     set smartcase                                           " Prevents vim search from being case sensitive
     set ignorecase
     set confirm
@@ -73,35 +100,41 @@ filetype off
 "}}}
 
 " Syntax {{{
-    autocmd BufEnter *.scss     colorscheme		Tomorrow-Night
-    autocmd BufEnter *.conf     colorscheme		badwolf
-    autocmd BufEnter *.php	    colorscheme		apprentice
-    autocmd BufEnter *.js		colorscheme		ChocolateLiquor
-    autocmd BufEnter *			colorscheme		apprentice
-    "autocmd BufEnter *.js		colorscheme		solarized
+    autocmd BufEnter *.scss     colorscheme     Tomorrow-Night
+    autocmd BufEnter *.conf     colorscheme     badwolf
+    autocmd BufEnter *.php      colorscheme     apprentice
+    autocmd BufEnter *.js       colorscheme     ChocolateLiquor
+    autocmd BufEnter *          colorscheme     apprentice
+    "autocmd BufEnter *.js      colorscheme     solarized
 
     autocmd FileType html set omnifunc=htmlcomplete#CompleteTags
 
     "Highlighting {{
         syntax on 
+        set showmatch                                           " Show's matching brackets
     "}}
 "}}}
 
 "Make it better for reading my shit {{{
-    set autoindent
-    set smartindent
-    "set foldlevel=1
-    "set foldmethod=syntax
-    set expandtab
-    set shiftwidth=2
-    set softtabstop=2
-    set tabstop=2
     set backspace=indent,eol,start
     set number
     set showmode
     set showcmd
-    set showmatch											" Show's matching brackets
     set listchars=tab:->
+
+    "Folding {{
+      "set foldlevel=1
+      "set foldmethod=syntax
+    "}}
+
+    "Indentation {{
+        set autoindent
+        set smartindent
+        set shiftwidth=4
+        set indentkeys-=0#
+        set softtabstop=4
+        set tabstop=4
+    "}}
 
     "Wrap Text {{
         set wrap
@@ -115,7 +148,7 @@ filetype off
 "}}}
 
 "Windows/Panels {{{
-    set splitbelow										" Open new split panes to right and bottom, which feels more natural
+    set splitbelow                                      " Open new split panes to right and bottom, which feels more natural
     set splitright
 "}}}
 
@@ -124,12 +157,12 @@ filetype off
     set undolevels=1000
 "}}}
 
-"Plugins {{{
+"Plugin options {{{
 
-    "Airline {{{
+    "Airline {{
         let g:airline#extensions#tabline#enabled = 1
         "let g:airline#extensions#tabline#left_sep = '>'
-    "}}}
+    "}}
 
     "CtrlP {{
         let g:ctrlp_working_path_mode = 'c'
@@ -145,7 +178,7 @@ filetype off
     "}}
 
     "NERDTree {{
-        "let g:nerdtree_tabs_open_on_console_startup=1			" As the code so obviously says: open on Vim Startup
+        "let g:nerdtree_tabs_open_on_console_startup=1          " As the code so obviously says: open on Vim Startup
     "}}
 "}}}
 

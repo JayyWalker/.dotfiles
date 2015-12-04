@@ -25,6 +25,7 @@ filetype off
             Plugin 'junegunn/vim-easy-align'                " Allows to easily align stuff
             Plugin 'vitalk/vim-simple-todo'
             Plugin 'freitass/todo.txt-vim'
+            Plugin 'vim-scripts/TaskList.vim'               " This will search the file for FIXME, TODO and XXX (or a custom list) and put them in a handy list for you to brwoser which at the same imt ewill update the locaiton in the document to see where the tag is located. 
         "}
 
         "Projects {

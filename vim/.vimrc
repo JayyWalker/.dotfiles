@@ -17,19 +17,19 @@ filetype off
         Plugin 'dsawardekar/wordpress.vim'              " Wordpress development plugin. Auto-completion, WP-CLI integration, Hooks Integration, jump to defition, UltiSnips Snippets, Syntax Highlighting, Search in Codex, WpSeek Integration.
         Plugin 'ervandew/supertab'                      " Tab completion.
         Plugin 'bling/vim-airline'                      " Lean & mean status/tabline for vim that's light as air.
-        Plugin 'YankRing.vim'                           " Maintains a history of yanks, changes and deletes.
 		Plugin 'joonty/vim-taggatron'					" Tag file manager
+        Plugin 'vim-scripts/YankRing.vim'                           " Maintains a history of yanks, changes and deletes.
 
         "Text {
             Plugin 'bronson/vim-trailing-whitespace'        " Removes whitespace by :FixWhitespace.
             Plugin 'junegunn/vim-easy-align'                " Allows to easily align stuff
-            Plugin 'vim-simple-todo'
-            Plugin 'todo.txt-vim'
+            Plugin 'vitalk/vim-simple-todo'
+            Plugin 'freitass/todo.txt-vim'
         "}
 
         "Projects {
             Plugin 'Shougo/unite.vim'                       " The unite or unite.vim plug-in can search and display information from arbitrary sources like files, buffers, recently used files or registers.
-            Plugin 'vim-searchindex'
+            Plugin 'google/vim-searchindex'
             Plugin 'kien/ctrlp.vim'                         " Open multiple files at once. Create new files and directories. Built-in project's root finder. Extensible.
         "}
 
@@ -59,7 +59,9 @@ filetype off
             Plugin 'lucapette/vim-jquery-doc'              " vim-jquery-doc is a little plugin that helps you to look up jQuery API doc website more quickly.
             Plugin 'pangloss/vim-javascript'               " Javascript bundle for vim, this bundle provides syntax and indent plugins.
             Plugin 'maksimr/vim-jsbeautify'                " Use jsbeautifier inside vim to format js, html and css files.
-            "Plugin 'mxw/vim-jsx'                           " Syntax hightlighting for JSX.
+			"Plugin 'wookiehangover/jshint.vim'			   " Debug for javascript
+			Plugin 'walm/jshint.vim'						" Another fucking jshint
+            "Plugin 'mxw/vim-jsx'                          " Syntax hightlighting for JSX.
         "}
 
         "HTML specific {"
@@ -70,7 +72,7 @@ filetype off
         "Twig specific {
             Plugin 'evidens/vim-twig'                      " Twig syntax
         "}
-        
+
         "CSS & CSS Prepocessor specific {
             Plugin 'cakebaker/scss-syntax.vim'             " SCSS syntax for vim.
             Plugin 'groenewege/vim-less'                   " LESS syntax
@@ -103,9 +105,7 @@ filetype off
 "}}}
 
 " Syntax {{{
-	if $COLORTERM == 'konsole-terminal'
-		set t_Co=256                                            " Makes vim not look so fugly
-	endif
+    set t_Co=256                                            " Makes vim not look so fugly
     autocmd BufEnter *.scss     colorscheme     Tomorrow-Night
     autocmd BufEnter *.conf     colorscheme     badwolf
     autocmd BufEnter *.php      colorscheme     jellybeans
@@ -114,9 +114,10 @@ filetype off
     "autocmd BufEnter *.js      colorscheme     solarized
 
     autocmd FileType html set omnifunc=htmlcomplete#CompleteTags
+	autocmd FileType js let JSHintToggle
 
     "Highlighting {{
-        syntax on 
+        syntax on
         set showmatch                                           " Show's matching brackets
     "}}
 "}}}
@@ -134,11 +135,11 @@ filetype off
     "}}
 
     "Indentation {{
-        set autoindent
+        "set autoindent
         set smartindent
+		set expandtab
         set shiftwidth=4
-        set indentkeys-=0#
-        set softtabstop=4
+        "set softtabstop=4
         set tabstop=4
     "}}
 

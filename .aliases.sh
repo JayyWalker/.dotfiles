@@ -1,3 +1,4 @@
+alias wpi="wp plugin install"
 # Ma .dotfiles
 alias dotconfig="vim $HOME/.dotfiles"
 alias dotfiles="$HOME/.dotfiles"

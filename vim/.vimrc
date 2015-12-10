@@ -17,6 +17,7 @@ filetype off
         Plugin 'dsawardekar/wordpress.vim'              " Wordpress development plugin. Auto-completion, WP-CLI integration, Hooks Integration, jump to defition, UltiSnips Snippets, Syntax Highlighting, Search in Codex, WpSeek Integration.
         Plugin 'ervandew/supertab'                      " Tab completion.
         Plugin 'bling/vim-airline'                      " Lean & mean status/tabline for vim that's light as air.
+		Plugin 'joonty/vim-taggatron'					" Tag file manager
         Plugin 'vim-scripts/YankRing.vim'                           " Maintains a history of yanks, changes and deletes.
 
         "Text {
@@ -24,6 +25,7 @@ filetype off
             Plugin 'junegunn/vim-easy-align'                " Allows to easily align stuff
             Plugin 'vitalk/vim-simple-todo'
             Plugin 'freitass/todo.txt-vim'
+            Plugin 'vim-scripts/TaskList.vim'               " This will search the file for FIXME, TODO and XXX (or a custom list) and put them in a handy list for you to brwoser which at the same imt ewill update the locaiton in the document to see where the tag is located. 
         "}
 
         "Projects {
@@ -50,7 +52,8 @@ filetype off
 
         "PHP specific {
             Plugin 'StanAngeloff/php.vim'                   " PHP overides highlights
-            Plugin 'joonty/vim-phpqa.git'                   " This is a plugin for Vim that integrates PHP quality checking tools, to allow you to code to a particular standard and easily spot errors and violations.
+            Plugin 'joonty/vim-phpqa.git'                   " This is a plugin for Vim that integrates PHP quality checking tools, to allow you to code to a particular standard and easily spot errors and violations. 
+			Plugin 'shancplus/phpcomplete.vim'				" Improved PHP omni-completion. Based on the default phpcomplete.vim.
         "}
 
         "Javascript specific {
@@ -79,6 +82,8 @@ filetype off
         "Colors {
             Plugin 'altercation/vim-colors-solarized'
             Plugin 'flazz/vim-colorschemes'
+	 		Plugin 'modess/vim-phpcolors'				   " PHP colors schemes to imrpove syntax highlighting
+			Plugin 'jonathanfilip/vim-lucius'
         "}
     "}}
 
@@ -93,7 +98,6 @@ filetype off
     set autochdir
     set wildmenu
     set ruler
-    set t_Co=256                                            " Makes vim not look so fugly
     set noerrorbells visualbell t_vb=                       " No more annoying flash
     set smartcase                                           " Prevents vim search from being case sensitive
     set ignorecase
@@ -102,9 +106,10 @@ filetype off
 "}}}
 
 " Syntax {{{
+    set t_Co=256                                            " Makes vim not look so fugly
     autocmd BufEnter *.scss     colorscheme     Tomorrow-Night
     autocmd BufEnter *.conf     colorscheme     badwolf
-    autocmd BufEnter *.php      colorscheme     apprentice
+    autocmd BufEnter *.php      colorscheme     jellybeans
     autocmd BufEnter *.js       colorscheme     ChocolateLiquor
     autocmd BufEnter *          colorscheme     apprentice
     "autocmd BufEnter *.js      colorscheme     solarized
@@ -179,6 +184,28 @@ filetype off
         "    \ 'dir': '\v[\/]\.(git|)'
         "}
     "}}
+
+	"OmniCompletion {{
+		filetype plugin on
+		set omnifunc=syntaxcomplete#Complete
+	"}}
+
+	"SuperTab {{
+		let g:SuperTabDefaultCompletionType = ""				" <TAB> now triggers omnicompletion
+	"}}
+
+	"Jellybeans {{
+		let g:jellybeans_use_lowercolor_black = 0
+	"}}
+
+	"Taggatron {{
+		\"php" : {
+		\	"tagfile" : ".php.tags",   " Location of the tag file
+		\	"args" : "-R",   " Arguments to pass to the command (-f and --languages are added automatically)
+		\	"cmd" : "ctags-exuberant",   " Command to execute
+		\	"filesappend" : "**"   " This is appended to the current working directory, and used as the files argument
+		\}
+	"}}
 
     "NERDTree {{
         "let g:nerdtree_tabs_open_on_console_startup=1          " As the code so obviously says: open on Vim Startup

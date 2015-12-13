@@ -19,6 +19,7 @@ filetype off
         Plugin 'bling/vim-airline'                      " Lean & mean status/tabline for vim that's light as air.
 		Plugin 'joonty/vim-taggatron'					" Tag file manager
         Plugin 'vim-scripts/YankRing.vim'                           " Maintains a history of yanks, changes and deletes.
+        Plugin 'junegunn/goyo.vim'                      " Distraction free writing
 
         "Text {
             Plugin 'bronson/vim-trailing-whitespace'        " Removes whitespace by :FixWhitespace.
@@ -26,6 +27,7 @@ filetype off
             Plugin 'vitalk/vim-simple-todo'
             Plugin 'freitass/todo.txt-vim'
             Plugin 'vim-scripts/TaskList.vim'               " This will search the file for FIXME, TODO and XXX (or a custom list) and put them in a handy list for you to brwoser which at the same imt ewill update the locaiton in the document to see where the tag is located. 
+            Plugin 'vim-latex/vim-latex'
         "}
 
         "Projects {
@@ -44,6 +46,10 @@ filetype off
             Plugin 'tpope/vim-fugitive'                     " Git Wrapper
         "}
 
+        "Markdown specific {
+            Plugin 'tpope/vim-markdown'                     " Syntax for markdown
+        "}
+
         "Syntax specific {
             Plugin 'scrooloose/syntastic'                   " Syntax checking hacks.
             Plugin 'jiangmiao/auto-pairs'
@@ -54,6 +60,9 @@ filetype off
             Plugin 'StanAngeloff/php.vim'                   " PHP overides highlights
             Plugin 'joonty/vim-phpqa.git'                   " This is a plugin for Vim that integrates PHP quality checking tools, to allow you to code to a particular standard and easily spot errors and violations. 
 			Plugin 'shancplus/phpcomplete.vim'				" Improved PHP omni-completion. Based on the default phpcomplete.vim.
+            Plugin 'vim-scripts/taglist.vim'                " Uses ctags to get a list of tags within the project
+            Plugin 'tobyS/pdv'                              " Automatically looks up the characteristics of the item you want to document and creates a Docblock skeleton for you
+            Plugin 'tobyS/vmustache'                        " vmustache is an implementation of the Mustache template system in VIMScript. 
         "}
 
         "Javascript specific {
@@ -78,6 +87,10 @@ filetype off
             Plugin 'cakebaker/scss-syntax.vim'             " SCSS syntax for vim.
             Plugin 'groenewege/vim-less'                   " LESS syntax
         "}
+        "
+            "I3 specific {
+                Plugin 'PotatoesMaster/i3-vim-syntax'       " Adds syntax for i3 files
+            "}
 
         "Colors {
             Plugin 'altercation/vim-colors-solarized'

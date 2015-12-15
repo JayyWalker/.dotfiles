@@ -186,7 +186,7 @@ filetype off
     "}}
 
     "CtrlP {{
-        let g:ctrlp_working_path_mode = 'c'
+        let g:ctrlp_working_path_mode = 'ra'
         let g:ctrlp_switch_buffer = 'Et'
         let g:ctrlp_clear_cache_on_exit = 1
         let g:ctrlp_cache_dir = $HOME.'/.cache/ctrlp'

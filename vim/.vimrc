@@ -278,8 +278,8 @@ filetype off
 
     "Indentation {{
 
-        " FIXME This may fix me forever shitty tabs
-        "set shiftwidth=4
+        " Fixed ma tabs =D =D :D :D. Tears of joy!!
+        set shiftwidth=4
 
         " Number of visual spaces per TAB
         set tabstop=4
@@ -369,6 +369,9 @@ filetype off
         :let mapleader = ","
         let mapleader = ","
         nnoremap <leader><space> :nohlsearch<cr>
+
+        " Saves an assortment of windows. Reopen the session usigng vim -S
+        nnoremap <leader>a :mksession<cr>
     "}}
 
     "CtrlP {{

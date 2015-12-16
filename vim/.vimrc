@@ -1,12 +1,14 @@
+" A good link on vimrc http://dougblack.io/words/a-good-vimrc.html
+
 "vimrc {{{
     augroup reload_vimrc " {
         autocmd!
         autocmd BufWritePost $MYVIMRC source $MYVIMRC
     augroup END "  }
-"}}}
 
-set nocompatible
-filetype off
+    set nocompatible
+    filetype off
+"}}}
 
 " Vundle" {{{
     set rtp+=~/.vim/bundle/Vundle.vim
@@ -269,11 +271,15 @@ filetype off
         " Open all folds by default. 99 = all folds open is guaranteed. 0 = all folds will be closed
         set foldlevelstart=99
 
+        set foldlevel=0
+
         " Maximum of 10 nested folds
         set foldnestmax=10
 
         " Fold based on indent level
-        set foldmethod=indent
+        set foldmethod=marker
+
+        set modelines=1
     "}}
 
     "Indentation {{
@@ -357,7 +363,7 @@ filetype off
     "NERDTree {{
 
         " As the code so obviously says: open on Vim Startup
-        "let g:nerdtree_tabs_open_on_console_startup=1                  
+        "let g:nerdtree_tabs_open_on_console_startup=1
     "}}
 "}}}
 
@@ -403,4 +409,4 @@ filetype off
         nmap <Space> <Enter>
     "}}
 "}}}
-
+" vim:foldmethod=marker:foldlevel=0

@@ -34,6 +34,9 @@ filetype off
         " Distraction free writing.
         Plugin 'junegunn/goyo.vim'
 
+        " Improves netrw
+        Plugin 'tpope/vim-vinegar'
+
         "Text {
 
             " Removes whitespace by :FixWhitespace.

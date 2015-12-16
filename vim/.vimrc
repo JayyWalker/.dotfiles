@@ -112,6 +112,9 @@
             " XXX This plugin has been shit so far. PHPMD don't work (Needs installing) and can't get PSR coding standards to work with PHPCS
             Plugin 'joonty/vim-phpqa.git'
 
+            " PHP Code Sniffer. Can be used on the current PHP, JS or CSS file
+            Plugin 'bpearson/vim-phpcs' 
+
             " Improved PHP omni-completion. Based on the default phpcomplete.vim.
             Plugin 'shawncplus/phpcomplete.vim'
 
@@ -342,14 +345,18 @@
         filetype plugin on
         set omnifunc=syntaxcomplete#Complete
     "}}
-
-    "SuperTab {{
-        let g:SuperTabDefaultCompletionType = ""                                " <TAB> now triggers omnicompletion
-    "}}
-
     "Jellybeans {{
         let g:jellybeans_use_lowercolor_black = 0
     "}}
+
+    "PHPQA {
+        " Set PHPCS args
+        let g:phpqa_codesniffer_args = "--standard=PSR1,PSR2"
+
+        " Don't let PHPCS run on save (default = 1)
+        let g:phpqa_codesniffer_autorun = 0
+        let g:phpmd_codesniffer_autorun = 0
+    "}
 
     "Taggatron {{
         \"php" : {
@@ -359,6 +366,11 @@
         \       "filesappend" : "**"     " This is appended to the current working directory, and used as the files argument
         \}
     "}}
+
+    "SuperTab {{
+        let g:SuperTabDefaultCompletionType = ""                                " <TAB> now triggers omnicompletion
+    "}}
+
 
     "NERDTree {{
 

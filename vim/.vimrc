@@ -116,7 +116,7 @@ filetype off
             " Automatically looks up the characteristics of the item you want to document and creates a Docblock skeleton for you.
             Plugin 'tobyS/pdv'
 
-            " vmustache is an implementation of the Mustache tempalte system in VIMScript.
+            " vmustache is an implementation of the Mustache template system in VIMScript.
             Plugin 'tobyS/vmustache'
         "}
 
@@ -180,7 +180,7 @@ filetype off
             " PHP colorschemes to improve syntax highlighting
             Plugin 'modess/vim-phpcolors'
 
-            Plugin 'jonathanfilip/vim-lucius'
+            "Plugin 'jonathanfilip/vim-lucius'
         "}
     "}}
 

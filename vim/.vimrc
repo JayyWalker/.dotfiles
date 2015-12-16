@@ -113,7 +113,7 @@
             Plugin 'joonty/vim-phpqa.git'
 
             " Improved PHP omni-completion. Based on the default phpcomplete.vim.
-            Plugin 'shancplus/phpcomplete.vim'
+            Plugin 'shawncplus/phpcomplete.vim'
 
             " Uses ctags to get a list of tags within the project.
             Plugin 'vim-scripts/taglist.vim'

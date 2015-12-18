@@ -39,6 +39,9 @@
         " Improves netrw
         Plugin 'tpope/vim-vinegar'
 
+        " :BufOnly clears all buffers but the current one
+        Plugin 'schickling/vim-bufonly'
+
         "Text {
 
             " Removes whitespace by :FixWhitespace.

@@ -113,10 +113,10 @@
 
             " Integrates PHP quality checking tools, to allow you to code to a particular standard and easily spot errors and violations.
             " XXX This plugin has been shit so far. PHPMD don't work (Needs installing) and can't get PSR coding standards to work with PHPCS
-            Plugin 'joonty/vim-phpqa.git'
+            "Plugin 'joonty/vim-phpqa.git'
 
             " PHP Code Sniffer. Can be used on the current PHP, JS or CSS file
-            Plugin 'bpearson/vim-phpcs' 
+            "Plugin 'bpearson/vim-phpcs' 
 
             " Improved PHP omni-completion. Based on the default phpcomplete.vim.
             Plugin 'shawncplus/phpcomplete.vim'

@@ -53,7 +53,6 @@ alias mv="mv -i"
 alias cp="cp -i"
 
 # Projects
-alias derek="mysql -u dev -h derek -p"
 alias prj="$HOME/projects/$CUR_PRJ"
 
 ## WORDPRESS specific
@@ -62,6 +61,7 @@ alias theme="$HOME/projects/${CUR_PRJ}/wp-content/themes/theme"
 
 # PHP projects
 alias propel="$PRJ/vendor/bin/propel"
+alias doctrine="vendor/bin/doctrine"
 
 ## Npm
 alias watcher="npm run watch"

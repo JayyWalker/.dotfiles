@@ -42,6 +42,9 @@
         " :BufOnly clears all buffers but the current one
         Plugin 'schickling/vim-bufonly'
 
+        "This plugin provides a start screen for Vim and Neovim.
+        Plugin 'mhinz/vim-startify'
+
         "Text {
 
             " Removes whitespace by :FixWhitespace.

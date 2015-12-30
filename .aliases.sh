@@ -92,3 +92,4 @@ alias aprs=" sudo service apache2 restart"
 # i3wm
 alias dualOff="xrandr --output VGA-0 --auto --output VGA-1 --off"
 alias dualOn="xrandr --output VGA-1 --auto --right-of VGA-0"
+alias i3config="vim ~/.config/i3/config"

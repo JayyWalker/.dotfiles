@@ -57,7 +57,7 @@ alias prj="$HOME/projects/$CUR_PRJ"
 
 ## WORDPRESS specific
 alias wpconfig="vim $PRJ/wp-config.php"
-alias theme="$HOME/projects/${CUR_PRJ}/wp-content/themes/theme"
+alias theme="$HOME/projects/${CUR_PRJ}/wp-content/themes/${THEME_NAME}"
 
 # PHP projects
 alias propel="$PRJ/vendor/bin/propel"

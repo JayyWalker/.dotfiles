@@ -14,11 +14,13 @@ alias sconfig="vim $HOME/.dotfiles/.scripts"
 # General convenience
 alias lsg="ls -Xla"
 alias :q="exit"
+alias mkdir="mkdir -vp"
 
 ## tmux
 alias tmat="tmux a -t"
 alias tma="tmux attach"
 alias tmd="tmux detach"
+alias tmn="tmux new -s"
 
 ## CHANGE DIRECTORY
 
@@ -85,7 +87,7 @@ alias nvconfig=" sudo vim /etc/nginx/sites-available/"
 alias ohnozng="vim /var/log/nginx/errors.log"
 alias ngrs=" sudo service nginx restart"
 
-## APACHE speficif
+## APACHE specific
 alias avconfig=" sudo vim /etc/apache2/sites-available/"
 alias ohnozap="$HOME/logs"
 alias aprs=" sudo service apache2 restart"

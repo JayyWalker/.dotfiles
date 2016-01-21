@@ -58,10 +58,12 @@ alias prj="$HOME/projects/$CUR_PRJ"
 ## WORDPRESS specific
 alias wpconfig="vim $PRJ/wp-config.php"
 alias theme="$HOME/projects/${CUR_PRJ}/wp-content/themes/${THEME_NAME}"
+alias childtheme="$HOME/projects/${CUR_PRJ}/wp-content/themes/${THEME_NAME}-child"
 
 # PHP projects
 alias propel="$PRJ/vendor/bin/propel"
-alias doctrine="vendor/bin/doctrine"
+alias doctrine="$PRJ/vendor/bin/doctrine"
+alias magento="$PRJ/bin/magento"
 
 ## Npm
 alias watcher="npm run watch"

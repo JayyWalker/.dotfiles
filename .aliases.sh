@@ -14,11 +14,13 @@ alias sconfig="vim $HOME/.dotfiles/.scripts"
 # General convenience
 alias lsg="ls -Xla"
 alias :q="exit"
+alias mkdir="mkdir -vp"
 
 ## tmux
 alias tmat="tmux a -t"
 alias tma="tmux attach"
 alias tmd="tmux detach"
+alias tmn="tmux new -s"
 
 ## CHANGE DIRECTORY
 
@@ -58,13 +60,15 @@ alias prj="$HOME/projects/$CUR_PRJ"
 ## WORDPRESS specific
 alias wpconfig="vim $PRJ/wp-config.php"
 alias theme="$HOME/projects/${CUR_PRJ}/wp-content/themes/${THEME_NAME}"
+alias childtheme="$HOME/projects/${CUR_PRJ}/wp-content/themes/${THEME_NAME}-child"
 alias uploads="$HOME/projects/${CUR_PRJ}/wp-content/uploads"
 alias plugins="$HOME/projects/${CUR_PRJ}/wp-content/plugins"
 alias gigno="vim $HOME/projects/${CUR_PRJ}/.gitignore"
 
 # PHP projects
 alias propel="$PRJ/vendor/bin/propel"
-alias doctrine="vendor/bin/doctrine"
+alias doctrine="$PRJ/vendor/bin/doctrine"
+alias magento="$PRJ/bin/magento"
 
 ## Npm
 alias watcher="npm run watch"
@@ -86,7 +90,7 @@ alias nvconfig=" sudo vim /etc/nginx/sites-available/"
 alias ohnozng="vim /var/log/nginx/errors.log"
 alias ngrs=" sudo service nginx restart"
 
-## APACHE speficif
+## APACHE specific
 alias avconfig=" sudo vim /etc/apache2/sites-available/"
 alias ohnozap="$HOME/logs"
 alias aprs=" sudo service apache2 restart"

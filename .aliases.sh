@@ -58,6 +58,9 @@ alias prj="$HOME/projects/$CUR_PRJ"
 ## WORDPRESS specific
 alias wpconfig="vim $PRJ/wp-config.php"
 alias theme="$HOME/projects/${CUR_PRJ}/wp-content/themes/${THEME_NAME}"
+alias uploads="$HOME/projects/${CUR_PRJ}/wp-content/uploads"
+alias plugins="$HOME/projects/${CUR_PRJ}/wp-content/plugins"
+alias gigno="vim $HOME/projects/${CUR_PRJ}/.gitignore"
 
 # PHP projects
 alias propel="$PRJ/vendor/bin/propel"

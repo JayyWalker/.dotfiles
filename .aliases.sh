@@ -66,8 +66,9 @@ alias plugins="$HOME/projects/${CUR_PRJ}/wp-content/plugins"
 alias gigno="vim $HOME/projects/${CUR_PRJ}/.gitignore"
 
 # PHP projects
-alias propel="$PRJ/vendor/bin/propel"
 alias doctrine="$PRJ/vendor/bin/doctrine"
+alias propel="$PRJ/vendor/bin/propel"
+alias ruckus="$PRJ/vendor/bin/ruckus.php"
 alias magento="$PRJ/bin/magento"
 
 ## Npm

@@ -1,4 +1,3 @@
-alias wpi="wp plugin install"
 # Ma .dotfiles
 alias dotconfig="vim $HOME/.dotfiles"
 alias dotfiles="$HOME/.dotfiles"
@@ -59,6 +58,7 @@ alias prj="$HOME/projects/$CUR_PRJ"
 
 ## WORDPRESS specific
 alias wpconfig="vim $PRJ/wp-config.php"
+alias wpi="wp plugin install"
 alias theme="$HOME/projects/${CUR_PRJ}/wp-content/themes/${THEME_NAME}"
 alias childtheme="$HOME/projects/${CUR_PRJ}/wp-content/themes/${THEME_NAME}-child"
 alias uploads="$HOME/projects/${CUR_PRJ}/wp-content/uploads"
@@ -66,10 +66,10 @@ alias plugins="$HOME/projects/${CUR_PRJ}/wp-content/plugins"
 alias gigno="vim $HOME/projects/${CUR_PRJ}/.gitignore"
 
 # PHP projects
-alias propel="$PRJ/vendor/bin/propel"
 alias doctrine="$PRJ/vendor/bin/doctrine"
 alias ruckus="$PRJ/vendor/bin/ruckus.php"
 alias phinx="$PRJ/vendor/bin/phinx"
+alias propel="$PRJ/vendor/bin/propel"
 alias magento="$PRJ/bin/magento"
 
 ## Npm

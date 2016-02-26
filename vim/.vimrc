@@ -153,6 +153,9 @@
 
             " Syntax highlighting for JSX.
             "Plugin 'mxw/vim-jsx'
+            
+            "Jade syntax
+            Plugin 'digitaltoad/vim-pug'
         "}
 
         "HTML specific {"

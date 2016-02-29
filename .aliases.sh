@@ -20,6 +20,9 @@ alias tma="tmux attach"
 alias tmd="tmux detach"
 alias tmn="tmux new -s"
 
+## ntp
+alias updateTime="sudo ntpdate ntp.ubuntu.com"
+
 ## CHANGE DIRECTORY
 
 # System stuff

@@ -45,6 +45,9 @@
         "This plugin provides a start screen for Vim and Neovim.
         Plugin 'mhinz/vim-startify'
 
+        " Isolate part of a file to create a 'safe edit environment'
+        Plugin 'ferranpm/vim-isolate'
+
         "Text {
 
             " Removes whitespace by :FixWhitespace.

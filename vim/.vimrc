@@ -47,6 +47,9 @@
 
         " Isolate part of a file to create a 'safe edit environment'
         Plugin 'ferranpm/vim-isolate'
+        
+        " Comment Better NERD
+        Plugin 'scrooloose/nerdcommenter'
 
         "Text {
 

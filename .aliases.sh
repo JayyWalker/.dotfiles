@@ -14,11 +14,16 @@ alias sconfig="vim $HOME/.dotfiles/.scripts"
 alias lsg="ls -Xla"
 alias :q="exit"
 alias mkdir="mkdir -vp" 
+
 ## tmux
 alias tmat="tmux a -t"
 alias tma="tmux attach"
 alias tmd="tmux detach"
 alias tmn="tmux new -s"
+
+## compression
+alias tarpack="tar czvf"
+alias tarun="tar xvf"
 
 ## ntp
 alias updateTime="sudo ntpdate ntp.ubuntu.com"

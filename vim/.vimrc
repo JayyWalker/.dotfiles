@@ -244,6 +244,19 @@
     " Highlight matches
     set hlsearch
 
+    " The Silver Searcher
+
+        if executable('ag')
+            " Use ag over grep
+            set grepprg=ag\ --nogroup\ --nocolor
+
+            " Use ag in CtrlP for listing files. lightning fast and respsects 
+            " .gitignore
+            let g:ctrlp_user_command = 'ag %s -l --nocolor - g ""'
+
+            " ag is fast enough that CtrlP doesn't need to cache
+            let g:ctrlp_use_caching = 0
+        endif
 "}}}
 
 " Syntax {{{
@@ -435,6 +448,16 @@
         map <leader>nf :NERDTreeFind<cr>
         map <leader>n  :NERDTree<cr>
         nmap <Space> <Enter>
+    "}}
+
+    "ag {{
+        " bind ± to grep word under cursor
+        nnoremap ± :grep! "\b<C-R><C-W>\b"<CR>:cw<CR>
+
+        " bind \ to grep shortcut
+        command -nargs=+ -complete=file -bar Ag silent! grep! <args>|cwindow|redraw!
+
+        nnoremap \ a:Ag<SPACE>
     "}}
 "}}}
 " vim:foldmethod=marker:foldlevel=0

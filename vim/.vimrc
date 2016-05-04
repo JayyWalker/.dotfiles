@@ -188,7 +188,11 @@
             " XXX Probably won't need this anytime soon. It's here just in case
             "Plugin 'groenewege/vim-less'
         "}
-        "
+        
+        "Ruby Specific {
+            Plugin 'vim-ruby/vim-ruby'
+        "}
+        
         "I3 specific {
 
             " Adds syntax for i3 files

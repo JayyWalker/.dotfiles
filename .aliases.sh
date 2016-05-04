@@ -11,7 +11,7 @@ alias econfig="vim $HOME/.dotfiles/.env"
 alias sconfig="vim $HOME/.dotfiles/.scripts"
 
 # General convenience
-alias lsg="ls -Xla"
+alias lsg="ls -xla"
 alias :q="exit"
 alias mkdir="mkdir -vp" 
 

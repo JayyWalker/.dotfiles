@@ -2,13 +2,14 @@
 
 # At the moment, this script is just for setting up nginx vhosts
 
+
+set -x
+
 echo Current project name is?
 
 env | grep CUR_PRJ
 
-echo 'Is this right [y | n]?' ansa
-
-read ansa
+read -p 'Is this right? [Y | n] ' ansa
 
 if [[ $ansa = n ]] ; then
 	echo Sort it out then run this again
@@ -16,9 +17,19 @@ if [[ $ansa = n ]] ; then
 	exit
 fi
 
-read -p 'Project vhost URL: ' url
+read -p 'Are you using xip.io? [Y | n] ' xip
 
-read -p 'Project vhost port:' port
+if [[ $xip = n ]] ; then
+
+    read -p 'Project vhost URL: ' url
+
+    read -p 'Project vhost port: ' port
+else
+    ip=$(ifconfig  | grep 'inet addr:'| grep -v '127.0.0.1' | cut -d: -f2 | awk '{ print $1 }')
+
+    url="${CUR_PRJ}.${ip}.xip.io"
+    port=80
+fi
 
 sudo cp ~/.dotfiles/.scripts/nginx-vhost.template /etc/nginx/sites-available/${CUR_PRJ}.dev
 

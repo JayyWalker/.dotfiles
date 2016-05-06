@@ -21,7 +21,7 @@ server {
 	listen port;
 	listen [::]:port;
 
-	root /home/reklaw/projects/project_name;
+	root home_folder/projects/project_name;
 	index index.php index.html index.htm;
 
 	# Make site accessible from http://localhost/

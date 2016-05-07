@@ -108,3 +108,5 @@ source $HOME/.dotfiles/.aliases.sh
 
 autoload -U +X bashcompinit && bashcompinit
 source ~/wp-completion.bash
+
+export PATH="$PATH:$HOME/.rvm/bin" # Add RVM to PATH for scripting

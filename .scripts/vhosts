@@ -34,7 +34,7 @@ fi
 
 #sudo cp ${template_path}nginx-vhost.template /etc/nginx/sites-available/${prj_name}.dev
 
-sudo cp ~/.dotfiles/.scripts/nginx-vhost.template /etc/nginx/sites-available/${prj_name}.dev
+sudo cp /etc/nginx/sites-available/nginx-vhost.template /etc/nginx/sites-available/${prj_name}.dev
 
 cd /etc/nginx/sites-available/
 

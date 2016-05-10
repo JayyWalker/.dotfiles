@@ -3,8 +3,6 @@
 # At the moment, this script is just for setting up nginx vhosts
 
 
-set -x
-
 echo Current project name is?
 
 env | grep CUR_PRJ

@@ -2,7 +2,6 @@
 
 # At the moment, this script is just for setting up nginx vhosts
 
-
 echo Current project name is?
 
 env | grep CUR_PRJ
@@ -10,7 +9,7 @@ env | grep CUR_PRJ
 read -p 'Is this right? [Y | n] ' ansa
 
 if [[ $ansa = n ]] ; then
-    read -p 'What is the project folder name?' prj_fol
+    read -p 'What is the project folder name? ' prj_fol
     prj_name=${prj_fol}
 else 
     prj_name=${CUR_PRJ}
@@ -39,7 +38,8 @@ sudo cp ~/.dotfiles/.scripts/nginx-vhost.template /etc/nginx/sites-available/${p
 
 cd /etc/nginx/sites-available/
 
-sudo sed -i "s/home_folder/$HOME" ${prj_name}.dev
+# ${HOME} already has a slash at the beginning
+sudo sed -i "s#home_folder#${HOME}#" ${prj_name}.dev
 
 sudo sed -i "s/project_name/$prj_name/" ${prj_name}.dev
 
@@ -47,9 +47,9 @@ sudo sed -i "s/project_url/$url/" ${prj_name}.dev
 
 sudo sed -i "s/port/$port/" ${prj_name}.dev
 
-echo 'You can edit any mistakes made. [This will wait for 10s]'
+echo 'You can edit any mistakes made. [This will wait for 5s]'
 
-sleep 10
+sleep 5
 
 vim ${prj_name}.dev
 

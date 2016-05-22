@@ -6,7 +6,7 @@ echo Current project name is?
 
 env | grep CUR_PRJ
 
-read -p 'Is this right? [Y | n] ' ansa
+read -p 'Is this right? [Y/n] ' ansa
 
 if [[ $ansa = n ]] ; then
     read -p 'What is the project folder name? ' prj_fol
@@ -15,7 +15,7 @@ else
     prj_name=${CUR_PRJ}
 fi
 
-read -p 'Are you using xip.io? [Y | n] ' xip
+read -p 'Are you using xip.io? [Y/n] ' xip
 
 if [[ $xip = n ]] ; then
 

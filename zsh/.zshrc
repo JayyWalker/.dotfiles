@@ -109,4 +109,11 @@ source $HOME/.dotfiles/.aliases.sh
 autoload -U +X bashcompinit && bashcompinit
 source ~/wp-completion.bash
 
-export PATH="$PATH:$HOME/.rvm/bin" # Add RVM to PATH for scripting
+if [ -z "$HOME/.rvm" ]; then
+    export PATH="$PATH:$HOME/.rvm/bin" # Add RVM to PATH for scripting
+fi
+
+if [ -z "$HOME/.nvm" ]; then
+    export NVM_DIR="$HOME/.nvm"
+    [ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"  # This loads nvm
+fi

@@ -1,3 +1,15 @@
 .netrwhist
 vim/.vim/bundle/
 zsh/.oh-my-zsh/cache/*
+
+### Vim ###
+# swap
+[._]*.s[a-w][a-z]
+[._]s[a-w][a-z]
+# session
+Session.vim
+# temporary
+.netrwhist
+*~
+# auto-generated tag files
+tags

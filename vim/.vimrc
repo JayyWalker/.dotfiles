@@ -207,6 +207,8 @@
             " PHP colorschemes to improve syntax highlighting
             Plugin 'modess/vim-phpcolors'
 
+            Plugin 'chriskempson/base16-vim'
+
             "Plugin 'jonathanfilip/vim-lucius'
         "}
     "}}

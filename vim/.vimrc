@@ -412,6 +412,11 @@
         "let g:nerdtree_tabs_open_on_console_startup=1
         let g:NERDTreeDirArrows = 0
     "}}
+    
+    "Base-16 {{
+    " Access colors present in 256 colorspace
+    let base16colorspace=256 
+    "}}
 "}}}
 
 "Key Maps {{{

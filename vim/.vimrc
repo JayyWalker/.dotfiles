@@ -276,12 +276,14 @@
     " Makes vim not look so fugly
     set t_Co=256
 
-    autocmd BufEnter *.scss         colorscheme         Tomorrow-Night
-    autocmd BufEnter *.conf         colorscheme         badwolf
-    autocmd BufEnter *.php          colorscheme         jellybeans
-    autocmd BufEnter *.js           colorscheme         ChocolateLiquor
     autocmd BufEnter *              colorscheme         apprentice
-    "autocmd BufEnter *.js          colorscheme         solarized
+    autocmd BufEnter *.scss         colorscheme         Tomorrow-Night
+   "autocmd BufEnter *.conf         colorscheme         badwolf
+    autocmd BufEnter *.conf         colorscheme         base16-google
+   "autocmd BufEnter *.php          colorscheme         jellybeans
+    autocmd BufEnter *.php          colorscheme         base16-google
+   "autocmd BufEnter *.js           colorscheme         ChocolateLiquor
+    autocmd BufEnter *.js           colorscheme         base16-google
 
     autocmd FileType html set omnifunc=htmlcomplete#CompleteTags
     autocmd FileType js let JSHintToggle
@@ -466,7 +468,7 @@
         nnoremap ± :grep! "\b<C-R><C-W>\b"<CR>:cw<CR>
 
         " bind \ to grep shortcut
-        command -nargs=+ -complete=file -bar Ag silent! grep! <args>|cwindow|redraw!
+        "command -nargs=+ -complete=file -bar Ag silent! grep! <args>|cwindow|redraw!
 
         nnoremap \ a:Ag<SPACE>
     "}}

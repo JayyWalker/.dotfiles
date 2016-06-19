@@ -83,11 +83,15 @@ source $HOME/.dotfiles/.dbconfig.sh
 # SSH configurations
 # ssh
 # export SSH_KEY_PATH="~/.ssh/dsa_id"
-zstyle :omz:plugins:ssh-agent agent-forwarding on								# Enables shortcut to ssh-add
+
+# Enables shortcut to ssh-add
+zstyle :omz:plugins:ssh-agent agent-forwarding on
 
 # Quick Navigation
-PROJECT_PATHS=(~/projects)																			# This uses the plugin 'pj'. Can now open project folder by entering 'pj project-title'
-																																# 'pjo project-title' will open project in $EDITOR
+
+# This uses the plugin 'pj'. Can now open project folder by entering 'pj project-title'
+PROJECT_PATHS=(~/projects)
+# 'pjo project-title' will open project in $EDITOR
 
 # Set personal aliases, overriding those provided by oh-my-zsh libs,
 # plugins, and themes. Aliases can be placed here, though oh-my-zsh
@@ -109,11 +113,3 @@ source $HOME/.dotfiles/.aliases.sh
 autoload -U +X bashcompinit && bashcompinit
 source ~/wp-completion.bash
 
-export PATH="$PATH:$HOME/.rvm/bin" # Add RVM to PATH for scripting
-
-export NVM_DIR="$HOME/.nvm"
-[ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"  # This loads nvm
-
-# Base16 Shell
-BASE16_SHELL="$HOME/.config/base16-shell/base16-tomorrow.dark.sh"
-[[ -s $BASE16_SHELL  ]] && source $BASE16_SHELL

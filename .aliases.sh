@@ -2,13 +2,13 @@
 alias dotconfig="vim $HOME/.dotfiles"
 alias dotfiles="$HOME/.dotfiles"
 
-alias prjconfig="vim $HOME/.dotfiles/.current_project.sh && source $HOME/.dotfiles/.current_project.sh"
+alias prjconfig="vim $HOME/.dotfiles/.current_project.sh && source $HOME/.zshrc"
 alias zshconfig="vim $HOME/.zshrc && source $HOME/.zshrc"
 alias viconfig="vim $HOME/.vimrc"
-alias tmconfig="vim $HOME/.tmux.conf && source $HOME/.tmux.conf"
-alias dbconfig="vim $HOME/.dotfiles/.dbconfig.sh && source $HOME/.dotfiles/.dbconfig.sh"
-alias aconfig="vim $HOME/.dotfiles/.aliases.sh && source $HOME/.dotfiles/.aliases.sh"
-alias econfig="vim $HOME/.dotfiles/.env && source $HOME/.dotfiles/.env"
+alias tmconfig="vim $HOME/.tmux.conf && source $HOME/.zshrc"
+alias dbconfig="vim $HOME/.dotfiles/.dbconfig.sh && source $HOME/.zshrc"
+alias aconfig="vim $HOME/.dotfiles/.aliases.sh && source $HOME/.zshrc"
+alias econfig="vim $HOME/.dotfiles/.env && source $HOME/.zshrc"
 alias sconfig="vim $HOME/.dotfiles/.scripts"
 
 # General convenience

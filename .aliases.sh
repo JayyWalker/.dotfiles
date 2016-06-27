@@ -20,7 +20,7 @@ alias mkdir="mkdir -vp"
 alias tmat="tmux a -t"
 alias tma="tmux attach"
 alias tmd="tmux detach"
-alias tmn="tmux new -s"
+alias tmn="tmux -2 new -s"
 
 ## compression
 alias tarpack="tar czvf"

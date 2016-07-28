@@ -77,7 +77,7 @@ alias gigno="vim $HOME/projects/${CUR_PRJ}/.gitignore"
 alias doctrine="$PRJ/vendor/bin/doctrine"
 alias ruckus="$PRJ/vendor/bin/ruckus.php"
 alias propel="$PRJ/vendor/bin/propel"
-alias phinx="$PRJ/vendor/bin/phinx"
+alias phinx="vendor/bin/phinx"
 alias magento="$PRJ/bin/magento"
 
 ## Npm

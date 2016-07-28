@@ -300,7 +300,7 @@
 
     " load filtype-specific indent files
     " TODO set indent files
-    filetype indent on
+    "filetype indent on
 
     "Folding {{
 
@@ -334,6 +334,12 @@
 
         " Tabs are spaces
         set expandtab
+
+        " Copy indentation of previous line
+        set autoindent
+
+        " Automatically insert one level of indentation
+        "set smartindent
     "}}
 
     "Wrap Text {{

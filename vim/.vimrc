@@ -51,6 +51,9 @@
         " Comment Better NERD
         Plugin 'scrooloose/nerdcommenter'
 
+        " Vim Multiline
+        Plugin 'terryma/vim-multiple-cursors'
+
         "Text {
 
             " Removes whitespace by :FixWhitespace.
@@ -162,6 +165,9 @@
             
             "Jade syntax
             Plugin 'digitaltoad/vim-pug'
+
+            "JSON syntax
+            Plugin 'elzr/vim-json'
         "}
 
         "HTML specific {"
@@ -420,6 +426,77 @@
     " Access colors present in 256 colorspace
         let base16colorspace=256 
     "}}
+    
+    "php.vim {{
+        " Syntax
+        function! PhpSyntaxOverride()
+            hi def link phpComment          Comment
+            hi def link phpMagicConstants   Constant
+            hi def link phpServerVars       Constant
+            hi def link phpConstants        Constant
+            hi def link phpBoolean          Boolean
+            hi def link phpNumber           Number
+            hi def link phpStringSingle     String
+            hi def link phpStringDouble     String
+            hi def link phpBacktick         String
+            hi def link phpStringDelimiter  String
+            hi def link phpHereDoc          String
+            hi def link phpNowDoc           String
+            hi def link phpFunctions        Function
+            hi def link phpMethods          Function
+            hi def link phpClasses          StorageClass
+            hi def link phpException        Exception
+            hi def link phpIdentifier       Identifier
+            hi def link phpIdentifierSimply Identifier
+            hi def link phpStatement        Statement
+            hi def link phpStructure        Statement
+            hi def link phpOperator         Operator
+            hi def link phpMemberSelector   Operator
+            hi def link phpInclude          PreProc
+            hi def link phpDefine           PreProc
+            hi def link phpKeyword          Keyword
+            hi def link phpSuperglobals     Type
+            hi def link phpType             Type
+            hi def link phpParent           Special
+            hi def link phpSpecialChar      SpecialChar
+            hi def link phpStrEsc           SpecialChar
+            hi def link phpParentError      Error
+            hi def link phpOctalError       Error
+            hi def link phpTodo             Todo
+
+            hi def link phpSplatOperator    phpOperator
+
+            hi def link phpCommentStar      phpComment
+            hi def link phpDocComment       phpComment
+            hi def link phpCommentTitle     phpComment
+            hi def link phpDocTags          phpComment
+            hi def link phpDocParam         phpComment
+            hi def link phpDocIdentifier    phpComment
+
+            hi def link phpFCKeyword        phpKeyword
+            hi def link phpSCKeyword        phpKeyword
+
+            hi def link phpStaticClasses    phpClasses
+
+            if (exists("php_var_selector_is_identifier") && php_var_selector_is_identifier)
+                hi def link phpVarSelector    phpIdentifier
+            else
+                hi def link phpVarSelector    phpOperator
+            endif
+
+            hi def link phpFunction        phpRegion
+            hi def link phpClass           phpRegion
+            hi def link phpClassExtends    phpClass
+            hi def link phpClassImplements phpClass
+            hi def link phpClassDelimiter  phpRegion
+        endfunction
+
+        augroup phpSyntaxOverride
+            autocmd!
+            autocmd FileType php call PhpSyntaxOverride()
+        augroup END
+    "}}
+
 "}}}
 
 "Key Maps {{{

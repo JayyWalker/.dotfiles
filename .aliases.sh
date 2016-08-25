@@ -15,6 +15,7 @@ alias sconfig="vim $HOME/.dotfiles/.scripts"
 alias lsg="ls -xla"
 alias :q="exit"
 alias mkdir="mkdir -vp" 
+alias -d="rm -rf"
 
 ## tmux
 alias tmat="tmux a -t"

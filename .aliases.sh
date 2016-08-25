@@ -10,6 +10,7 @@ alias dbconfig="vim $HOME/.dotfiles/.dbconfig.sh && source $HOME/.zshrc"
 alias aconfig="vim $HOME/.dotfiles/.aliases.sh && source $HOME/.zshrc"
 alias econfig="vim $HOME/.dotfiles/.env && source $HOME/.zshrc"
 alias sconfig="vim $HOME/.dotfiles/.scripts"
+alias rconfig="vim $HOME/.dotfiles/.config/ranger/rc.conf"
 
 # General convenience
 alias lsg="ls -xla"

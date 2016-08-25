@@ -13,3 +13,13 @@ Session.vim
 *~
 # auto-generated tag files
 tags
+
+### Composer ###
+/.config/composer/vendor/
+/.config/composer/.htaccess
+/.config/composer/composer.lock
+/.config/composer/keys.*
+
+### thefuck ###
+/.config/thefuck/__pycache__
+/.config/thefuck/rules

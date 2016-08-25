@@ -23,3 +23,8 @@ tags
 ### thefuck ###
 /.config/thefuck/__pycache__
 /.config/thefuck/rules
+
+### Ranger ###
+/home/coldhands/.dotfiles/.config/ranger/bookmarks
+/home/coldhands/.dotfiles/.config/ranger/history
+/home/coldhands/.dotfiles/.config/ranger/tagged

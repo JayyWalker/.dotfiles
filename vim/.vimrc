@@ -496,6 +496,13 @@
             autocmd FileType php call PhpSyntaxOverride()
         augroup END
     "}}
+    
+    "phpcomplete {{
+        let g:phpcomplete_complete_for_unknown_classes = 1
+        let g:phpcomplete_complete_for_unknown_classes = 1
+        let g:phpcomplete_complete_for_unknown_classes = 1
+    "}}
+    
 
 "}}}
 

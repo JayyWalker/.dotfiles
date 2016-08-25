@@ -25,6 +25,6 @@ tags
 /.config/thefuck/rules
 
 ### Ranger ###
-/home/coldhands/.dotfiles/.config/ranger/bookmarks
-/home/coldhands/.dotfiles/.config/ranger/history
-/home/coldhands/.dotfiles/.config/ranger/tagged
+/.config/ranger/bookmarks
+/.config/ranger/history
+/.config/ranger/tagged

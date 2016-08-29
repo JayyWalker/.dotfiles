@@ -92,7 +92,7 @@ alias derekdump="mysqldump -u dev -h derek -p"
 alias dumpdb="mysqldump -u $DBU -p$DBP"
 alias derek="mysql -u dev -h derek -p"
 alias mydb="mysql -u $DBU -p$DBP"
-alias mydbcli="mycli -u $DBU -p$DBP jnfsdk"
+alias mydbcli="mycli -u $DBU -p $DBP"
 
 # Server stuff
 alias vh="sudo vim /etc/hosts"

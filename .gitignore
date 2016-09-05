@@ -3,6 +3,8 @@ vim/.vim/bundle/
 zsh/.oh-my-zsh/cache/*
 
 ### Vim ###
+# folder
+/vim/.vim/view
 # swap
 [._]*.s[a-w][a-z]
 [._]s[a-w][a-z]

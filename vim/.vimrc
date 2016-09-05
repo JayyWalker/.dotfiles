@@ -314,18 +314,25 @@
         " enable folding
         set foldenable
 
+        " Fold based on syntax
+        set foldmethod=manual
+
         " Open all folds by default. 99 = all folds open is guaranteed. 0 = all folds will be closed
-        set foldlevelstart=99
+        set foldlevelstart=0
 
         set foldlevel=0
 
         " Maximum of 10 nested folds
         set foldnestmax=10
 
-        " Fold based on indent level
-        set foldmethod=marker
-
         set modelines=1
+
+        autocmd BufWinLeave *.* mkview
+        autocmd BufWinEnter *.* silent loadview
+
+        let php_folding=1
+
+        let javaScript_fold=1
     "}}
 
     "Indentation {{
@@ -499,11 +506,7 @@
     
     "phpcomplete {{
         let g:phpcomplete_complete_for_unknown_classes = 1
-        let g:phpcomplete_complete_for_unknown_classes = 1
-        let g:phpcomplete_complete_for_unknown_classes = 1
     "}}
-    
-
 "}}}
 
 "Key Maps {{{
@@ -558,4 +561,3 @@
         nnoremap \ a:Ag<SPACE>
     "}}
 "}}}
-" vim:foldmethod=marker:foldlevel=0

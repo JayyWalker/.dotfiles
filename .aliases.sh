@@ -30,6 +30,9 @@ alias tarun="tar xvf"
 ## ntp
 alias updateTime="sudo ntpdate ntp.ubuntu.com"
 
+## Silver Search ag
+alias ag="ag --path-to-agignore ~/.agignore"
+
 ## CHANGE DIRECTORY
 
 # System stuff

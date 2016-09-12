@@ -318,21 +318,21 @@
         set foldmethod=manual
 
         " Open all folds by default. 99 = all folds open is guaranteed. 0 = all folds will be closed
-        set foldlevelstart=0
+        "set foldlevelstart=0
 
-        set foldlevel=0
+        "set foldlevel=0
 
         " Maximum of 10 nested folds
-        set foldnestmax=10
+        "set foldnestmax=10
 
         set modelines=1
 
         autocmd BufWinLeave *.* mkview
         autocmd BufWinEnter *.* silent loadview
 
-        let php_folding=1
+        "let php_folding=1
 
-        let javaScript_fold=1
+        "let javaScript_fold=1
     "}}
 
     "Indentation {{
@@ -561,3 +561,4 @@
         nnoremap \ a:Ag<SPACE>
     "}}
 "}}}
+"vim:foldlevelstart=0;foldlevel=0;foldmethod=marker

@@ -83,6 +83,7 @@ alias ruckus="$PRJ/vendor/bin/ruckus.php"
 alias propel="$PRJ/vendor/bin/propel"
 alias phinx="php vendor/bin/phinx"
 alias magento="$PRJ/bin/magento"
+alias drush="$PRJ/vendor/bin/drush"
 
 ## Npm
 alias watcher="npm run watch"

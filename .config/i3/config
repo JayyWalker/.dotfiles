@@ -179,6 +179,9 @@ bar {
 # Prevent focus on a new window
 no_focus [window_role="pop-up"]
 
+# Disable the title bar 
+new_window pixel 0
+
 # GTK
 exec --no-startup-id gnome-settings-daemon
 
@@ -193,3 +196,4 @@ exec --no-startup-id ~/.fehbg
 
 # VPN
 exec --no-startup-id nm-applet
+

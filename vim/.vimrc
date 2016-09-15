@@ -277,18 +277,20 @@
     " Makes vim not look so fugly
     set t_Co=256
 
-    autocmd BufEnter *              colorscheme         apprentice
-    autocmd BufEnter *.scss         colorscheme         Tomorrow-Night
-   "autocmd BufEnter *.conf         colorscheme         badwolf
-    autocmd BufEnter *.conf         colorscheme         base16-google
-   "autocmd BufEnter *.php          colorscheme         jellybeans
-    autocmd BufEnter *.php          colorscheme         base16-google
-   "autocmd BufEnter *.js           colorscheme         ChocolateLiquor
-    autocmd BufEnter *.js           colorscheme         base16-google
-    autocmd BufEnter *.pug           colorscheme         base16-google
+    autocmd FileType *              colorscheme         apprentice
+    autocmd FileType *.scss         colorscheme         Tomorrow-Night
+   "autocmd FileType *.conf         colorscheme         badwolf
+    autocmd FileType *.conf         colorscheme         base16-google
+   "autocmd FileType *.php          colorscheme         jellybeans
+    autocmd FileType *.php          colorscheme         base16-google
+   "autocmd FileType *.js           colorscheme         ChocolateLiquor
+    autocmd FileType *.js           colorscheme         base16-google
+    autocmd FileType *.pug          colorscheme         base16-google
 
-    autocmd FileType html set omnifunc=htmlcomplete#CompleteTags
-    autocmd FileType js let JSHintToggle
+    autocmd FileType *.html.twig    set                 filetype=twig
+
+    autocmd FileType html           set                 omnifunc=htmlcomplete#CompleteTags
+    autocmd FileType js             let                 JSHintToggle
 
 "}}}
 

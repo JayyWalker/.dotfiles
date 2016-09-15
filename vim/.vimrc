@@ -68,8 +68,6 @@
 
             " This will search the file for FIXME, TODO and XXX (or a custom list) and put them in a handy  list for you to browse  which at the same will update the location in the document to see where the tag is located
             Plugin 'vim-scripts/TaskList.vim'
-
-            Plugin 'vim-latex/vim-latex'
         "}
 
         "Projects {
@@ -150,9 +148,6 @@
 
             " Javascript bundle for vim, this bundle provides syntax and indent plugins.
             Plugin 'pangloss/vim-javascript'
-
-            " Use jsbeautifier inside vim to format js, html and css files.
-            Plugin 'maksimr/vim-jsbeautify'
 
             " Debug for Javascript.
             "Plugin 'wookiehangover/jshint.vim'

@@ -21,6 +21,7 @@ tags
 /.config/pulse
 /.config/dconf
 /.config/menus
+/.config/gtk-3.0/bookmarks
 
 ### Composer ###
 /.config/composer/vendor/

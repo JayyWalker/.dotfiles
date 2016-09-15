@@ -19,6 +19,8 @@ tags
 ### .config ###
 /.config/google-chrome
 /.config/pulse
+/.config/dconf
+/.config/menus
 
 ### Composer ###
 /.config/composer/vendor/

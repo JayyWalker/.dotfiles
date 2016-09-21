@@ -287,11 +287,8 @@
     autocmd BufEnter *.js           colorscheme         base16-google-dark
     autocmd BufEnter *.pug          colorscheme         base16-google-dark
 
-    "autocmd BufEnter *.twig set filetype=twig
-
     autocmd FileType html           set                 omnifunc=htmlcomplete#CompleteTags
     autocmd FileType js             let                 JSHintToggle
-
 "}}}
 
 "Make it better for reading my shit {{{

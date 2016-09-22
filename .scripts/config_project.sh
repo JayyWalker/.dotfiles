@@ -30,4 +30,4 @@ source $config_file
 echo CUR_PRJ    = $CUR_PRJ
 echo PRJ_ENV    = $PRJ_ENV
 echo THEME_NAME = $THEME_NAME
-echo THEM_PATH  = $THEME_PATH
+echo THEME_PATH  = $THEME_PATH

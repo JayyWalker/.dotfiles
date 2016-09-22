@@ -150,10 +150,10 @@
             Plugin 'pangloss/vim-javascript'
 
             " Debug for Javascript.
-            "Plugin 'wookiehangover/jshint.vim'
+            Plugin 'wookiehangover/jshint.vim'
 
             " Another fucking jshint.
-            Plugin 'walm/jshint.vim'
+            "Plugin 'walm/jshint.vim'
 
             " Syntax highlighting for JSX.
             "Plugin 'mxw/vim-jsx'
@@ -288,7 +288,7 @@
     autocmd BufEnter *.pug          colorscheme         base16-google-dark
 
     autocmd FileType html           set                 omnifunc=htmlcomplete#CompleteTags
-    autocmd FileType js             let                 JSHintToggle
+    "autocmd FileType js             let                 JSHintToggle
 "}}}
 
 "Make it better for reading my shit {{{

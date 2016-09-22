@@ -54,6 +54,7 @@ alias nts="netstat -tunlp"
 ## PERMISSIONS
 alias ownwww="sudo chown -R www-data:www-data"
 alias ownme="sudo chown -R $USER:$USER"
+alias mewww="sudo chown -R $USER:www-data"
 alias ch777="chmod 777"
 alias ch775="chmod 775"
 alias 777r="chmod -R 777"
@@ -67,29 +68,31 @@ alias cp="cp -i"
 
 # Projects
 alias prj="$HOME/projects/$CUR_PRJ"
+alias theme="$HOME/projects/${CUR_PRJ}/${THEME_PATH}"
+alias gigno="vim $HOME/projects/${CUR_PRJ}/.gitignore"
 
 ## WORDPRESS specific
 alias wpconfig="vim $PRJ/wp-config.php"
 alias wpi="wp plugin install"
-alias theme="$HOME/projects/${CUR_PRJ}/wp-content/themes/${THEME_NAME}"
 alias childtheme="$HOME/projects/${CUR_PRJ}/wp-content/themes/${THEME_NAME}-child"
 alias uploads="$HOME/projects/${CUR_PRJ}/wp-content/uploads"
 alias plugins="$HOME/projects/${CUR_PRJ}/wp-content/plugins"
-alias gigno="vim $HOME/projects/${CUR_PRJ}/.gitignore"
 
-# PHP projects
+## PHP projects
 alias doctrine="$PRJ/vendor/bin/doctrine"
 alias ruckus="$PRJ/vendor/bin/ruckus.php"
 alias propel="$PRJ/vendor/bin/propel"
-alias phinx="php vendor/bin/phinx"
+alias phinx="$PRJ/vendor/bin/phinx"
 alias magento="$PRJ/bin/magento"
 alias drush="$PRJ/vendor/bin/drush"
 
 ## Npm
 alias watcher="npm run watch"
 alias build="npm run build"
-alias nbgu="sudo npm install && bower install && gulp"
-alias nbg="sudo npm install && bower install && grunt build"
+alias npmb="npm install && bower install"
+alias nbgu="npm install && bower install && gulp"
+alias nbg="npm install && bower install && grunt build"
+alias gubw="gulp build && gulp watch"
 
 # Database stuff
 alias derekdump="mysqldump -u dev -h derek -p"
@@ -97,20 +100,20 @@ alias dumpdb="mysqldump -u $DBU -p$DBP"
 alias derek="mysql -u dev -h derek -p"
 alias mydb="mysql -u $DBU -p$DBP"
 alias mydbcli="mycli -u $DBU -p $DBP"
+alias derekcli="mycli -u dev -h derek -p"
 
 # Server stuff
 alias vh="sudo vim /etc/hosts"
 
 ## NGINX specific
-alias nvconfig=" sudo vim /etc/nginx/sites-available/"
+alias nvconfig="sudo vim /etc/nginx/sites-available/"
 alias ohnozng="vim /var/log/nginx/errors.log"
-alias ngrs=" sudo service nginx restart"
+alias ngrs="sudo service nginx restart"
 
 ## APACHE specific
-alias avconfig=" sudo vim /etc/apache2/sites-available/"
+alias avconfig="sudo vim /etc/apache2/sites-available/"
 alias ohnozap="$HOME/logs"
-alias aprs=" sudo service apache2 restart"
-
+alias aprs="sudo service apache2 restart"
 
 # i3wm
 alias dualOff="xrandr --output VGA-0 --auto --output VGA-1 --off"

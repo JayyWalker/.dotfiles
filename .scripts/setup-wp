@@ -10,6 +10,8 @@ set -x
 
 clear
 
+#TODO Maybe it will be better to config everything in the beginning and then the script will create everything
+
 ## 1a) Setup project
 
 echo "Your current project name is '${CUR_PRJ}'"

@@ -3,25 +3,28 @@
 # This script will configure the environment to access project directories quicker.
 # This sript requires the PRJ environment variable to be set.
 
-clear 
-
 config_file="${HOME}/.dotfiles/.current_project.sh"
 
-if [ "x$PRJ_ENV" == "x" ]; then
-    echo PRJ_ENV must be set.
-
-    exit 0;
-fi
-
-if [[ $PRJ_ENV = 'wp' ]] ; then
-    theme_path="wp-content/themes/${THEME_NAME}"
-
-elif  [[ $PRJ_ENV = 'drupal' ]] ; then
-    theme_path="themes/${THEME_NAME}"
-
-else
-    echo "There is no option for PRJ_ENV=${PRJ_ENV}."
-fi
+case $PRJ_ENV in
+    '')
+        echo 'PRJ_ENV must be set';
+        exit 0;
+        ;;
+    'wp')
+        theme_path="wp-content/themes/${THEME_NAME}"
+        ;;
+    'drupal')
+        theme_path="themes/${THEME_NAME}"
+        ;;
+    'custom')
+        read -p 'Theme path: ' theme
+        theme_path="${theme}"
+        ;;
+    *)
+        echo There is no option for current PRJ_ENV
+        exit 0
+        ;;
+esac;
 
 sed -i "/export THEME_PATH=/c export THEME_PATH='${theme_path}'" $config_file
 

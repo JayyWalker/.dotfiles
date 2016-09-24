@@ -3,7 +3,7 @@ alias dotconfig="vim $HOME/.dotfiles"
 alias dotfiles="$HOME/.dotfiles"
 
 # TODO Writing the prjconfig as a function will be much more flexible
-alias prjconfig="vim $HOME/.dotfiles/.current_project.sh && bash $HOME/.dotfiles/.scripts/config_project.sh && source $HOME/.zshrc"
+alias prjconfig="vim $HOME/.dotfiles/.current_project.sh && source $HOME/.zshrc && bash $HOME/.dotfiles/.scripts/config_project.sh && source $HOME/.zshrc"
 alias zshconfig="vim $HOME/.zshrc && source $HOME/.zshrc"
 alias viconfig="vim $HOME/.vimrc"
 alias tmconfig="vim $HOME/.tmux.conf && source $HOME/.zshrc"

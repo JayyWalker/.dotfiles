@@ -15,7 +15,7 @@ else
     prj_name=${CUR_PRJ}
 fi
 
-read -p 'Are you using xip.io? [Y/n] ' xip
+read -p 'Are you using nip.io? [Y/n] ' xip
 
 if [[ $xip = n ]] ; then
 
@@ -25,7 +25,7 @@ if [[ $xip = n ]] ; then
 else
     ip=$(ifconfig  | grep 'inet addr:'| grep -v '127.0.0.1' | cut -d: -f2 | awk '{ print $1 }')
 
-    url="${prj_name}.${ip}.xip.io"
+    url="${prj_name}.${ip}.nip.io"
     port=80
 fi
 

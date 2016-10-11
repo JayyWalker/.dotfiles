@@ -94,6 +94,7 @@ alias npmb="npm install && bower install"
 alias nbgu="npm install && bower install && gulp"
 alias nbg="npm install && bower install && grunt build"
 alias gubw="gulp build && gulp watch"
+alias grunt="./node_modules/.bin/grunt"
 
 # Database stuff
 alias derekdump="mysqldump -u dev -h derek -p"

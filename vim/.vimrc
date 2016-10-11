@@ -10,7 +10,7 @@
     filetype off
 "}}}
 
-" Vundle" {{{
+" Vundle {{{
     set rtp+=~/.vim/bundle/Vundle.vim
     call vundle#begin()
 
@@ -102,7 +102,7 @@
 
             " Syntax for markdown
             Plugin 'tpope/vim-markdown'
-    "}
+        "}
 
         "Syntax specific {
 
@@ -150,7 +150,7 @@
             Plugin 'pangloss/vim-javascript'
 
             " Debug for Javascript.
-            Plugin 'wookiehangover/jshint.vim'
+            "Plugin 'wookiehangover/jshint.vim'
 
             " Another fucking jshint.
             "Plugin 'walm/jshint.vim'
@@ -165,7 +165,11 @@
             Plugin 'elzr/vim-json'
         "}
 
-        "HTML specific {"
+        "Vue specific {
+            Plugin 'posva/vim-vue'
+        "}
+
+        "HTML specific {
 
             " HTML5 omnicmomplete and syntax.
             Plugin 'othree/html5.vim'
@@ -277,15 +281,16 @@
     " Makes vim not look so fugly
     set t_Co=256
 
-    autocmd BufEnter *              colorscheme         apprentice
-    autocmd BufEnter *.scss         colorscheme         Tomorrow-Night
-   "autocmd BufEnter *.conf         colorscheme         badwolf
-    autocmd BufEnter *.conf         colorscheme         base16-google
-   "autocmd BufEnter *.php          colorscheme         jellybeans
-    autocmd BufEnter *.php          colorscheme         base16-google
-   "autocmd BufEnter *.js           colorscheme         ChocolateLiquor
-    autocmd BufEnter *.js           colorscheme         base16-google
-    autocmd BufEnter *.pug          colorscheme         base16-google
+    autocmd BufEnter *              colorscheme          base16-google-dark
+    "autocmd BufEnter *.scss         colorscheme         Tomorrow-Night
+   ""autocmd BufEnter *.conf         colorscheme         badwolf
+    "autocmd BufEnter *.conf         colorscheme         base16-google-dark
+   ""autocmd BufEnter *.php          colorscheme         jellybeans
+    "autocmd BufEnter *.php          colorscheme         base16-google-dark
+   ""autocmd BufEnter *.js           colorscheme         ChocolateLiquor
+    "autocmd BufEnter *.js           colorscheme         base16-google-dark
+    "autocmd BufEnter *.pug          colorscheme         base16-google-dark
+    "autocmd BufEnter *.vue          colorscheme         base16-google-dark
 
     autocmd FileType html           set                 omnifunc=htmlcomplete#CompleteTags
     "autocmd FileType js             let                 JSHintToggle
@@ -389,6 +394,7 @@
         filetype plugin on
         set omnifunc=syntaxcomplete#Complete
     "}}
+
     "Jellybeans {{
         let g:jellybeans_use_lowercolor_black = 0
     "}}
@@ -414,7 +420,6 @@
     "SuperTab {{
         let g:SuperTabDefaultCompletionType = ""                                " <TAB> now triggers omnicompletion
     "}}
-
 
     "NERDTree {{
 
@@ -524,6 +529,7 @@
 
         " Gave up on this. Try it another time
         " imap hh <C-y>,
+    "}}
 
     "Easy-align {{
 

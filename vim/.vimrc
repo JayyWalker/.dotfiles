@@ -54,6 +54,9 @@
         " Vim Multiline
         Plugin 'terryma/vim-multiple-cursors'
 
+        " Vim editorconfig
+        Plugin 'editorconfig/editorconfig-vim'
+
         "Text {
 
             " Removes whitespace by :FixWhitespace.
@@ -150,7 +153,7 @@
             Plugin 'pangloss/vim-javascript'
 
             " Debug for Javascript.
-            Plugin 'wookiehangover/jshint.vim'
+            "Plugin 'wookiehangover/jshint.vim'
 
             " Another fucking jshint.
             "Plugin 'walm/jshint.vim'
@@ -163,6 +166,10 @@
 
             "JSON syntax
             Plugin 'elzr/vim-json'
+        "}
+
+        "Vue specific {
+            Plugin 'posva/vim-vue'
         "}
 
         "HTML specific {"

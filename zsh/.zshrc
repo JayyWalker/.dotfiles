@@ -54,7 +54,7 @@ COMPLETION_WAITING_DOTS="true"
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(bower command-not-found common-aliases compleat copydir copyfile cp encode64 fasd git github gitignore git-extras last-working-dir lol node pj ssh-agent thefuck web-search zsh-autosuggestions)
+plugins=(bower command-not-found common-aliases compleat copydir copyfile cp encode64 fasd git github gitignore git-extras gulp last-working-dir lol node pj ssh-agent thefuck web-search zsh-autosuggestions zsh-nvm)
 
 # User configuration
 
@@ -153,3 +153,17 @@ elif type compctl &>/dev/null; then
   compctl -K _pm2_completion + -f + pm2
 fi
 ###-end-pm2-completion-###
+
+###-load-nvmrc-if-exists-###
+autoload -U add-zsh-hook
+load-nvmrc() {
+    if [[ -f .nvmrc && -r .nvmrc  ]]; then
+        nvm use
+    elif [[ $(nvm version) != $(nvm version default)   ]]; then
+        echo "Reverting to nvm default version"
+        nvm use default
+    fi
+}
+add-zsh-hook chpwd load-nvmrc
+load-nvmrc
+###-end-load-nvmrc-if-exists-###

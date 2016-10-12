@@ -6,114 +6,123 @@
 
 # Turn tracing on
 
-set -x
+#set -x
 
-clear
+# 1) Create project folder
+ProjectsDirectory="${HOME}/projects"
 
-#TODO Maybe it will be better to config everything in the beginning and then the script will create everything
+read -p "Are you currently in the project folder? [Y/n] " CurrentProject
 
-## 1a) Setup project
+if [[ $CurrentProject == n ]]; then
+    read -p "Project Name: " ProjectName
 
-echo "Your current project name is '${CUR_PRJ}'"
+    ProjectFullPath="${ProjectsDirectory}/${ProjectName}"
 
-read -p 'Is this correct? [Y|n] ' answer
-
-if [[ $answer = n  ]]; then
-   read -p 'Project title: ' project_name
-   ## Check if use input is not 'n', 'y' or 'enter'
-   elif [! ]
-   else
-       exit
-fi
-
-## 1b) Set $projectname to be used across the script
-if [[ -n "$project_name" ]]; then
-    echo "The project name is '${project_name}'"
-
-else 
-    project_name=${CUR_PRJ}
-
-    echo "The project name is '${project_name}'"
-
-fi
-
-## 1c) Create project directory
-if [[ -d "${HOME}/projects" ]]; then
-    projects_path=${HOME}/projects
-
-else
-    echo 'Cannot detect projects path'
-
-    read -p "What is your projects path? (Do not use ~): " projects_path
-
-fi
-
-cd ${projects_path} 
-
-if [[ -d $project_name ]]; then
-    echo "Directory '${project_name}' already exists"
-
-    if [ "$(ls -A $project_name)" ]; then
-        echo "Directory '${project_name}' is not empty"
-
-        exit
-
-    else 
-        cd ${project_name}
-
+    if [[ ! -d $ProjectFullPath ]]; then
+        cd $ProjectsDirectory
+        mkdir $ProjectName && cd "$_"
     fi
-
 else
-    mkdir ${project_name} && cd ${project_name}
+    ProjectFullPath=${pwd}
+    ProjectName=${PWD##*/}
 fi
+
+# 2) Download Wordpress
+if [[ -e '/usr/local/bin/wp' ]]; then
+    wp_cli=wp
+elif [[ -e '/usr/local/bin/wp-cli' ]]; then
+    wp_cli=wp_cli
+else
+    echo 'You do not have wp-cli installed. Please install it and launch this script again'
+    exit 0
+fi
+
+# 3) Setup Server
+read -p 'Are you using nip.io? [Y/n] ' nip
+
+if [[ $nip = n ]] ; then
+
+    read -p 'Project vhost URL: ' ProjectUrl
+
+    read -p 'Project vhost port: ' ProjectServerPort
+else
+    ip=$(ifconfig  | grep 'inet addr:'| grep -v '127.0.0.1' | cut -d: -f2 | awk '{ print $1 }')
+
+    url="${ProjectName}.${ip}.nip.io"
+    port=80
+fi
+
+sudo cp /etc/nginx/sites-available/nginx-vhost.template /etc/nginx/sites-available/${ProjectName}.dev
+
+cd /etc/nginx/sites-available/
+
+# ${HOME} already has a slash at the beginning
+sudo sed -i "s#home_folder#${HOME}#" ${ProjectName}.dev
+
+sudo sed -i "s/project_name/$ProjectName/" ${ProjectName}.dev
+
+sudo sed -i "s/project_url/$url/" ${ProjectName}.dev
+
+sudo sed -i "s/port/$port/" ${ProjectName}.dev
+
+echo 'You can edit any mistakes made. [This will wait for 5s]'
+
+sleep 5
+
+vim ${ProjectName}.dev
+
+sudo ln -s /etc/nginx/sites-available/$ProjectName\.dev /etc/nginx/sites-enabled/$ProjectName\.dev
+
+sudo service nginx reload
+
+sleep 5 
 
 exit
 
-## 2a) Download wordpress
+$wp_cli core download
 
-# Check if wp cli is installed
-if [ ! -f '/usr/local/bin/wp' ]; then
-    echo "You do not have 'wp-cli'. It will make this process much quicker if you did"
-
-    exit
-fi
-
-wp core download
-
-## 3a) Setup database
-
-cp wp-config-sample.php wp-config.php
+# 4) Setup Wordpress project
 
 read -p 'Database Name: ' DBNAME
 
-    sed -i "s/database_name_here/$DBNAME/g" wp-config.php
+read -p 'Database User: ' DBUSER
 
-read -p 'Database username: ' DBUSER
+read -p 'Database Password: ' DBPASS
 
-    sed -i "s/username_here/$DBUSER/g" wp-config.php
+read -p 'Database Host: ' DBHOST
 
-read -sp 'Database password: ' DBPASS
-    
-    sed -i "s/password_here/$DBPASS/g" wp-config.php
+read -p 'Table Prefix '  DBPREFIX
 
-read -p 'Is your database local? [Y|n]' host_answer
+read -p 'Set URL? [Y/n] ' SetURL
 
-    if [[ $host_answer = n ]]; then
-        echo Database host?
+cp wp-config-sample.php wp-config.php
 
-        read DBHOST
+sed -i "s/database_name_here/${DBNAME}/g" wp-config.php
+sed -i "s/username_here/${DBUSER}/g" wp-config.php
+sed -i "s/password_here/${DBPASS}/g" wp-config.php
 
-        sed -i "s/localhost/$DBHOST/g" wp-config.php
-    fi
+if [[ ! $DBHOST == n ]]; then
+    sed -i "s/localhost/${DBHOST}/g" wp-config.php
+fi
 
-read -p 'What is your project URL: ' project_url
+if [[ ! $DBPREFIX = n ]]; then
+    sed -i "s/wp_/${DBPREFIX}/g" wp-config.php
+fi
 
-read -p 'Set URLs? [Y|n]' project_url_answer
+if [[ ! $SetURL = n ]]; then
+    read -p "URL: " ProjectUrl
+    echo "define('WP_SITEURL', 'http://${ProjectUrl}');" > wp-config.php
+    echo "define('WP_HOME', WP_SITEURL);" > wp-config.php
+fi
 
-    if [[ $project_url_answer = n ]]; then
+# 5) Create Database
 
-        read -p "What is your project URL ('http://' is already included): " project_url
+MySQL="mysql -u ${DBUSER} -p${DBPASS} -e "
 
-        echo "define('WP_HOME', 'http://${project_url}');" > wp-config.php
-        echo "define('WP_SITEURL', 'http://${project_url}');" > wp-config.php
-    fi
+$MySQL "CREATE DATABASE ${DBNAME}"
+
+# 6) Finish
+echo 'Edit the config'
+
+vim wp-config.php
+#rm -rf $ProjectFullPath

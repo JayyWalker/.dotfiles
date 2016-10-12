@@ -153,3 +153,17 @@ elif type compctl &>/dev/null; then
   compctl -K _pm2_completion + -f + pm2
 fi
 ###-end-pm2-completion-###
+
+###-load-nvmrc-if-exists-###
+autoload -U add-zsh-hook
+load-nvmrc() {
+    if [[ -f .nvmrc && -r .nvmrc  ]]; then
+        nvm use
+    elif [[ $(nvm version) != $(nvm version default)   ]]; then
+        echo "Reverting to nvm default version"
+        nvm use default
+    fi
+}
+add-zsh-hook chpwd load-nvmrc
+load-nvmrc
+###-end-load-nvmrc-if-exists-###

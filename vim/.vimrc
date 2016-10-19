@@ -47,12 +47,15 @@
 
         " Isolate part of a file to create a 'safe edit environment'
         Plugin 'ferranpm/vim-isolate'
-        
+
         " Comment Better NERD
         Plugin 'scrooloose/nerdcommenter'
 
         " Vim Multiline
         Plugin 'terryma/vim-multiple-cursors'
+
+        " Vim editorconfig
+        Plugin 'editorconfig/editorconfig-vim'
 
         "Text {
 

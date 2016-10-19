@@ -23,6 +23,7 @@ alias tmat="tmux a -t"
 alias tma="tmux attach"
 alias tmd="tmux detach"
 alias tmn="tmux -2 new -s"
+alias tms="tmux switch -t"
 
 ## compression
 alias tarpack="tar czvf"

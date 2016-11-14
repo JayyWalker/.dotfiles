@@ -80,7 +80,10 @@ alias childtheme="$HOME/projects/${CUR_PRJ}/wp-content/themes/${THEME_NAME}-chil
 alias uploads="$HOME/projects/${CUR_PRJ}/wp-content/uploads"
 alias plugins="$HOME/projects/${CUR_PRJ}/wp-content/plugins"
 
-## PHP projects
+## PHP
+alias phpconfig="vim /etc/php/7.0/fpm/php.ini"
+
+### projects
 alias doctrine="$PRJ/vendor/bin/doctrine"
 alias ruckus="$PRJ/vendor/bin/ruckus.php"
 alias propel="$PRJ/vendor/bin/propel"

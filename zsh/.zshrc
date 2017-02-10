@@ -167,3 +167,5 @@ load-nvmrc() {
 add-zsh-hook chpwd load-nvmrc
 load-nvmrc
 ###-end-load-nvmrc-if-exists-###
+
+export PATH="$PATH:$HOME/.rvm/bin" # Add RVM to PATH for scripting

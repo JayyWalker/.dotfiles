@@ -57,6 +57,10 @@
         " Vim editorconfig
         Plugin 'editorconfig/editorconfig-vim'
 
+        Plugin 'xolox/vim-notes'
+
+        Plugin 'xolox/vim-misc'
+
         "Text {
 
             " Removes whitespace by :FixWhitespace.
@@ -216,6 +220,8 @@
             Plugin 'modess/vim-phpcolors'
 
             Plugin 'chriskempson/base16-vim'
+
+            Plugin 'trevordmiller/nova-vim'
 
             "Plugin 'jonathanfilip/vim-lucius'
         "}

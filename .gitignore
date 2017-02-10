@@ -37,3 +37,6 @@ tags
 /.config/ranger/bookmarks
 /.config/ranger/history
 /.config/ranger/tagged
+
+### OSX ###
+.DS_Store

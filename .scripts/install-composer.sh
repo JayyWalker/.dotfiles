@@ -15,4 +15,7 @@ fi
 php composer-setup.php
 RESULT=$?
 rm composer-setup.php
+
+echo 'Moving composer.phar to /usr/local/bin/composer'
+sudo mv composer.phar /usr/local/bin/composer
 exit $RESULT

@@ -57,6 +57,9 @@
         " Vim editorconfig
         Plugin 'editorconfig/editorconfig-vim'
 
+        " Reload changed files in buffer
+        Plugin 'djoshea/vim-autoread'
+
         "Text {
 
             " Removes whitespace by :FixWhitespace.
@@ -508,6 +511,11 @@
     
     "phpcomplete {{
         let g:phpcomplete_complete_for_unknown_classes = 1
+    "}}
+
+    "syntastic {{
+        let g:syntastic_check_on_wq = 1
+        let g:syntastic_javascript_checkers = ['eslint']
     "}}
 "}}}
 

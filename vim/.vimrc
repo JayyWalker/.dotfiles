@@ -34,10 +34,10 @@
         Plugin 'vim-scripts/YankRing.vim'
 
         " Distraction free writing.
-        Plugin 'junegunn/goyo.vim'
+        "Plugin 'junegunn/goyo.vim'
 
         " Improves netrw
-        Plugin 'tpope/vim-vinegar'
+        "Plugin 'tpope/vim-vinegar'
 
         " :BufOnly clears all buffers but the current one
         Plugin 'schickling/vim-bufonly'
@@ -60,6 +60,10 @@
         " Reload changed files in buffer
         Plugin 'djoshea/vim-autoread'
 
+        Plugin 'xolox/vim-notes'
+
+        Plugin 'xolox/vim-misc'
+
         "Text {
 
             " Removes whitespace by :FixWhitespace.
@@ -79,12 +83,12 @@
         "Projects {
 
             " The unite or unite.vim plug-in can search and display information from arbitrary sources like files, buffers, recently used files or registers.
-            Plugin 'Shougo/unite.vim'
+            "Plugin 'Shougo/unite.vim'
 
             Plugin 'google/vim-searchindex'
 
             " Open multiple files at once. Create new files and directories. Buil-in project's root finder. Extensible.
-            Plugin 'kien/ctrlp.vim'
+            "Plugin 'kien/ctrlp.vim'
         "}
 
         "NERDTree specific {
@@ -141,16 +145,16 @@
             Plugin 'vim-scripts/taglist.vim'
 
             " Automatically looks up the characteristics of the item you want to document and creates a Docblock skeleton for you.
-            Plugin 'tobyS/pdv'
+            "Plugin 'tobyS/pdv'
 
             " vmustache is an implementation of the Mustache template system in VIMScript.
-            Plugin 'tobyS/vmustache'
+            "Plugin 'tobyS/vmustache'
         "}
 
         "Javascript specific {
 
             " vim-jquery-doc is a little plugin that helps you to look jQuery API doc website more quickly.
-            Plugin 'lucapette/vim-jquery-doc'
+            "Plugin 'lucapette/vim-jquery-doc'
 
             " Javascript bundle for vim, this bundle provides syntax and indent plugins.
             Plugin 'pangloss/vim-javascript'
@@ -201,7 +205,7 @@
         "}
         
         "Ruby Specific {
-            Plugin 'vim-ruby/vim-ruby'
+            "Plugin 'vim-ruby/vim-ruby'
         "}
         
         "I3 specific {
@@ -211,14 +215,16 @@
         "}
 
         "Colors {
-            Plugin 'altercation/vim-colors-solarized'
+            "Plugin 'altercation/vim-colors-solarized'
 
-            Plugin 'flazz/vim-colorschemes'
+            "Plugin 'flazz/vim-colorschemes'
 
             " PHP colorschemes to improve syntax highlighting
             Plugin 'modess/vim-phpcolors'
 
             Plugin 'chriskempson/base16-vim'
+
+            Plugin 'trevordmiller/nova-vim'
 
             "Plugin 'jonathanfilip/vim-lucius'
         "}
@@ -516,6 +522,9 @@
     "syntastic {{
         let g:syntastic_check_on_wq = 1
         let g:syntastic_javascript_checkers = ['eslint']
+    
+    "editorconfig-vim {{
+        let g:EditorConfig_exclude_patterns = ['fugitive://.*']
     "}}
 "}}}
 

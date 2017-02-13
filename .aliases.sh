@@ -17,6 +17,7 @@ alias rconfig="vim $HOME/.dotfiles/.config/ranger/rc.conf"
 alias lsg="ls -xla"
 alias :q="exit"
 alias mkdir="mkdir -vp" 
+alias read="cat"
 
 ## tmux
 alias tmat="tmux a -t"
@@ -80,13 +81,17 @@ alias childtheme="$HOME/projects/${CUR_PRJ}/wp-content/themes/${THEME_NAME}-chil
 alias uploads="$HOME/projects/${CUR_PRJ}/wp-content/uploads"
 alias plugins="$HOME/projects/${CUR_PRJ}/wp-content/plugins"
 
-## PHP projects
-alias doctrine="$PRJ/vendor/bin/doctrine"
+## PHP
+alias phpconfig="vim /etc/php/7.0/fpm/php.ini"
+
+### projects
+alias doctrine="vendor/bin/doctrine"
 alias ruckus="$PRJ/vendor/bin/ruckus.php"
 alias propel="$PRJ/vendor/bin/propel"
-alias phinx="$PRJ/vendor/bin/phinx"
-alias magento="$PRJ/bin/magento"
+alias phinx="vendor/bin/phinx"
+alias magento="bin/magento"
 alias drush="$PRJ/vendor/bin/drush"
+alias sylius="./bin/console"
 
 ## Npm
 alias watcher="npm run watch"
@@ -95,7 +100,8 @@ alias npmb="npm install && bower install"
 alias nbgu="npm install && bower install && gulp"
 alias nbg="npm install && bower install && grunt build"
 alias gubw="gulp build && gulp watch"
-alias grunt="./node_modules/.bin/grunt"
+#alias grunt="./node_modules/.bin/grunt"
+alias browserSync="./node_modules/.bin/browser-sync"
 
 # Database stuff
 alias derekdump="mysqldump -u dev -h derek -p"
@@ -103,7 +109,7 @@ alias dumpdb="mysqldump -u $DBU -p$DBP"
 alias derek="mysql -u dev -h derek -p"
 alias mydb="mysql -u $DBU -p$DBP"
 alias mydbcli="mycli -u $DBU -p $DBP"
-alias derekcli="mycli -u dev -h derek -p"
+alias derekcli="mycli -u dev -h derek -p $DEREKP"
 
 # Server stuff
 alias vh="sudo vim /etc/hosts"

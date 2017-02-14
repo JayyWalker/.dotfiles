@@ -22,12 +22,17 @@ tags
 /.config/dconf
 /.config/menus
 /.config/gtk-3.0/bookmarks
+/.config/yarn
+/.config/configstore/bower-github.yml
+/.config/configstore/insight-bower.json
+/.config/configstore/update-notifier-bower.yml
 
 ### Composer ###
 /.config/composer/vendor/
 /.config/composer/.htaccess
 /.config/composer/composer.lock
 /.config/composer/keys.*
+/.config/composer/auth.json
 
 ### thefuck ###
 /.config/thefuck/__pycache__

@@ -14,7 +14,7 @@ alias sconfig="vim $HOME/.dotfiles/.scripts"
 alias rconfig="vim $HOME/.dotfiles/.config/ranger/rc.conf"
 
 # General convenience
-alias lsg="ls -xla"
+alias lsg="ls -xla --group-directories-first"
 alias :q="exit"
 alias mkdir="mkdir -vp" 
 alias read="cat"

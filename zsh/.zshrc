@@ -54,7 +54,7 @@ COMPLETION_WAITING_DOTS="true"
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(bower command-not-found common-aliases compleat copydir copyfile cp encode64 fasd git github gitignore git-extras gulp last-working-dir lol node pj ssh-agent thefuck vi-mode wd web-search yarn zsh-autosuggestions zsh-nvm)
+plugins=(bower command-not-found common-aliases compleat copyfile git gitignore git-extras gulp last-working-dir lol pj ssh-agent vi-mode wd web-search yarn zsh-autosuggestions zsh-nvm)
 
 # User configuration
 
@@ -169,3 +169,5 @@ load-nvmrc
 ###-end-load-nvmrc-if-exists-###
 
 export PATH="$PATH:$HOME/.rvm/bin" # Add RVM to PATH for scripting
+
+set -o vi

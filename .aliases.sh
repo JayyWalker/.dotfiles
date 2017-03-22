@@ -92,6 +92,7 @@ alias phinx="vendor/bin/phinx"
 alias magento="bin/magento"
 alias drush="$PRJ/vendor/bin/drush"
 alias sylius="./bin/console"
+alias phpunit="vendor/bin/phpunit"
 
 ## Npm
 alias watcher="npm run watch"

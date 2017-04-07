@@ -194,6 +194,11 @@
             Plugin 'evidens/vim-twig'
         "}
 
+        "Blade specific {
+            " Blade syntax
+            Plugin 'jwalton512/vim-blade'
+        "}
+
         "CSS & CSS Prepocessor specific {
 
             " SCSS syntax for vim.
@@ -601,5 +606,31 @@
 
     nnoremap <leader>u :call RunPHPUnitTest(0)<cr>
     nnoremap <leader>f :call RunPHPUnitTest(1)<cr>
+
+	" Prepare a new PHP class
+	function! Class()
+		let name = input('Class name? ')
+		let namespace = input('Any Namespace? ')
+
+		if strlen(namespace)
+			exec "normal i<?php namespace " . namespace . ";\<C-m>\<C-m>"
+		else
+			exec "normal i<?php \<C-m>"
+		endif
+
+		" Open class
+		exec "normal iclass " . name . " {\<C-m>}\<C-[>O\<C-[>"
+
+		exec "normal i\<C-M>public function __construct()\<C-M>{\<C-M>\<C-M>}\<C-[>"
+	endfunction
+	nmap ,1 :call Class()
+
+    " Reset filetype
+    function! ResetFT()
+        let my_filetype = &filetype
+
+        set ft = my_filetype 
+    endfunction
+    nmap ,2 :call ResetFT()
 "}}}
 "vim:foldlevelstart=0;foldlevel=0;foldmethod=marker

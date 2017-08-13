@@ -17,7 +17,9 @@ alias rconfig="vim $HOME/.dotfiles/.config/ranger/rc.conf"
 alias lsg="ls -xla --group-directories-first"
 alias :q="exit"
 alias mkdir="mkdir -vp" 
+alias mk="mkdir"
 alias read="cat"
+alias df="df -h"
 
 ## tmux
 alias tmat="tmux a -t"
@@ -34,7 +36,7 @@ alias tarun="tar xvf"
 alias updateTime="sudo ntpdate ntp.ubuntu.com"
 
 ## Silver Search ag
-alias ag="ag --path-to-agignore ~/.agignore"
+alias ag="ag --path-to-ignore ~/.agignore"
 
 ## CHANGE DIRECTORY
 
@@ -130,3 +132,12 @@ alias aprs="sudo service apache2 restart"
 alias dualOff="xrandr --output VGA-0 --auto --output VGA-1 --off"
 alias dualOn="xrandr --output VGA-1 --auto --right-of VGA-0"
 alias i3config="vim ~/.config/i3/config"
+
+# git
+alias gs="git stash"
+
+#Vagrant
+alias vu="vagrant up"
+alias vssh="vagrant ssh"
+alias vh="vagrant halt"
+alias vp="vagrant provision"

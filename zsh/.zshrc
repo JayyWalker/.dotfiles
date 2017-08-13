@@ -7,10 +7,8 @@ export ZSH=$HOME/.oh-my-zsh
 # time that oh-my-zsh is loaded.
 #ZSH_THEME="avit"
 #ZSH_THEME="random"
-#ZSH_THEME="kafeitu"
-#ZSH_THEME="candy"
-#ZSH_THEME="agnoster"
 ZSH_THEME="nicoulaj"
+#ZSH_THEME="bira"
 
 # Uncomment the following line to use case-sensitive completion.
 # CASE_SENSITIVE="true"
@@ -54,7 +52,7 @@ COMPLETION_WAITING_DOTS="true"
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(bower command-not-found common-aliases compleat copyfile git gitignore git-extras gulp last-working-dir lol pj ssh-agent vi-mode wd web-search yarn zsh-autosuggestions zsh-nvm)
+plugins=(bower command-not-found common-aliases compleat copyfile git gitignore git-extras gulp laravel5 last-working-dir lol pj ssh-agent vagrant vi-mode wd web-search yarn zsh-autosuggestions zsh-nvm)
 
 # User configuration
 
@@ -63,6 +61,8 @@ plugins=(bower command-not-found common-aliases compleat copyfile git gitignore 
 source $ZSH/oh-my-zsh.sh
 source $HOME/.dotfiles/.env
 source $HOME/.dotfiles/.dbconfig.sh
+source $HOME/.phpbrew/bashrc
+source $HOME/.phpbrew/completions
 
 # Runs terminal at startup
 #[[ $TERM != "screen" ]] && exec tmux
@@ -90,7 +90,7 @@ zstyle :omz:plugins:ssh-agent agent-forwarding on
 # Quick Navigation
 
 # This uses the plugin 'pj'. Can now open project folder by entering 'pj project-title'
-PROJECT_PATHS=(~/projects)
+PROJECT_PATHS=(~/Sites)
 # 'pjo project-title' will open project in $EDITOR
 
 # Set personal aliases, overriding those provided by oh-my-zsh libs,
@@ -103,15 +103,8 @@ PROJECT_PATHS=(~/projects)
 source $HOME/.dotfiles/.aliases.sh
 
 
-#export PATH="$HOME/.linuxbrew/bin:$PATH"
-#export MANPATH="$HOME/.linuxbrew/share/man:$MANPATH"
-#export INFOPATH="$HOME/.linuxbrew/share/inofo:$INFOPATH"
-#export PATH=$PATH:#/.composer/vendor/bin
-#export PATH=$PATH:/usr/local/bin/
-#export PATH=$PATH:/usr/bin
-
 autoload -U +X bashcompinit && bashcompinit
-source ~/wp-completion.bash
+#source ~/wp-completion.bash
 
 ###-begin-pm2-completion-###
 ### credits to npm for the completion file model
@@ -168,8 +161,6 @@ add-zsh-hook chpwd load-nvmrc
 load-nvmrc
 ###-end-load-nvmrc-if-exists-###
 
-export PATH="$PATH:$HOME/.rvm/bin" # Add RVM to PATH for scripting
-
 set -o vi
 
 # start typing + [Up-Arrow] - fuzzy find history forward
@@ -184,3 +175,19 @@ if [[ "${terminfo[kcud1]}" != "" ]]; then
   zle -N down-line-or-beginning-search
   bindkey "${terminfo[kcud1]}" down-line-or-beginning-search
 fi
+
+# Vagrant halt all
+vagrant() {
+    if [[ $@ == "halt all"  ]]; then
+        command vagrant global-status | grep running | colrm 8 | xargs -L 1 -t vagrant halt
+    else
+        command vagrant "$@"
+    fi
+}
+
+# Load rbenv automatically
+eval "$(rbenv init -)"
+
+# php-version
+#source $(brew --prefix php-version)/php-version.sh && php-version 5
+

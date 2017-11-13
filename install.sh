@@ -15,7 +15,7 @@ read -p "Install NVM [Y/n]" installNvm
 if [[ $installNvm != n ]]; then
     echo "Installing NVM"
 
-    export NVM_DIR="$HOME/.nvm-test" && (
+    export NVM_DIR="$HOME/.nvm" && (
       git clone https://github.com/creationix/nvm.git "$NVM_DIR"
       cd "$NVM_DIR"
       git checkout `git describe --abbrev=0 --tags --match "v[0-9]*" origin`

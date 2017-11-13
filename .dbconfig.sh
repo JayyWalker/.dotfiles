@@ -1,2 +1,0 @@
-export DBU=
-export DBP=

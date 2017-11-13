@@ -44,3 +44,25 @@ if [[ -e "$HOME/.oh-my-zsh" ]]; then
 fi
 
 ln -s ${DOTFILES}/zsh/.oh-my-zsh $HOME/.oh-my-zsh
+
+## Vim
+message .vim "$HOME/.vim"
+if [[ -e "$HOME/.vim" ]]; then
+    rm -f $HOME/.vim
+
+    echo "Removed already existing .vim"
+fi
+
+ln -s ${DOTFILES}/vim/.vim $HOME/.vim
+
+if [[ -e "$HOME/.vimrc" ]]; then
+    rm -f $HOME/.vimrc
+
+    echo "Removed already existing .vimrc"
+fi
+ln -s ${DOTFILES}/vim/.vimrc $HOME/.vimrc
+
+## Install Vim plugins
+echo "Installing Vim plugins"
+vim +PluginInstall +qall
+echo "Vim plugins installed"

@@ -61,8 +61,11 @@ plugins=(bower command-not-found common-aliases compleat copyfile git gitignore 
 source $ZSH/oh-my-zsh.sh
 source $HOME/.dotfiles/.env
 source $HOME/.dotfiles/.dbconfig.sh
-source $HOME/.phpbrew/bashrc
-source $HOME/.phpbrew/completions
+
+if [[ -e "$HOME/.phpbrew" ]]; then
+    source $HOME/.phpbrew/bashrc
+    source $HOME/.phpbrew/completions
+fi
 
 # Runs terminal at startup
 #[[ $TERM != "screen" ]] && exec tmux
@@ -90,7 +93,7 @@ zstyle :omz:plugins:ssh-agent agent-forwarding on
 # Quick Navigation
 
 # This uses the plugin 'pj'. Can now open project folder by entering 'pj project-title'
-PROJECT_PATHS=(~/Sites)
+PROJECT_PATHS=(~/Sites ~/projects)
 # 'pjo project-title' will open project in $EDITOR
 
 # Set personal aliases, overriding those provided by oh-my-zsh libs,
@@ -104,61 +107,21 @@ source $HOME/.dotfiles/.aliases.sh
 
 
 autoload -U +X bashcompinit && bashcompinit
-#source ~/wp-completion.bash
-
-###-begin-pm2-completion-###
-### credits to npm for the completion file model
-#
-# Installation: pm2 completion >> ~/.bashrc  (or ~/.zshrc)
-#
-
-COMP_WORDBREAKS=${COMP_WORDBREAKS/=/}
-COMP_WORDBREAKS=${COMP_WORDBREAKS/@/}
-export COMP_WORDBREAKS
-
-if type complete &>/dev/null; then
-  _pm2_completion () {
-    local si="$IFS"
-    IFS=$'\n' COMPREPLY=($(COMP_CWORD="$COMP_CWORD" \
-                           COMP_LINE="$COMP_LINE" \
-                           COMP_POINT="$COMP_POINT" \
-                           pm2 completion -- "${COMP_WORDS[@]}" \
-                           2>/dev/null)) || return $?
-    IFS="$si"
-  }
-  complete -o default -F _pm2_completion pm2
-elif type compctl &>/dev/null; then
-  _pm2_completion () {
-    local cword line point words si
-    read -Ac words
-    read -cn cword
-    let cword-=1
-    read -l line
-    read -ln point
-    si="$IFS"
-    IFS=$'\n' reply=($(COMP_CWORD="$cword" \
-                       COMP_LINE="$line" \
-                       COMP_POINT="$point" \
-                       pm2 completion -- "${words[@]}" \
-                       2>/dev/null)) || return $?
-    IFS="$si"
-  }
-  compctl -K _pm2_completion + -f + pm2
-fi
-###-end-pm2-completion-###
 
 ###-load-nvmrc-if-exists-###
-autoload -U add-zsh-hook
-load-nvmrc() {
-    if [[ -f .nvmrc && -r .nvmrc  ]]; then
-        nvm use
-    elif [[ $(nvm version) != $(nvm version default)   ]]; then
-        echo "Reverting to nvm default version"
-        nvm use default
-    fi
-}
-add-zsh-hook chpwd load-nvmrc
-load-nvmrc
+if [[ -e "${HOME}/.nvm" ]]; then 
+    autoload -U add-zsh-hook
+    load-nvmrc() {
+        if [[ -f .nvmrc && -r .nvmrc  ]]; then
+            nvm use
+        elif [[ $(nvm version) != $(nvm version default)   ]]; then
+            echo "Reverting to nvm default version"
+            nvm use default
+        fi
+    }
+    add-zsh-hook chpwd load-nvmrc
+    load-nvmrc
+fi
 ###-end-load-nvmrc-if-exists-###
 
 set -o vi
@@ -177,16 +140,18 @@ if [[ "${terminfo[kcud1]}" != "" ]]; then
 fi
 
 # Vagrant halt all
-vagrant() {
-    if [[ $@ == "halt all"  ]]; then
-        command vagrant global-status | grep running | colrm 8 | xargs -L 1 -t vagrant halt
-    else
-        command vagrant "$@"
-    fi
-}
+if [[ -x "$(command -v vagrant)" ]]; then
+    vagrant() {
+        if [[ $@ == "halt all"  ]]; then
+            command vagrant global-status | grep running | colrm 8 | xargs -L 1 -t vagrant halt
+        else
+            command vagrant "$@"
+        fi
+    }
+fi
 
 # Load rbenv automatically
-eval "$(rbenv init -)"
+#eval "$(rbenv init -)"
 
 # php-version
 #source $(brew --prefix php-version)/php-version.sh && php-version 5

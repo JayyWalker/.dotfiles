@@ -151,7 +151,9 @@ if [[ -x "$(command -v vagrant)" ]]; then
 fi
 
 # Load rbenv automatically
-#eval "$(rbenv init -)"
+if [[ -x "$(command -v rbenv)" ]]; then
+    eval "$(rbenv init -)"
+fi
 
 # php-version
 #source $(brew --prefix php-version)/php-version.sh && php-version 5

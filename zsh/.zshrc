@@ -93,3 +93,11 @@ if [[ -e "$HOME/.phpbrew" ]]; then
     source $HOME/.phpbrew/bashrc
     source $HOME/.phpbrew/completions
 fi
+
+# NVM
+if [[ -e "$HOME/.nvm" ]]; then
+    export NVM_DIR="$HOME/.nvm"
+
+    # This loads nvm
+    [ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"
+fi

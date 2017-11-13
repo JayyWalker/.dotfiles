@@ -10,6 +10,20 @@ message () {
     echo "Symlinking $1 to $2"
 }
 
+## Install NVM
+read -p "Install NVM [Y/n]" installNvm
+if [[ $installNvm != n ]]; then
+    echo "Installing NVM"
+
+    export NVM_DIR="$HOME/.nvm-test" && (
+      git clone https://github.com/creationix/nvm.git "$NVM_DIR"
+      cd "$NVM_DIR"
+      git checkout `git describe --abbrev=0 --tags --match "v[0-9]*" origin`
+    ) && . "$NVM_DIR/nvm.sh"
+
+    echo "NVM Installed"
+fi
+
 ## ZSHRC
 echo "Symlinking .zshrc to ${HOME}/.zshrc"
 message .zshrc $HOME/.zshrc

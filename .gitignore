@@ -1,5 +1,6 @@
 .netrwhist
 vim/.vim/bundle/
+!vim/.vim/bundle/Vundle.vim
 zsh/.oh-my-zsh/cache/*
 
 ### Vim ###

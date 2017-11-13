@@ -112,3 +112,11 @@ if [[ -e "$HOME/.nvm" ]]; then
         ) && . "$NVM_DIR/nvm.sh"
     }
 fi
+
+# Base16 Shell
+if [[ -e "$HOME/.config/base16-shell/scripts/base16-tomorrow-night.sh" ]]; then
+    export BASE16_SHELL="$HOME/.config/base16-shell/scripts/base16-tomorrow-night.sh"
+    [[ -s $BASE16_SHELL  ]] && source $BASE16_SHELL
+else
+    echo "Base16 Tomorrow Night does not exist"
+fi

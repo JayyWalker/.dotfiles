@@ -84,6 +84,11 @@ alias childtheme="$HOME/projects/${CUR_PRJ}/wp-content/themes/${THEME_NAME}-chil
 alias uploads="$HOME/projects/${CUR_PRJ}/wp-content/uploads"
 alias plugins="$HOME/projects/${CUR_PRJ}/wp-content/plugins"
 
+## LARAVEL specific
+alias art="php ./artisan"
+alias vc="php ./artisan view:clear"
+alias cc="php ./artisan cache:clear"
+
 ## PHP
 alias phpconfig="vim /etc/php/7.0/fpm/php.ini"
 
@@ -96,7 +101,6 @@ alias magento="bin/magento"
 alias drush="$PRJ/vendor/bin/drush"
 alias sylius="./bin/console"
 alias phpunit="vendor/bin/phpunit"
-alias artisan="php ./artisan"
 
 ## Npm
 alias watcher="npm run watch"

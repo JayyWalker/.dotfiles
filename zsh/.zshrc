@@ -113,6 +113,12 @@ if [[ -e "$HOME/.nvm" ]]; then
     }
 fi
 
+# Golang
+if [[ -x $(command -v go) ]]; then
+    export GOPATH=$HOME/.go
+    export PATH=$PATH:$GOPATH/bin
+fi
+
 # Base16 Shell
 BASE16_SHELL=$HOME/.config/base16-shell/
 [ -n "$PS1" ] && [ -s $BASE16_SHELL/profile_helper.sh ] && eval "$($BASE16_SHELL/profile_helper.sh)"

@@ -2,6 +2,7 @@
 vim/.vim/bundle/
 !vim/.vim/bundle/Vundle.vim
 zsh/.oh-my-zsh/cache/*
+/scripts/vagrant-locator/vendor
 
 ### Vim ###
 # folder

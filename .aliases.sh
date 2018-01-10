@@ -121,7 +121,7 @@ alias mydbcli="mycli -u $DBU -p $DBP"
 alias derekcli="mycli -u dev -h derek -p $DEREKP"
 
 # Server stuff
-alias vh="sudo vim /etc/hosts"
+alias vhs="sudo vim /etc/hosts"
 
 ## NGINX specific
 alias nvconfig="sudo vim /etc/nginx/sites-available/"
@@ -142,8 +142,8 @@ alias i3config="vim ~/.config/i3/config"
 alias gs="git stash"
 
 #Vagrant
-alias vu="vagrant up"
-alias vssh="vagrant ssh"
-alias vh="vagrant halt"
-alias vp="vagrant provision"
-alias vgs="vagrant global-status"
+#alias vu="v up"
+#alias vssh="$(v ssh $1)"
+#alias vh="v halt"
+#alias vp="v provision"
+#alias vgs="vagrant global-status"

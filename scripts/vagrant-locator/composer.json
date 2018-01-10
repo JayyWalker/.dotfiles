@@ -1,0 +1,8 @@
+{
+    "require": {
+        "tightenco/collect": "^5.5"
+    },
+    "require-dev": {
+        "kint-php/kint": "^2.2"
+    }
+}

@@ -15,19 +15,23 @@ read -p "Install NVM [Y/n]" installNvm
 if [[ $installNvm != n ]]; then
     echo "Installing NVM"
 
-    export NVM_DIR="$HOME/.nvm" && (
-      git clone https://github.com/creationix/nvm.git "$NVM_DIR"
-      cd "$NVM_DIR"
-      git checkout `git describe --abbrev=0 --tags --match "v[0-9]*" origin`
-    ) && . "$NVM_DIR/nvm.sh"
+    if ! [[ -d "${HOME}/.nvm" ]]; then
+        export NVM_DIR="$HOME/.nvm" && (
+          git clone https://github.com/creationix/nvm.git "$NVM_DIR"
+          cd "$NVM_DIR"
+          git checkout `git describe --abbrev=0 --tags --match "v[0-9]*" origin`
+        ) && . "$NVM_DIR/nvm.sh"
 
-    echo "NVM Installed"
+        echo "NVM Installed"
+    else
+        echo "NVM already installed"
+    fi
 fi
 
 ## ZSHRC
 echo "Symlinking .zshrc to ${HOME}/.zshrc"
 message .zshrc $HOME/.zshrc
-if [[ -e ${HOME}/.zshrc ]]; then
+if [[ -d ${HOME}/.zshrc ]]; then
     rm -f $HOME/.zshrc
 
     echo "Removed already existing .zshrc"
@@ -37,17 +41,18 @@ ln -s ${DOTFILES}/zsh/.zshrc $HOME/.zshrc
 
 ## Oh my zsh
 message .oh-my-zsh "$HOME/.oh-my-zsh"
-if [[ -e "$HOME/.oh-my-zsh" ]]; then
+if [[ -d "$HOME/.oh-my-zsh" ]]; then
     rm -f $HOME/.oh-my-zsh
 
     echo "Removed already existing .oh-my-zsh"
 fi
 
 ln -s ${DOTFILES}/zsh/.oh-my-zsh $HOME/.oh-my-zsh
-
+https://dl.google.com/go1.9.2.linux-amd64.tar.gz
+https://dl.google.com/go/go1.9.2.linux-amd64.tar.gz
 ## Vim
 message .vim "$HOME/.vim"
-if [[ -e "$HOME/.vim" ]]; then
+if [[ -d "$HOME/.vim" ]]; then
     rm -f $HOME/.vim
 
     echo "Removed already existing .vim"
@@ -63,6 +68,10 @@ fi
 ln -s ${DOTFILES}/vim/.vimrc $HOME/.vimrc
 
 ## Install Vim plugins
+if ! [[ -d "$HOME/.vim/bundle/Vundle.vim" ]]; then
+    git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
+fi
+
 echo "Installing Vim plugins"
 vim +PluginInstall +qall
 echo "Vim plugins installed"

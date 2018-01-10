@@ -3,6 +3,7 @@
 
 # Path to your oh-my-zsh installation.
 export ZSH=$HOME/.oh-my-zsh
+export ZSH_CUSTOM=$HOME/.dotfiles/zsh/.oh-my-zsh-custom/
 
 # Set name of the theme to load. Optionally, if you set this to "random"
 # it'll load a random theme each time that oh-my-zsh is loaded.
@@ -59,7 +60,7 @@ ZSH_THEME="nicoulaj"
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(bower command-not-found common-aliases compleat copyfile git gitignore git-extras gulp laravel5 last-working-dir lol pj ssh-agent vagrant vi-mode wd web-search yarn zsh-autosuggestions zsh-nvm)
+plugins=(bower command-not-found common-aliases compleat copyfile extract git gitignore git-extras gulp laravel5 last-working-dir lol pj ssh-agent rbenv vagrant vi-mode wd web-search yarn zsh-autosuggestions zsh-nvm)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -86,7 +87,7 @@ export EDITOR='vim'
 source $HOME/.dotfiles/.aliases.sh
 
 # Quick Navigation
-PROJECT_PATHS=(~/Sites ~/projects)
+PROJECT_PATHS=(~/Sites ~/projects ~/tests ~/code-peek)
 
 # PHPBrew
 if [[ -e "$HOME/.phpbrew" ]]; then
@@ -136,4 +137,8 @@ if [[ "${terminfo[kcud1]}" != "" ]]; then
   autoload -U down-line-or-beginning-search
   zle -N down-line-or-beginning-search
   bindkey "${terminfo[kcud1]}" down-line-or-beginning-search
+fi
+
+if [[ -e "$HOME/.dotfiles/scripts/vagrant-locator" ]]; then
+    source $HOME/.dotfiles/scripts/vagrant-locator/vagrant-locator.sh
 fi

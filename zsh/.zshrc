@@ -60,7 +60,7 @@ ZSH_THEME="nicoulaj"
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(bower command-not-found common-aliases compleat copyfile extract git gitignore git-extras gulp laravel5 last-working-dir lol pj ssh-agent rbenv vagrant vi-mode wd web-search yarn zsh-autosuggestions zsh-nvm)
+plugins=(bower command-not-found common-aliases compleat copyfile docker extract git gitignore git-extras gulp laravel5 last-working-dir lol pj ssh-agent rbenv vagrant vi-mode wd web-search yarn zsh-autosuggestions)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -141,4 +141,15 @@ fi
 
 if [[ -e "$HOME/.dotfiles/scripts/vagrant-locator" ]]; then
     source $HOME/.dotfiles/scripts/vagrant-locator/vagrant-locator.sh
+fi
+
+export APPLICATION_ENV=dev
+
+if [[ -x $(command -v go) ]]; then
+    git config --global alias.lg "log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --"
+fi
+
+# Composer
+if [[ -x $(command -v composer) ]]; then
+    export PATH="$PATH:$HOME/.composer/vendor/bin"
 fi

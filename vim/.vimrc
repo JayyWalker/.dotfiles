@@ -298,7 +298,7 @@
     " Makes vim not look so fugly
     set t_Co=256
 
-    autocmd BufEnter *              colorscheme          base16-google-dark
+    "autocmd BufEnter *              colorscheme          base16-google-dark
     "autocmd BufEnter *.scss         colorscheme         Tomorrow-Night
    ""autocmd BufEnter *.conf         colorscheme         badwolf
     "autocmd BufEnter *.conf         colorscheme         base16-google-dark

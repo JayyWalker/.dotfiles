@@ -48,8 +48,7 @@ if [[ -d "$HOME/.oh-my-zsh" ]]; then
 fi
 
 ln -s ${DOTFILES}/zsh/.oh-my-zsh $HOME/.oh-my-zsh
-https://dl.google.com/go1.9.2.linux-amd64.tar.gz
-https://dl.google.com/go/go1.9.2.linux-amd64.tar.gz
+
 ## Vim
 message .vim "$HOME/.vim"
 if [[ -d "$HOME/.vim" ]]; then
@@ -68,10 +67,13 @@ fi
 ln -s ${DOTFILES}/vim/.vimrc $HOME/.vimrc
 
 ## Install Vim plugins
-if ! [[ -d "$HOME/.vim/bundle/Vundle.vim" ]]; then
+if [[ ! -d "$HOME/.vim/bundle/Vundle.vim" ]]; then
     git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
 fi
 
 echo "Installing Vim plugins"
 vim +PluginInstall +qall
 echo "Vim plugins installed"
+
+echo "Loading zshrc..."
+source ~/.zshrc

@@ -28,7 +28,7 @@
         Plugin 'bling/vim-airline'
 
         " Tag file manager.
-        Plugin 'joonty/vim-taggatron'
+        "Plugin 'joonty/vim-taggatron'
 
         " Maintains a history of yanks, changes and delete.
         Plugin 'vim-scripts/YankRing.vim'

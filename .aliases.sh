@@ -111,6 +111,7 @@ alias nbg="npm install && bower install && grunt build"
 alias gubw="gulp build && gulp watch"
 #alias grunt="./node_modules/.bin/grunt"
 alias browserSync="./node_modules/.bin/browser-sync"
+alias hygen="./node_modules/.bin/hygen"
 
 # Database stuff
 alias derekdump="mysqldump -u dev -h derek -p"

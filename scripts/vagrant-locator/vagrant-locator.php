@@ -1,4 +1,4 @@
-#! /Users/jordan.josiah-walker/.phpbrew/php/php-7.2.0/bin/php
+#! /usr/local/bin/php
 
 <?php
 

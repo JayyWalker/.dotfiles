@@ -92,7 +92,6 @@ PROJECT_PATHS=(~/Sites ~/projects ~/tests ~/code-peek)
 # PHPBrew
 if [[ -e "$HOME/.phpbrew" ]]; then
     source $HOME/.phpbrew/bashrc
-    source $HOME/.phpbrew/completions
 fi
 
 # NVM
@@ -145,7 +144,7 @@ fi
 
 export APPLICATION_ENV=dev
 
-if [[ -x $(command -v go) ]]; then
+if [[ -x $(command -v git) ]]; then
     git config --global alias.lg "log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --"
 fi
 
@@ -153,3 +152,26 @@ fi
 if [[ -x $(command -v composer) ]]; then
     export PATH="$PATH:$HOME/.composer/vendor/bin"
 fi
+
+[[ -s "$HOME/.avn/bin/avn.sh" ]] && source "$HOME/.avn/bin/avn.sh" # load avn
+
+export GUI_EDITOR=code
+
+function azure_ssh () {
+    ssh -i ~/.ssh/azure deploy@$1
+}
+
+# PHP version switcher
+phpv() {
+    valet stop
+    brew unlink php@7.1 php@7.2 php@7.3
+    brew link --force --overwrite $1
+    brew services start $1
+    composer global update
+	rm -f ~/.config/valet/valet.sock
+    valet install
+}
+
+alias php71="phpv php@7.1"
+alias php72="phpv php@7.2"
+alias php73="phpv php"

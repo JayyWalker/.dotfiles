@@ -60,7 +60,7 @@ ZSH_THEME="nicoulaj"
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(bower command-not-found common-aliases compleat copyfile docker extract git gitignore git-extras gulp laravel5 last-working-dir lol pj ssh-agent rbenv vagrant vi-mode wd web-search yarn zsh-autosuggestions)
+plugins=(bower command-not-found common-aliases compleat copyfile docker docker-compose extract git gitignore git-extras gulp laravel5 last-working-dir lol pj ssh-agent rbenv vagrant vi-mode wd web-search yarn zsh-autosuggestions)
 
 source $ZSH/oh-my-zsh.sh
 

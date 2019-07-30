@@ -100,7 +100,13 @@ alias phinx="vendor/bin/phinx"
 alias magento="bin/magento"
 alias drush="$PRJ/vendor/bin/drush"
 alias sylius="./bin/console"
+
 alias phpunit="vendor/bin/phpunit"
+
+### valet
+alias php71="phpv php@7.1"
+alias php72="phpv php@7.2"
+alias php73="phpv php"
 
 ## Npm
 alias watcher="npm run watch"
@@ -151,3 +157,5 @@ alias glgdo="gi lg --date-order"
 #alias vh="v halt"
 #alias vp="v provision"
 #alias vgs="vagrant global-status"
+
+

@@ -83,28 +83,17 @@ if [[ -e "$HOME/.phpbrew" ]]; then
     source $HOME/.phpbrew/bashrc
 fi
 
+# Base16 Shell
+[ -n "$PS1" ] && [ -s $BASE16_SHELL/profile_helper.sh ] && eval "$($BASE16_SHELL/profile_helper.sh)"
+
 # NVM
-#if [[ -e "$HOME/.nvm" ]]; then
-#    export NVM_DIR="$HOME/.nvm"
-#
+# if [[ -e "$HOME/.nvm" ]]; then
 #    # This loads nvm
 #    [ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"
-#
+
 #    # This loads nvm bash_completion
 #    [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"
-#
-#    upgrade-nvm () {
-#        (
-#            cd "$NVM_DIR"
-#            git fetch origin
-#            git checkout `git describe --abbrev=0 --tags --match "v[0-9]*" origin`
-#        ) && . "$NVM_DIR/nvm.sh"
-#    }
-#fi
-
-# Base16 Shell
-BASE16_SHELL=$HOME/.config/base16-shell/
-[ -n "$PS1" ] && [ -s $BASE16_SHELL/profile_helper.sh ] && eval "$($BASE16_SHELL/profile_helper.sh)"
+# fi
 
 # Arrow history
 ## start typing + [Up-Arrow] - fuzzy find history forward
@@ -130,14 +119,3 @@ if [[ -x $(command -v git) ]]; then
 fi
 
 [[ -s "$HOME/.avn/bin/avn.sh" ]] && source "$HOME/.avn/bin/avn.sh" # load avn
-
-# PHP version switcher
-phpv() {
-    valet stop
-    brew unlink php@7.1 php@7.2 php@7.3
-    brew link --force --overwrite $1
-    brew services start $1
-    composer global update
-	rm -f ~/.config/valet/valet.sock
-    valet install
-}

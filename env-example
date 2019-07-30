@@ -69,3 +69,9 @@ export EDITOR='vim'
 # Android SDK
 export JAVA_HOME=$(/usr/libexec/java_home -v 1.8)
 export ANDROID_HOME=/usr/local/share/android-sdk
+
+# if [[ -e "$HOME/.nvm" ]]; then
+#   export NVM_DIR="$HOME/.nvm"
+# fi
+
+export BASE16_SHELL=$HOME/.config/base16-shell/

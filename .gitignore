@@ -50,3 +50,4 @@ tags
 
 ### OSX ###
 .DS_Store
+.env

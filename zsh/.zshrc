@@ -1,15 +1,10 @@
-# If you come from bash you might have to change your $PATH.
-# export PATH=$HOME/bin:/usr/local/bin:$PATH
+if [ -f ${HOME}/.dotfiles/.env ]; then
+    source ${HOME}/.dotfiles/.env
+else
+    echo "${HOME}/.dotfiles/.env"
 
-# Path to your oh-my-zsh installation.
-export ZSH=$HOME/.oh-my-zsh
-export ZSH_CUSTOM=$HOME/.dotfiles/zsh/.oh-my-zsh-custom/
-
-# Set name of the theme to load. Optionally, if you set this to "random"
-# it'll load a random theme each time that oh-my-zsh is loaded.
-# See https://github.com/robbyrussell/oh-my-zsh/wiki/Themes
-ZSH_THEME="nicoulaj"
-
+    echo ".env not found. You might have a few problems"
+fi
 
 # Set list of themes to load
 # Setting this variable when ZSH_THEME=random
@@ -24,9 +19,6 @@ ZSH_THEME="nicoulaj"
 # Uncomment the following line to use hyphen-insensitive completion. Case
 # sensitive completion must be off. _ and - will be interchangeable.
 # HYPHEN_INSENSITIVE="true"
-
-# Uncomment the following line to disable bi-weekly auto-update checks.
- DISABLE_AUTO_UPDATE="true"
 
 # Uncomment the following line to change how often to auto-update (in days).
 # export UPDATE_ZSH_DAYS=13
@@ -60,7 +52,7 @@ ZSH_THEME="nicoulaj"
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(bower command-not-found common-aliases compleat copyfile docker docker-compose extract git gitignore git-extras gulp laravel5 last-working-dir lol pj ssh-agent rbenv vagrant vi-mode wd web-search yarn zsh-autosuggestions)
+# plugins=()
 
 source $ZSH/oh-my-zsh.sh
 
@@ -70,9 +62,6 @@ source $ZSH/oh-my-zsh.sh
 
 # You may need to manually set your language environment
 # export LANG=en_US.UTF-8
-
-# Preferred editor for local and remote sessions
-export EDITOR='vim'
 
 # Compilation flags
 # export ARCHFLAGS="-arch x86_64"
@@ -87,7 +76,7 @@ export EDITOR='vim'
 source $HOME/.dotfiles/.aliases.sh
 
 # Quick Navigation
-PROJECT_PATHS=(~/Sites ~/projects ~/tests ~/code-peek)
+# PROJECT_PATHS=(<paths-here>)
 
 # PHPBrew
 if [[ -e "$HOME/.phpbrew" ]]; then
@@ -95,29 +84,23 @@ if [[ -e "$HOME/.phpbrew" ]]; then
 fi
 
 # NVM
-if [[ -e "$HOME/.nvm" ]]; then
-    export NVM_DIR="$HOME/.nvm"
-
-    # This loads nvm
-    [ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"
-
-    # This loads nvm bash_completion
-    [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"
-
-    upgrade-nvm () {
-        (
-            cd "$NVM_DIR"
-            git fetch origin
-            git checkout `git describe --abbrev=0 --tags --match "v[0-9]*" origin`
-        ) && . "$NVM_DIR/nvm.sh"
-    }
-fi
-
-# Golang
-if [[ -x $(command -v go) ]]; then
-    export GOPATH=$HOME/.go
-    export PATH=$PATH:$GOPATH/bin
-fi
+#if [[ -e "$HOME/.nvm" ]]; then
+#    export NVM_DIR="$HOME/.nvm"
+#
+#    # This loads nvm
+#    [ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"
+#
+#    # This loads nvm bash_completion
+#    [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"
+#
+#    upgrade-nvm () {
+#        (
+#            cd "$NVM_DIR"
+#            git fetch origin
+#            git checkout `git describe --abbrev=0 --tags --match "v[0-9]*" origin`
+#        ) && . "$NVM_DIR/nvm.sh"
+#    }
+#fi
 
 # Base16 Shell
 BASE16_SHELL=$HOME/.config/base16-shell/
@@ -142,24 +125,11 @@ if [[ -e "$HOME/.dotfiles/scripts/vagrant-locator" ]]; then
     source $HOME/.dotfiles/scripts/vagrant-locator/vagrant-locator.sh
 fi
 
-export APPLICATION_ENV=dev
-
 if [[ -x $(command -v git) ]]; then
     git config --global alias.lg "log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --"
 fi
 
-# Composer
-if [[ -x $(command -v composer) ]]; then
-    export PATH="$PATH:$HOME/.composer/vendor/bin"
-fi
-
 [[ -s "$HOME/.avn/bin/avn.sh" ]] && source "$HOME/.avn/bin/avn.sh" # load avn
-
-export GUI_EDITOR=code
-
-function azure_ssh () {
-    ssh -i ~/.ssh/azure deploy@$1
-}
 
 # PHP version switcher
 phpv() {
@@ -171,7 +141,3 @@ phpv() {
 	rm -f ~/.config/valet/valet.sock
     valet install
 }
-
-alias php71="phpv php@7.1"
-alias php72="phpv php@7.2"
-alias php73="phpv php"

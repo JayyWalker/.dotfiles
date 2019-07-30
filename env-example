@@ -1,0 +1,71 @@
+# If you come from bash you might have to change your $PATH.
+export PATH=$HOME/bin:/usr/local/bin:$PATH
+
+###### OH MY ZSH begins here #####
+# Path to your oh-my-zsh installation.
+export ZSH=$HOME/.oh-my-zsh
+export ZSH_CUSTOM=$HOME/.dotfiles/zsh/.oh-my-zsh-custom/
+
+# Set name of the theme to load. Optionally, if you set this to "random"
+# it'll load a random theme each time that oh-my-zsh is loaded.
+# See https://github.com/robbyrussell/oh-my-zsh/wiki/Themes
+export ZSH_THEME="nicoulaj"
+
+# Uncomment the following line to disable bi-weekly auto-update checks.
+export DISABLE_AUTO_UPDATE="true"
+
+# For the pj plugin
+export PROJECT_PATHS=(~/projects ~/tests ~/code-peek)
+
+# Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
+# Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
+# Example format: plugins=(rails git textmate ruby lighthouse)
+# Add wisely, as too many plugins slow down shell startup.
+export plugins=(
+  command-not-found
+  common-aliases
+  compleat
+  copyfile
+  docker
+  docker-compose
+  extract
+  git
+  gitignore
+  git-extras
+  gulp
+  laravel5
+  last-working-dir
+  lol
+  nvm
+  pj
+  ssh-agent
+  rbenv
+  vagrant
+  vi-mode
+  wd
+  yarn
+  zsh-autosuggestions
+)
+
+###### OH MY ZSH ends here ######
+
+# Golang
+if [[ -x $(command -v go) ]]; then
+  export GOPATH=$HOME/.go
+  export PATH=$PATH:$GOPATH/bin
+fi
+
+# Composer
+if [[ -x $(command -v composer) ]]; then
+    export PATH="$PATH:$HOME/.composer/vendor/bin"
+fi
+
+# Text Editor
+export GUI_EDITOR=code
+
+# Preferred editor for local and remote sessions
+export EDITOR='vim'
+
+# Android SDK
+export JAVA_HOME=$(/usr/libexec/java_home -v 1.8)
+export ANDROID_HOME=/usr/local/share/android-sdk

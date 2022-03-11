@@ -100,6 +100,7 @@ alias phinx="vendor/bin/phinx"
 alias magento="bin/magento"
 alias drush="$PRJ/vendor/bin/drush"
 alias sylius="./bin/console"
+alias sail='bash vendor/bin/sail'
 
 alias phpunit="vendor/bin/phpunit"
 
@@ -118,6 +119,8 @@ alias gubw="gulp build && gulp watch"
 #alias grunt="./node_modules/.bin/grunt"
 alias browserSync="./node_modules/.bin/browser-sync"
 alias hygen="./node_modules/.bin/hygen"
+alias gatsby="./node_modules/.bin/gatsby"
+alias cdk="./node_modules/.bin/cdk"
 
 # Database stuff
 alias derekdump="mysqldump -u dev -h derek -p"
@@ -149,6 +152,7 @@ alias i3config="vim ~/.config/i3/config"
 alias gs="git stash"
 alias glg="git lg"
 alias glgdo="gi lg --date-order"
+alias hub="gh"
 
 
 #Vagrant

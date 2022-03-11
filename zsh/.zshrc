@@ -119,3 +119,7 @@ if [[ -x $(command -v git) ]]; then
 fi
 
 [[ -s "$HOME/.avn/bin/avn.sh" ]] && source "$HOME/.avn/bin/avn.sh" # load avn
+
+function read_json () {
+    cat $1 | jq | less
+}

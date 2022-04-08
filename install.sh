@@ -67,13 +67,9 @@ fi
 ln -s ${DOTFILES}/vim/.vimrc $HOME/.vimrc
 
 # ## Install Vim plugins
-# if [[ ! -d "$HOME/.vim/bundle/Vundle.vim" ]]; then
-#     git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
-# fi
 
-# echo "Installing Vim plugins"
-# vim +PluginInstall +qall
-# echo "Vim plugins installed"
+echo "Installing Vim plugins"
+vim +PluginInstall +qall
+echo "Vim plugins installed"
 
-echo "Loading zshrc..."
-source ~/.zshrc
+echo "Now run `source ~/.zshrc`"

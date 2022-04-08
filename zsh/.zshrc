@@ -79,9 +79,9 @@ source $HOME/.dotfiles/.aliases.sh
 # PROJECT_PATHS=(<paths-here>)
 
 # PHPBrew
-if [[ -e "$HOME/.phpbrew" ]]; then
-    source $HOME/.phpbrew/bashrc
-fi
+# if [[ -e "$HOME/.phpbrew" ]]; then
+#     source $HOME/.phpbrew/bashrc
+# fi
 
 # Base16 Shell
 [ -n "$PS1" ] && [ -s $BASE16_SHELL/profile_helper.sh ] && eval "$($BASE16_SHELL/profile_helper.sh)"
@@ -97,29 +97,23 @@ fi
 
 # Arrow history
 ## start typing + [Up-Arrow] - fuzzy find history forward
-if [[ "${terminfo[kcuu1]}" != "" ]]; then
-  autoload -U up-line-or-beginning-search
-  zle -N up-line-or-beginning-search
-  bindkey "${terminfo[kcuu1]}" up-line-or-beginning-search
-fi
+# if [[ "${terminfo[kcuu1]}" != "" ]]; then
+#   autoload -U up-line-or-beginning-search
+#   zle -N up-line-or-beginning-search
+#   bindkey "${terminfo[kcuu1]}" up-line-or-beginning-search
+# fi
 
-## start typing + [Down-Arrow] - fuzzy find history backward
-if [[ "${terminfo[kcud1]}" != "" ]]; then
-  autoload -U down-line-or-beginning-search
-  zle -N down-line-or-beginning-search
-  bindkey "${terminfo[kcud1]}" down-line-or-beginning-search
-fi
+# ## start typing + [Down-Arrow] - fuzzy find history backward
+# if [[ "${terminfo[kcud1]}" != "" ]]; then
+#   autoload -U down-line-or-beginning-search
+#   zle -N down-line-or-beginning-search
+#   bindkey "${terminfo[kcud1]}" down-line-or-beginning-search
+# fi
 
-if [[ -e "$HOME/.dotfiles/scripts/vagrant-locator" ]]; then
-    source $HOME/.dotfiles/scripts/vagrant-locator/vagrant-locator.sh
-fi
+# if [[ -e "$HOME/.dotfiles/scripts/vagrant-locator" ]]; then
+#     source $HOME/.dotfiles/scripts/vagrant-locator/vagrant-locator.sh
+# fi
 
-if [[ -x $(command -v git) ]]; then
-    git config --global alias.lg "log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --"
-fi
-
-[[ -s "$HOME/.avn/bin/avn.sh" ]] && source "$HOME/.avn/bin/avn.sh" # load avn
-
-function read_json () {
-    cat $1 | jq | less
-}
+# if [[ -x $(command -v git) ]]; then
+#     git config --global alias.lg "log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --"
+# fi

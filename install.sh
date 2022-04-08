@@ -17,10 +17,10 @@ if [[ $installNvm != n ]]; then
 
     if ! [[ -d "${HOME}/.nvm" ]]; then
         export NVM_DIR="$HOME/.nvm" && (
-          git clone https://github.com/creationix/nvm.git "$NVM_DIR"
-          cd "$NVM_DIR"
-          git checkout `git describe --abbrev=0 --tags --match "v[0-9]*" origin`
-        ) && . "$NVM_DIR/nvm.sh"
+        git clone https://github.com/nvm-sh/nvm.git "$NVM_DIR"
+        cd "$NVM_DIR"
+        git checkout `git describe --abbrev=0 --tags --match "v[0-9]*" $(git rev-list --tags --max-count=1)`
+        ) && \. "$NVM_DIR/nvm.sh"
 
         echo "NVM Installed"
     else
@@ -66,14 +66,14 @@ if [[ -e "$HOME/.vimrc" ]]; then
 fi
 ln -s ${DOTFILES}/vim/.vimrc $HOME/.vimrc
 
-## Install Vim plugins
-if [[ ! -d "$HOME/.vim/bundle/Vundle.vim" ]]; then
-    git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
-fi
+# ## Install Vim plugins
+# if [[ ! -d "$HOME/.vim/bundle/Vundle.vim" ]]; then
+#     git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
+# fi
 
-echo "Installing Vim plugins"
-vim +PluginInstall +qall
-echo "Vim plugins installed"
+# echo "Installing Vim plugins"
+# vim +PluginInstall +qall
+# echo "Vim plugins installed"
 
 echo "Loading zshrc..."
 source ~/.zshrc

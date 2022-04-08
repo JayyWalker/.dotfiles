@@ -19,3 +19,7 @@ phpv() {
 #        ) && . "$NVM_DIR/nvm.sh"
 #    }
 # fi
+
+function read_json () {
+    cat $1 | jq | less
+}

@@ -152,7 +152,6 @@ alias i3config="vim ~/.config/i3/config"
 alias gs="git stash"
 alias glg="git lg"
 alias glgdo="gi lg --date-order"
-alias hub="gh"
 
 
 #Vagrant

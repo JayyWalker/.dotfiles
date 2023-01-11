@@ -120,7 +120,6 @@ alias gubw="gulp build && gulp watch"
 alias browserSync="./node_modules/.bin/browser-sync"
 alias hygen="./node_modules/.bin/hygen"
 alias gatsby="./node_modules/.bin/gatsby"
-alias cdk="./node_modules/.bin/cdk"
 
 # Database stuff
 alias derekdump="mysqldump -u dev -h derek -p"
@@ -162,3 +161,6 @@ alias glgdo="gi lg --date-order"
 #alias vgs="vagrant global-status"
 
 
+#aws
+alias cdklocal="./node_modules/.bin/cdklocal"
+alias cdk="./node_modules/.bin/cdk"

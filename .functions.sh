@@ -23,3 +23,7 @@ phpv() {
 function read_json () {
     cat $1 | jq | less
 }
+
+function install_rust () {
+    http --body --ssl tls1.2 https://sh.rustup.rs | sh
+}

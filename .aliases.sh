@@ -120,6 +120,7 @@ alias gubw="gulp build && gulp watch"
 alias browserSync="./node_modules/.bin/browser-sync"
 alias hygen="./node_modules/.bin/hygen"
 alias gatsby="./node_modules/.bin/gatsby"
+alias prisma="./node_modules/.bin/prisma"
 
 # Database stuff
 alias derekdump="mysqldump -u dev -h derek -p"
@@ -148,9 +149,9 @@ alias dualOn="xrandr --output VGA-1 --auto --right-of VGA-0"
 alias i3config="vim ~/.config/i3/config"
 
 # git
-alias gs="git stash"
-alias glg="git lg"
-alias glgdo="gi lg --date-order"
+alias gs="git stash --all"
+#alias glg="git lg"
+#alias glgdo="gi lg --date-order"
 
 
 #Vagrant
@@ -160,7 +161,13 @@ alias glgdo="gi lg --date-order"
 #alias vp="v provision"
 #alias vgs="vagrant global-status"
 
+#Docker
+alias drup="docker-compose rm --stop --volumes --force && docker compose up -d"
 
 #aws
 alias cdklocal="./node_modules/.bin/cdklocal"
 alias cdk="./node_modules/.bin/cdk"
+alias al="aws_login"
+
+#ide
+alias ws="webstorm"

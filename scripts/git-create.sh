@@ -8,7 +8,12 @@ if [[ $1 == "" ]]; then
     exit 1
 fi
 
+read -p "Project name" projectName
+
+
 mkdir $1 && cd $_
 
 git init
+
+printf $projectName > README.md
 

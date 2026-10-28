@@ -171,3 +171,4 @@ alias al="aws_login"
 
 #ide
 alias ws="webstorm"
+alias vim="nvim"

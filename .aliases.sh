@@ -121,6 +121,9 @@ alias browserSync="./node_modules/.bin/browser-sync"
 alias hygen="./node_modules/.bin/hygen"
 alias gatsby="./node_modules/.bin/gatsby"
 alias prisma="./node_modules/.bin/prisma"
+alias plx="pnpm dlx"
+alias px="pnpm exec"
+alias pnr="pnpm run"
 
 # Database stuff
 alias derekdump="mysqldump -u dev -h derek -p"

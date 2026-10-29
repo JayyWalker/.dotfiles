@@ -118,5 +118,14 @@ source $HOME/.dotfiles/.aliases.sh
 #     git config --global alias.lg "log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --"
 # fi
 
+
 # bun completions
-[ -s "/Users/jordanwalker/.bun/_bun" ] && source "/Users/jordanwalker/.bun/_bun"
+[ -s "/Users/jayy/.bun/_bun" ] && source "/Users/jayy/.bun/_bun"
+
+# pnpm
+export PNPM_HOME="/Users/jayy/Library/pnpm"
+case ":$PATH:" in
+  *":$PNPM_HOME:"*) ;;
+  *) export PATH="$PNPM_HOME:$PATH" ;;
+esac
+# pnpm end

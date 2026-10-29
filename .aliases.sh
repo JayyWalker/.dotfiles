@@ -126,6 +126,10 @@ alias px="pnpm exec"
 alias pnr="pnpm run"
 alias ace="node ace"
 
+#aws
+alias cdklocal="./node_modules/.bin/cdklocal"
+alias cdk="./node_modules/.bin/cdk"
+
 # Database stuff
 alias derekdump="mysqldump -u dev -h derek -p"
 alias dumpdb="mysqldump -u $DBU -p$DBP"

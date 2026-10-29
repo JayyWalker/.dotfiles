@@ -124,6 +124,7 @@ alias prisma="./node_modules/.bin/prisma"
 alias plx="pnpm dlx"
 alias px="pnpm exec"
 alias pnr="pnpm run"
+alias ace="node ace"
 
 # Database stuff
 alias derekdump="mysqldump -u dev -h derek -p"
